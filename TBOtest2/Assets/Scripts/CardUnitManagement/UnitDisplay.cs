@@ -17,7 +17,7 @@ public class UnitDisplay : MonoBehaviourPun
   
      void OnMouseEnter ()
      {
-         if (gameObject.GetComponent<UnitStat>().statBonus != 0)
+         if (gameObject.GetComponent<UnitStat>().stat != CardTemplate.Stat.none)
          {
              if (gameObject.GetComponent<UnitStat>().stat == CardTemplate.Stat.atk)
              {
@@ -50,12 +50,13 @@ public class UnitDisplay : MonoBehaviourPun
                  string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
                  string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
                  string thirdPart = (gameObject.GetComponent<UnitStat>().move 
-                                     + gameObject.GetComponent<UnitStat>().statBonus 
-                                     + gameObject.GetComponent<UnitStat>().MvBonus).ToString();
+                                     + gameObject.GetComponent<UnitStat>().statBonus).ToString();
                  string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
                  string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
+                 string sixthPart = gameObject.GetComponent<UnitStat>().MvBonus.ToString();
                  text = "HP = " + firstPart + "   "+ "ATK = " + secondPart + Environment.NewLine + "MOVE = " +thirdPart + " " +
-                        "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " + fifthPart;
+                        "RANGE = " + fourthPart  + Environment.NewLine + "ELEMENT = " + fifthPart + Environment.NewLine + 
+                        gameObject.GetComponent<UnitStat>().biome +" BONUS MOVE = " + sixthPart;
                  currentToolTipText = text;
              }
 
@@ -68,7 +69,7 @@ public class UnitDisplay : MonoBehaviourPun
                  string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
                  string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
                  text = "HP = " + firstPart + "   "+ "ATK = " + secondPart + Environment.NewLine + "MOVE = " +thirdPart + " " +
-                        "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " + fifthPart;
+                        "RANGE = " + fourthPart  + Environment.NewLine + "ELEMENT = " + fifthPart;
                  currentToolTipText = text;
              }
          }

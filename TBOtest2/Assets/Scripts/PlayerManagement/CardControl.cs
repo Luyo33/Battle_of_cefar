@@ -11,7 +11,8 @@ using UnityEngine.UI;
 public class CardControl : MonoBehaviourPun
 {
     public GameObject EmptyUnit;
-    public GameObject EmptyCard;
+    public GameObject EmptyCardR1;
+    public GameObject EmptyCardR2;
     public GameObject battlefield;
     public Manager field;
     public List<CardTemplate> Deck;
@@ -38,16 +39,33 @@ public class CardControl : MonoBehaviourPun
     }
     public void take(CardTemplate c)
     {
-        GameObject card = Instantiate(EmptyCard);
-        card.GetComponent<Draggable>().Card = c;
-        card.GetComponent<CardDisplay>().Card = c;
-        card.GetComponent<Draggable>().hand = gameObject;
-        card.GetComponent<Draggable>().invoc = this;
-        card.GetComponent<Draggable>().battlefield = battlefield;
-        card.GetComponent<CardDisplay>().setR();//here
-        card.GetComponent<Draggable>().setR();//here
-        card.transform.SetParent(this.transform.parent.GetChild(0));
-        card.GetComponent<CardDisplay>().DisplayUp();
+        if (c.cardrank == 1)
+        {
+            GameObject card = Instantiate(EmptyCardR1);
+            card.GetComponent<Draggable>().Card = c;
+            card.GetComponent<CardDisplay>().Card = c;
+            card.GetComponent<Draggable>().hand = gameObject;
+            card.GetComponent<Draggable>().invoc = this;
+            card.GetComponent<Draggable>().battlefield = battlefield;
+            card.GetComponent<CardDisplay>().setR(); //here
+            card.GetComponent<Draggable>().setR(); //here
+            card.transform.SetParent(this.transform.parent.GetChild(0));
+            card.GetComponent<CardDisplay>().DisplayUp();
+        }
+
+        if (c.cardrank == 2)
+        {
+            GameObject card = Instantiate(EmptyCardR2);
+            card.GetComponent<Draggable>().Card = c;
+            card.GetComponent<CardDisplay>().Card = c;
+            card.GetComponent<Draggable>().hand = gameObject;
+            card.GetComponent<Draggable>().invoc = this;
+            card.GetComponent<Draggable>().battlefield = battlefield;
+            card.GetComponent<CardDisplay>().setR(); //here
+            card.GetComponent<Draggable>().setR(); //here
+            card.transform.SetParent(this.transform.parent.GetChild(0));
+            card.GetComponent<CardDisplay>().DisplayUp();
+        }
 
     }
     public void Shuffle()

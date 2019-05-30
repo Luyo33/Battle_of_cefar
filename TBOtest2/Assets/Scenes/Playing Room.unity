@@ -514,6 +514,16 @@ PrefabInstance:
       propertyPath: surface
       value: 
       objectReference: {fileID: 1513687028}
+    - target: {fileID: 5582686895771563773, guid: 5f6d83d6be7f125468cc57f7f920429f,
+        type: 3}
+      propertyPath: stepX
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582686895771563773, guid: 5f6d83d6be7f125468cc57f7f920429f,
+        type: 3}
+      propertyPath: stepZ
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 1255134091023950544, guid: 5f6d83d6be7f125468cc57f7f920429f,
         type: 3}
       propertyPath: m_Enabled
@@ -1906,7 +1916,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819428014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0000076293873}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0000059880663}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1316462978}
@@ -3304,7 +3314,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EmptyUnit: {fileID: 2334186763500800170, guid: 3ecc4ebf761f8fb4db87ef29a0993216,
     type: 3}
-  EmptyCard: {fileID: 7162622442927779926, guid: 6f9a09679e908ed4d9663c838bf278a5,
+  EmptyCardR1: {fileID: 7162622442927779926, guid: 6f9a09679e908ed4d9663c838bf278a5,
+    type: 3}
+  EmptyCardR2: {fileID: 1109077401503720, guid: 8133df6cae55ca746a18cf21c371bcd6,
     type: 3}
   battlefield: {fileID: 1737194752}
   field: {fileID: 0}
@@ -3314,6 +3326,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9836a3345e292fe4f95bc76508ba13a2, type: 2}
   - {fileID: 11400000, guid: 5fef96e7b4e7ddd49861bccc9021298f, type: 2}
   - {fileID: 11400000, guid: d115800606f7f4746a4b3a81681941bf, type: 2}
+  - {fileID: 11400000, guid: 509cf984546007d4fabbd417cfb77cc0, type: 2}
+  - {fileID: 11400000, guid: 509cf984546007d4fabbd417cfb77cc0, type: 2}
   deckCount: 0
 --- !u!1 &1232281017
 GameObject:
@@ -3576,8 +3590,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316462977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00007629393}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00012207028}
+  m_LocalScale: {x: 1.2741, y: 1.2741, z: 1.2741}
   m_Children:
   - {fileID: 819428015}
   m_Father: {fileID: 907198663}

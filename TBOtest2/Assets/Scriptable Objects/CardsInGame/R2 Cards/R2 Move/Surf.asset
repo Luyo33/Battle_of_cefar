@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e95278fe8ba24e01ace4ec4d158bf719, type: 3}
-  m_Name: Fire Propultion
+  m_Name: Surf
   m_EditorClassIdentifier: 
-  name: Fire Propultion
-  description: Use actual fireworks to go faster
-  element: 1
+  name: Surf
+  description: Commun technique to travel faster when on water
+  element: 2
   cardrank: 2
-  biome: 3
+  biome: 2
   bonus: 0
   stat: 1
-  movebonus: 0.3
+  movebonus: 1.3

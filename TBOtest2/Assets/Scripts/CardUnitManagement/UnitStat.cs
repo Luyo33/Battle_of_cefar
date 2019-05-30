@@ -18,7 +18,7 @@ public class UnitStat : MonoBehaviourPun
     public BiomeProp.Biome biome;
     public int statBonus = 0;
     public CardTemplate.Stat stat;
-    public float MvBonus = 0;
+    public float MvBonus = 0f;
     public int rank; // 0 = trapcard ;
     
 
@@ -98,5 +98,4 @@ public class UnitStat : MonoBehaviourPun
             Debug.Log(statBonus);
         }
     }
-    
 }

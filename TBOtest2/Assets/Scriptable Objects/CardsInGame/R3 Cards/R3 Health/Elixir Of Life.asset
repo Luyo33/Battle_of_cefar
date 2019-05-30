@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e95278fe8ba24e01ace4ec4d158bf719, type: 3}
-  m_Name: Pushing Winds
+  m_Script: {fileID: 11500000, guid: 1943657ee14746bc9a57a3e280ce4390, type: 3}
+  m_Name: Elixir Of Life
   m_EditorClassIdentifier: 
-  name: Pushing Winds
-  description: 'Utilize The Strong Winds In The Plains '
-  element: 3
-  cardrank: 2
-  biome: 0
-  bonus: 0
-  stat: 1
-  movebonus: 0.1
+  name: Elixir Of Life
+  description: This legendary elixir makes you bigger
+  element: 0
+  cardrank: 3
+  moveplus: 0
+  rangeplus: 0
+  atkplus: 0
+  hpplus: 2
