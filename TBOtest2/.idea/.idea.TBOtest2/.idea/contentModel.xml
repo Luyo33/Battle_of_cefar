@@ -369,6 +369,7 @@
             <e p="Card_R3.cs" t="Include" />
             <e p="CardDisplay.cs" t="Include" />
             <e p="CardTemplate.cs" t="Include" />
+            <e p="DeckBuilder.cs" t="Include" />
           </e>
         </e>
         <e p="Scripts" t="Include">
