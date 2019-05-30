@@ -51,6 +51,10 @@ public class UnitAtk : MonoBehaviourPun
     
     public List<GameObject> RecGetTargets(int range, UnitStat u, int h)
     {
+        if (!gameObject.GetComponent<UnitMan>().canhit)
+        {
+            return new List<GameObject>();
+        }
         List<Tuple<Vector3Int, int>> next = new List<Tuple<Vector3Int, int>>();
         Vector3Int here = new Vector3Int(position.x, position.y,
             battlefield.GetCellFromXZ(position).GetComponent<BiomeProp>().height);
@@ -119,6 +123,8 @@ public class UnitAtk : MonoBehaviourPun
         int plusatk = u1.stat == CardTemplate.Stat.atk && u1.biome == battlefield.GetCellFromXZ(gameObject.GetComponent<UnitMov>().position).GetComponent<BiomeProp>().biome? u1.statBonus:0;
         int plusdef = u2.stat == CardTemplate.Stat.def && u2.biome == battlefield.GetCellFromXZ(target.GetComponent<UnitMov>().position).GetComponent<BiomeProp>().biome? u2.statBonus:0;
         target.GetComponent<UnitStat>().hp -= (u1.atk + plusatk - plusdef) * damage(u2.element);
+        gameObject.GetComponent<UnitMan>().canhit = false;
+        gameObject.GetComponent<UnitMan>().canmove = false;
         
     }
     

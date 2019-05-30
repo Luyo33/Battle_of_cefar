@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
 
 public class UnitMan : MonoBehaviourPun
 {
@@ -12,6 +13,7 @@ public class UnitMan : MonoBehaviourPun
     public Card_R3 R3;
     public GameObject battle;
     public bool tomouse;
+<<<<<<< HEAD
 
     [PunRPC]
     void PutPiece(string n, string d, string e, int c, int m, int r, int a, int h, PhotonMessageInfo info)
@@ -33,6 +35,10 @@ public class UnitMan : MonoBehaviourPun
         tomouse = true;
         statUpdate();
     }
+=======
+    public bool canmove;
+    public bool canhit;
+>>>>>>> Aristide
     public void Start()
     {
         if (R1 != null)
@@ -87,7 +93,16 @@ public class UnitMan : MonoBehaviourPun
         gameObject.GetComponent<UnitStat>().statUpdate();
         gameObject.GetComponent<UnitMov>().statUpdate();
         gameObject.GetComponent<UnitAtk>().statUpdate();
+        
     }
 
-    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            canhit = true;
+            canmove = true;
+            tomouse = true;
+        }
+    }
 }

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1943657ee14746bc9a57a3e280ce4390, type: 3}
-  m_Name: Holy Water
+  m_Name: True Ice Barrier
   m_EditorClassIdentifier: 
-  name: Holy Water
-  description: God himself gave this sacred water
+  name: True Ice Barrier
+  description: True Ice never melts
   element: 2
   cardrank: 3
-  moveplus: 0
+  moveplus: -1
   rangeplus: 0
   atkplus: 0
-  hpplus: 4
+  hpplus: 6
