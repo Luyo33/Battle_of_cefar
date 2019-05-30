@@ -72,7 +72,8 @@ public class UnitDisplay : MonoBehaviourPun
                         "RANGE = " + fourthPart  + Environment.NewLine + "ELEMENT = " + fifthPart;
                  currentToolTipText = text;
              }
-         }
+         }            
+         
          else
          {
              string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
