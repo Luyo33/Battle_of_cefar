@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 using Random = System.Random;
 
-public class Manager : MonoBehaviour //Yael
+public class Manager : MonoBehaviourPun //Yael
 {
     public Vector4 seed;
     public int sizeX = 15;
@@ -18,6 +19,7 @@ public class Manager : MonoBehaviour //Yael
     public GameObject[,] cellMap;
 
     public NavMeshSurface surface;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +56,36 @@ public class Manager : MonoBehaviour //Yael
         return new Vector2Int(0,0);
     }
 
+    [PunRPC]
+    void GenerateCellMap(int sizeX, int sizeZ, float varX, float varZ, float deltaX, float deltaZ)
+    {
+        cellMap = new GameObject[sizeX, sizeZ];
+        for (int x = 0; x < cellMap.GetLength(0); x++)
+        {
+            for (int z = 0; z < cellMap.GetLength(1); z++)
+            {
+                float y = Mathf.PerlinNoise(x * stepX + varX, z * stepZ + varZ);
+                GameObject closest = biomesCell[0];
+                foreach (GameObject cell in biomesCell)
+                {
+                    var d = cell.GetComponent<GenerationData>();
+                    var closestData = closest.GetComponent<GenerationData>();
+                    if (closest == null || Mathf.Abs(d.value - y) < (Mathf.Abs(closestData.value - y)))
+                    {
+                        closest = cell;
+                    }
+                }
+                cellMap[x, z] = Instantiate(closest);
+                cellMap[x, z].transform.parent = transform;
+                var data = closest.GetComponent<GenerationData>();
+                int h = data.defaultHeight - data.heightVar + Mathf.RoundToInt(Mathf.PerlinNoise(x * data.step + deltaX, z * data.step + deltaZ) * data.heightVar * 2);
+                cellMap[x, z].transform.Translate(x, z, h);
+                //
+                cellMap[x, z].GetComponent<BiomeProp>().height = h;
+            }
+        }
+    }
+
     void GenerateMap()
     {
         cellMap = new GameObject[sizeX, sizeZ];
@@ -65,6 +97,7 @@ public class Manager : MonoBehaviour //Yael
         float varZ = seed.z * 10000;
         float deltaX = seed.y * 10000;
         float deltaZ = seed.w * 10000;
+        photonView.RPC("GenerateCellMap", RpcTarget.Others, sizeX, sizeZ, varX, varZ, deltaX, deltaZ);
         for (int x = 0; x < cellMap.GetLength(0); x++)
         {
             for (int z = 0; z < cellMap.GetLength(1); z++)

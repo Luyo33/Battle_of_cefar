@@ -36,4 +36,5 @@ MonoBehaviour:
   - RPC_LoadedGameScene
   - RPC_SetValues
   - PutPiece
+  - GenerateCellMap
   DisableAutoOpenWizard: 1
