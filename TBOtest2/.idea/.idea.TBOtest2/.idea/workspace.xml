@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e22f83f-5746-470d-a6e8-753f29b7b166" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TBOtest2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TBOtest2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/CardsInGame/DeckBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/CardsInGame/DeckBuilder.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonChat.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonChat.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonRealtime.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonRealtime.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.Culling.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.Culling.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.Utilities.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonUnityNetworking.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonUnityNetworking.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhotonWebSocket.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhotonWebSocket.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="9e22f83f-5746-470d-a6e8-753f29b7b166" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +14,7 @@
         <entry file="file://$PROJECT_DIR$/Assets/Scriptable Objects/CardsInGame/DeckBuilder.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="468">
-              <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
               <folding>
                 <marker date="1559229107477" expanded="true" signature="6:78" ph="..." />
                 <marker date="1559229107477" expanded="true" signature="183:1979" ph="{...}" />
@@ -54,7 +41,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scriptable Objects/CardsInGame/Card_R3.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="68">
               <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
               <folding>
                 <marker date="1558967343107" expanded="true" signature="6:92" ph="..." />
@@ -210,12 +197,12 @@
       <workItem from="1559119021319" duration="2235000" />
       <workItem from="1559121313295" duration="2704000" />
       <workItem from="1559213523454" duration="4057000" />
-      <workItem from="1559227084168" duration="2018000" />
+      <workItem from="1559227084168" duration="2258000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40060000" />
+    <option name="totallyTimeSpent" value="40300000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -227,7 +214,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="736" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="736" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.262945" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1998,7 +1985,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scriptable Objects/CardsInGame/Card_R3.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="68">
           <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
           <folding>
             <marker date="1558967343107" expanded="true" signature="6:92" ph="..." />
@@ -2010,7 +1997,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Scriptable Objects/CardsInGame/DeckBuilder.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
-          <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
           <folding>
             <marker date="1559229107477" expanded="true" signature="6:78" ph="..." />
             <marker date="1559229107477" expanded="true" signature="183:1979" ph="{...}" />
