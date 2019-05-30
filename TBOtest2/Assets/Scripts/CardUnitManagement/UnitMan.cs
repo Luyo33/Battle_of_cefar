@@ -13,7 +13,8 @@ public class UnitMan : MonoBehaviourPun
     public Card_R3 R3;
     public GameObject battle;
     public bool tomouse;
-<<<<<<< HEAD
+    public bool canmove;
+    public bool canhit;
 
     [PunRPC]
     void PutPiece(string n, string d, string e, int c, int m, int r, int a, int h, PhotonMessageInfo info)
@@ -35,10 +36,6 @@ public class UnitMan : MonoBehaviourPun
         tomouse = true;
         statUpdate();
     }
-=======
-    public bool canmove;
-    public bool canhit;
->>>>>>> Aristide
     public void Start()
     {
         if (R1 != null)
