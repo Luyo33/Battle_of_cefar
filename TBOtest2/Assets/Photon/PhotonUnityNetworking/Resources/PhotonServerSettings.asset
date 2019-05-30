@@ -35,5 +35,4 @@ MonoBehaviour:
   - RPC_CreatePlayer
   - RPC_LoadedGameScene
   - RPC_SetValues
-  - PutPiece
   DisableAutoOpenWizard: 1
