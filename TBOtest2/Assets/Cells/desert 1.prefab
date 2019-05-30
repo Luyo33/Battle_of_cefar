@@ -129,7 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7fd57ff5f0eaf478999fae43090f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyselector: {fileID: 0}
   selector: {fileID: 3909438553596214898, guid: 6f420f55ee762ca4796093220cf94bff,
     type: 3}
   mark2: {fileID: 3923367898808832899, guid: 884dd8453bd69cc49b442e973cd3424e, type: 3}

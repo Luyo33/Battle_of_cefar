@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
-using Photon.Pun;
 
-public class Selector : MonoBehaviourPun
+public class Selector : MonoBehaviour
 {
-    public GameObject enemyselector;
     public GameObject selector;
     public GameObject mark2;
     public bool IsSelected = false;
     private GameObject selected = null;
     private GameObject marked = null;
+    
     
     // Start is called before the first frame update
     void Start()
@@ -42,7 +41,6 @@ public class Selector : MonoBehaviourPun
         Destroy(selected);
         selected = null;
         IsSelected = false;
-
     }
 
     public void Highlight()

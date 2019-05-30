@@ -112,7 +112,7 @@ public class UnitMov : MonoBehaviourPun
                 {
                     r2bonus = biomebonus;
                 }
-                mv += (float) (r2bonus - b.fieldmalus - h*2 - 1);
+                mv += (float) (r2bonus - b.fieldmalus - h - 1);
                 Vector3Int pos = new Vector3Int(x, y, h);
                 if (!tested.Contains(pos))
                 {
@@ -122,7 +122,11 @@ public class UnitMov : MonoBehaviourPun
                     {
                         if (mv <= 0.5)
                         {
-                            works.Add(toadd);
+                            if (h < 2)
+                            {
+                                works.Add(toadd);
+                            }
+                            
                         }
 
                         if (mv > 0.5)

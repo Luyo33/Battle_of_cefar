@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using Photon.Pun;
 
-public class UnitStat : MonoBehaviourPun,IPunObservable
+public class UnitStat : MonoBehaviourPun
 {
     public Card_R1 template; // find a way to put in template before Start!
     public string name;
@@ -20,30 +20,31 @@ public class UnitStat : MonoBehaviourPun,IPunObservable
     public CardTemplate.Stat stat;
     public float MvBonus = 0;
     public int rank; // 0 = trapcard ;
+    
 
-    [PunRPC]
-    void StatLog()
-    {
-
-    }
-    [PunRPC]
-    void StatUpdate(string n, string d, int a, int r, int m, CardTemplate.Element e, CardTemplate.Stat s, BiomeProp.Biome b, int sb, int rank)
-    {
-        name = n; description = d; atk = a; range = r; move = m; element = e; stat = s; biome = b; statBonus = sb; this.rank = rank;
-    }
     private void Start()
     {
-        template = gameObject.GetComponent<UnitMan>().R1;
-        rank = 1;
-        biome = BiomeProp.Biome.Classic;
-        name = template.name;
-        description = template.description;
-        hp = template.hp;
-        atk = template.atk;
-        range = template.range;
-        move = template.move;
-        element = template.element;
-        stat = CardTemplate.Stat.none;
+        try
+        {
+            template = gameObject.GetComponent<UnitMan>().R1;
+            rank = 1;
+            biome = BiomeProp.Biome.Classic;
+            name = template.name;
+            description = template.description;
+            hp = template.hp;
+            atk = template.atk;
+            range = template.range;
+            move = template.move;
+            element = template.element;
+            stat = CardTemplate.Stat.none;
+                
+        }
+        catch (Exception e)
+        {
+            Debug.Log("this shouldn't be here");
+            Debug.Log(e);
+        }
+        
     }
  
     public void statUpdate()
@@ -58,21 +59,20 @@ public class UnitStat : MonoBehaviourPun,IPunObservable
         element = template.element;
         if (gameObject.GetComponent<UnitMan>().R2 != null)
         {
-            rank = 2;
             stat = gameObject.GetComponent<UnitMan>().R2.stat;
             biome = gameObject.GetComponent<UnitMan>().R2.biome;
             statBonus =  gameObject.GetComponent<UnitMan>().R2.bonus;
         }
         if (gameObject.GetComponent<UnitMan>().R3 != null)
         {
-            rank = 3;
             Card_R3 R3 = gameObject.GetComponent<UnitMan>().R3;
             hp += R3.hpplus;
             atk += R3.atkplus;
             range += R3.rangeplus;
             move += R3.moveplus;
         }
-        photonView.RPC("StatUpdate", RpcTarget.Others, name, description, atk, range, move, element, stat, biome, statBonus, rank);
+
+        
     }
     
     public void Update()
@@ -98,8 +98,5 @@ public class UnitStat : MonoBehaviourPun,IPunObservable
             Debug.Log(statBonus);
         }
     }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-    }
+    
 }

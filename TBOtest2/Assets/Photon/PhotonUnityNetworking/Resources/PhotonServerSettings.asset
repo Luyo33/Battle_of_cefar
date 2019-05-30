@@ -35,9 +35,4 @@ MonoBehaviour:
   - RPC_CreatePlayer
   - RPC_LoadedGameScene
   - RPC_SetValues
-  - PutPiece
-  - DestroyEnemySelector
-  - SetEnemySelector
-  - StatLog
-  - StatUpdate
   DisableAutoOpenWizard: 1

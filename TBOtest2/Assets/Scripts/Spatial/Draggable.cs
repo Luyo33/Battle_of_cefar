@@ -15,11 +15,13 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public Card_R1 R1;
     public Card_R2 R2;
     public Card_R3 R3;
+    public bool used;
     
     //public enum Tile{ PLAIN, MOUNTAIN, LAKE, DESERT, FOREST, MAP}
 
     private void Start()
     {
+        used = false;
         parentToReturnTo = null;
         invoc = hand.GetComponent<CardControl>();
         if (Card)
@@ -81,8 +83,19 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             R3 = GetComponent<CardDisplay>().CardR3;
             if (R1 != null)
             {
-                GameObject u = invoc.CreateUnit1(R1, battlefield.GetComponent<Manager>().Vselected());
-                u.GetComponent<UnitMan>().statUpdate();
+                Vector2Int pos = battlefield.GetComponent<Manager>().Vselected();
+                if (battlefield.GetComponent<Manager>().GetUnitFromXZ(pos) == null)
+                {
+                    if (pos[0] == 0 || pos[1] == 0 || pos[0] == battlefield.GetComponent<Manager>().sizeX - 1 ||
+                        pos[1] == battlefield.GetComponent<Manager>().sizeZ - 1)//spawn sur les côtés
+                    {
+                        GameObject u = invoc.CreateUnit1(R1, pos);
+                        u.GetComponent<UnitMan>().statUpdate();
+                        used = true;
+                    }
+                    
+                }
+                
             }
 
             if (R2 != null)
@@ -94,7 +107,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                     {
                         if (p.selected)
                         {
-                            invoc.R1R2(R2, unit);
+                            used = invoc.R1R2(R2, unit);
                             break;
                         }
                     }
@@ -109,16 +122,24 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                     {
                         if (p.selected)
                         {
-                            invoc.R2R3(R3, unit);
+                             used = invoc.R2R3(R3, unit);
                             break;
                         }
                     }
                 }
             }
+
+            if (used)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                this.transform.SetParent(parentToReturnTo);
+                GetComponent<CanvasGroup>().blocksRaycasts = true;
+                GetComponent<CanvasGroup>().alpha = 1f; 
+            }
             
-            this.transform.SetParent(parentToReturnTo);
-            GetComponent<CanvasGroup>().blocksRaycasts = true;
-            GetComponent<CanvasGroup>().alpha = 1f; 
         }
     }
 }

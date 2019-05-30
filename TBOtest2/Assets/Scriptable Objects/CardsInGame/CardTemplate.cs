@@ -34,19 +34,5 @@ public abstract class CardTemplate : ScriptableObject
         else return null;
     }
 
-    public Element ToElement(string s)
-    {
-        if (s == "Classic")
-            return Element.Classic;
-        if (s == "Fire")
-            return Element.Fire;
-        if (s == "Water")
-            return Element.Water;
-        if (s == "Wind")
-            return Element.Wind;
-        if (s == "Earth")
-            return Element.Earth;
-        else return Element.Classic;
-    }
-
+    
 }

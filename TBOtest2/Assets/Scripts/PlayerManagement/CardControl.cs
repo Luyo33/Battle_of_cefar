@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using System.Security.Cryptography;
 using Photon.Pun.Demo.PunBasics;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -78,9 +79,13 @@ public class CardControl : MonoBehaviourPun
         unit.GetComponent<UnitMan>().battle = battlefield;
         unit.GetComponent<UnitMan>().Start();
         unit.AddComponent<UnitMov>().position = position;
-        unit.AddComponent<Select>();
+        unit.GetComponent<PlayerComponent>().select = unit.GetComponent<Select>();
+        unit.GetComponent<UnitDisplay>().unitInfo = Camera.main.transform.GetChild(0).GetChild(1).GetChild(0)
+            .GetComponent<TextMeshProUGUI>();
+        unit.GetComponent<UnitMan>().statUpdate();
         field.Units.Add(unit);
         //unit.transform.parent = something.transform;//for hierarchy
+        unit.GetComponent<UnitMan>().statUpdate();
         return unit;
     }
 
@@ -89,7 +94,7 @@ public class CardControl : MonoBehaviourPun
         //TODO Ylan
     }
 
-    public void R1R2(Card_R2 template, GameObject Unit)
+    public bool R1R2(Card_R2 template, GameObject Unit)
     {
         
         UnitStat u = Unit.GetComponent<UnitStat>();
@@ -103,11 +108,14 @@ public class CardControl : MonoBehaviourPun
             {
                 Unit.GetComponent<UnitStat>().MvBonus = template.movebonus;
             }
+
+            return true;
         }
-        
+
+        return false;
     }
 
-    public void R2R3(Card_R3 template, GameObject Unit)
+    public bool R2R3(Card_R3 template, GameObject Unit)
     {
         UnitStat u = Unit.GetComponent<UnitStat>();
         if (u.element == template.element && u.rank != 3)
@@ -116,6 +124,9 @@ public class CardControl : MonoBehaviourPun
             Unit.GetComponent<UnitStat>().atk += template.atkplus;
             Unit.GetComponent<UnitStat>().move += template.moveplus;
             Unit.GetComponent<UnitStat>().range += template.rangeplus;
+            return true;
         }
+
+        return false;
     }
 }

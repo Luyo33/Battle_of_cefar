@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using Photon.Pun;
+using TMPro;
+using UnityEngine.Experimental.UIElements;
 
 public class UnitDisplay : MonoBehaviourPun
 {
@@ -10,30 +13,78 @@ public class UnitDisplay : MonoBehaviourPun
      private string text;
   
      private string currentToolTipText = "";
-     private GUIStyle guiStyleFore;
-     private GUIStyle guiStyleBack;
-  
-     void Start()
-     {
-         guiStyleFore = new GUIStyle();
-         guiStyleFore.normal.textColor = Color.white;  
-         guiStyleFore.alignment = TextAnchor.MiddleCenter;
-         guiStyleFore.wordWrap = true;
-         guiStyleBack = new GUIStyle();
-         guiStyleBack.normal.textColor = Color.black;  
-         guiStyleBack.alignment = TextAnchor.MiddleCenter;
-         guiStyleBack.wordWrap = true;
-     }
+     public TextMeshProUGUI unitInfo;
   
      void OnMouseEnter ()
      {
-         string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
-         string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
-         string thirdPart = gameObject.GetComponent<UnitStat>().move.ToString();
-         string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
-         text = "HP = " + firstPart + "   "+ "ATK = " + secondPart + Environment.NewLine + "MOVE = " +thirdPart + " " +
-             "RANGE = " + fourthPart;
-         currentToolTipText = text;
+         if (gameObject.GetComponent<UnitStat>().statBonus != 0)
+         {
+             if (gameObject.GetComponent<UnitStat>().stat == CardTemplate.Stat.atk)
+             {
+                 string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
+                 string secondPart = (gameObject.GetComponent<UnitStat>().atk + 
+                                      gameObject.GetComponent<UnitStat>().statBonus).ToString();
+                 string thirdPart = gameObject.GetComponent<UnitStat>().move.ToString();
+                 string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
+                 string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
+                 text = "HP = " + firstPart + "   "+ "ATK = " + secondPart + Environment.NewLine + "MOVE = " +thirdPart + " " +
+                        "RANGE = " + fourthPart  + Environment.NewLine + "ELEMENT = " + fifthPart;
+                 currentToolTipText = text;
+             }
+
+             if (gameObject.GetComponent<UnitStat>().stat == CardTemplate.Stat.def)
+             {
+                 string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
+                 string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
+                 string thirdPart = gameObject.GetComponent<UnitStat>().move.ToString();
+                 string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
+                 string fifthPart = gameObject.GetComponent<UnitStat>().statBonus.ToString();
+                 string sixthPart = gameObject.GetComponent<UnitStat>().element.ToString();
+                 text = "HP = " + firstPart + "   "+ "ATK = " + secondPart + Environment.NewLine + "MOVE = " +thirdPart + " " +
+                        "RANGE = " + fourthPart + Environment.NewLine + "DEF = " + fifthPart + " ELEMENT = " + sixthPart;
+                 currentToolTipText = text;
+             }
+
+             if (gameObject.GetComponent<UnitStat>().stat == CardTemplate.Stat.move)
+             {
+                 string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
+                 string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
+                 string thirdPart = (gameObject.GetComponent<UnitStat>().move 
+                                     + gameObject.GetComponent<UnitStat>().statBonus 
+                                     + gameObject.GetComponent<UnitStat>().MvBonus).ToString();
+                 string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
+                 string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
+                 text = "HP = " + firstPart + "   "+ "ATK = " + secondPart + Environment.NewLine + "MOVE = " +thirdPart + " " +
+                        "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " + fifthPart;
+                 currentToolTipText = text;
+             }
+
+             if (gameObject.GetComponent<UnitStat>().stat == CardTemplate.Stat.range)
+             {
+                 string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
+                 string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
+                 string thirdPart = (gameObject.GetComponent<UnitStat>().move + 
+                                     gameObject.GetComponent<UnitStat>().statBonus).ToString();
+                 string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
+                 string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
+                 text = "HP = " + firstPart + "   "+ "ATK = " + secondPart + Environment.NewLine + "MOVE = " +thirdPart + " " +
+                        "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " + fifthPart;
+                 currentToolTipText = text;
+             }
+         }
+         else
+         {
+             string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
+             string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
+             string thirdPart = gameObject.GetComponent<UnitStat>().move.ToString();
+             string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
+             string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
+             text = "HP = " + firstPart + "   "+ "ATK = " + secondPart + Environment.NewLine + "MOVE = " +thirdPart + " " +
+                    "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " + fifthPart;
+             currentToolTipText = text;
+         }
+
+         
      }
   
      void OnMouseExit ()
@@ -41,14 +92,20 @@ public class UnitDisplay : MonoBehaviourPun
          currentToolTipText = "";
      }
   
-     void OnGUI()
+     void Write()
      {
          if (currentToolTipText != "")
          {
-             //var x = Event.current.mousePosition.x;
-             //var y = Event.current.mousePosition.y;
-             GUI.Label (new Rect (570,0,150,60), currentToolTipText, guiStyleBack);
-             GUI.Label (new Rect (570,0,150,60), currentToolTipText, guiStyleFore);
+             unitInfo.text = currentToolTipText;
          }
+         else
+         {
+             unitInfo.text = "";
+         }
+     }
+
+     void Update()
+     {
+         Write();
      }
 }

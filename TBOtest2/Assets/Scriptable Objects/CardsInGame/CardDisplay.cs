@@ -18,18 +18,19 @@ public class CardDisplay : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descriptionText;
     public TextMeshProUGUI elementText;
+    public TextMeshProUGUI rankText;
     public TextMeshProUGUI atkText;
     public TextMeshProUGUI hpText;
     
-    private Color FireCard_Color = new Color(255,25,0);
-    private Color WaterCard_Color = new Color(0,76,255);
-    private Color EarthCard_Color = new Color(255,207,0);
-    private Color ClassicCard_Color = new Color(255,255,255);
-    private Color AirCard_Color = new Color(0,255,94);
+    private Color32 FireCard_Color = new Color32(255,19,0,255);
+    private Color32 WaterCard_Color = new Color32(0,76,255,255);
+    private Color32 EarthCard_Color = new Color32(255,207,0,255);
+    private Color32 ClassicCard_Color = new Color32(255,255,255,255);
+    private Color32 AirCard_Color = new Color32(0,255,94,255);
 
     public Image artworkImage;
     
-    public Color setColor(CardTemplate c)
+    public Color32 setColor(CardTemplate c)
     {
         if (c.element == CardTemplate.Element.Classic)
             return ClassicCard_Color;
@@ -41,7 +42,7 @@ public class CardDisplay : MonoBehaviour
             return AirCard_Color;
         if (c.element == CardTemplate.Element.Earth)
             return EarthCard_Color;
-        return Color.red;
+        return Color.clear;
     }
 
     // Start is called before the first frame update
@@ -65,12 +66,24 @@ public class CardDisplay : MonoBehaviour
         if (CardR1 != null)
         {
             elementText.text = CardR1.ToString(Card.element);
+            rankText.text = "R1";
             atkText.text = CardR1.atk.ToString();
             hpText.text = CardR1.hp.ToString();
         }
 
         if (CardR2 != null)
         {
+            elementText.text = CardR2.ToString(Card.element);
+            rankText.text = "R2";
+            hpText.text = CardR2.stat.ToString();
+            if(CardR2.stat == CardTemplate.Stat.move)
+            {
+                atkText.text = (CardR2.bonus + CardR2.movebonus).ToString();
+            }
+            else
+            {
+                atkText.text = CardR2.bonus.ToString();
+            }
             //text: element, stat, statint
         }
 
@@ -89,8 +102,28 @@ public class CardDisplay : MonoBehaviour
     {
         nameText.text = Card.name;
         descriptionText.text = Card.description;
-        elementText.text = CardR1.ToString(Card.element);
-        atkText.text = CardR1.atk.ToString();
-        hpText.text = CardR1.hp.ToString();
+        elementText.text = Card.ToString(Card.element);
+        if (CardR1 != null)
+        {
+            elementText.text = CardR1.ToString(Card.element);
+            rankText.text = "R1";
+            atkText.text = CardR1.atk.ToString();
+            hpText.text = CardR1.hp.ToString();
+        }
+        if (CardR2 != null)
+        {
+            elementText.text = CardR2.ToString(Card.element);
+            rankText.text = "R2";
+            hpText.text = CardR2.stat.ToString();
+            if(CardR2.stat == CardTemplate.Stat.move)
+            {
+                atkText.text = (CardR2.bonus + CardR2.movebonus).ToString();
+            }
+            else
+            {
+                atkText.text = CardR2.bonus.ToString();
+            }
+            //text: element, stat, statint
+        }
     }
 }
