@@ -177,6 +177,7 @@
     <Compile Include="Assets\Scriptable Objects\CardsInGame\Card_R3.cs" />
     <Compile Include="Assets\Scriptable Objects\CardsInGame\CardDisplay.cs" />
     <Compile Include="Assets\Scriptable Objects\CardsInGame\CardTemplate.cs" />
+    <Compile Include="Assets\Scriptable Objects\CardsInGame\DeckBuilder.cs" />
     <Compile Include="Assets\Scripts\CardUnitManagement\UnitAtk.cs" />
     <Compile Include="Assets\Scripts\CardUnitManagement\UnitDisplay.cs" />
     <Compile Include="Assets\Scripts\CardUnitManagement\UnitMan.cs" />
