@@ -15,6 +15,7 @@ public class CardControl : MonoBehaviourPun
     public GameObject EmptyCardR2;
     public GameObject battlefield;
     public Manager field;
+    public DeckBuilder DeckBuilder;
     public List<CardTemplate> Deck;
     public int deckCount;
 
