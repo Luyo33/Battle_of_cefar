@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5582686895771563762}
   - component: {fileID: 5582686895771563773}
-  - component: {fileID: 1255134091023950544}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -56,18 +55,4 @@ MonoBehaviour:
   - {fileID: 6206372761850750764, guid: ff69e21a30de14949a9103a6c140e938, type: 3}
   - {fileID: 4439113508636916118, guid: 16d828113629eee41b577a91a57d4507, type: 3}
   Units: []
---- !u!114 &1255134091023950544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5582686895771563772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c173504ff87766a4394950c44f2278de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EmptyUnit: {fileID: 5543933595940750104, guid: e7edc65a6a0201048a9d99feeea14322,
-    type: 3}
-  battlefield: {fileID: 5582686895771563773}
+  surface: {fileID: 0}

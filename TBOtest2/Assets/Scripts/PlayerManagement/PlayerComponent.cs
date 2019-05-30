@@ -52,7 +52,8 @@ public class PlayerComponent : MonoBehaviourPun
                         Vector2Int pos = gameObject.GetComponent<UnitMan>().battle.GetComponent<Manager>()
                             .Vselected();
                         
-                        if (gameObject.GetComponent<UnitMov>().Neighbours.Contains(pos))
+                        if (gameObject.GetComponent<UnitMov>().Neighbours.Contains(pos) &&
+                            gameObject.GetComponent<UnitMov>().position != pos)
                         {
                             Debug.Log("Possible Movement");
                             gameObject.GetComponent<UnitMov>().position = pos;
@@ -61,6 +62,8 @@ public class PlayerComponent : MonoBehaviourPun
                             Debug.Log(gameObject.GetComponent<UnitMan>()
                                 .battle.GetComponent<Manager>()
                                 .GetCellFromXZ(gameObject.GetComponent<UnitMov>().position));
+                            gameObject.GetComponent<UnitMan>().canmove = false;
+                            gameObject.GetComponent<UnitMan>().canhit = true;
                         }
                         
                         else

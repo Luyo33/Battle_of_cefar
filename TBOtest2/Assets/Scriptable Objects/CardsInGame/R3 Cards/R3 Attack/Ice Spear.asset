@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Ice Spear
   description: Took down a dragon in one hit
-  element: 0
+  element: 2
   cardrank: 3
   moveplus: 0
   rangeplus: 0

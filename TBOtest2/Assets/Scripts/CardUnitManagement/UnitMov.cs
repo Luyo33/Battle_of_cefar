@@ -81,6 +81,10 @@ public class UnitMov : MonoBehaviourPun
 
     private List<Vector2Int> AvailableFields() //idea: have as flight bonus the faculty to have h+1
     {
+        if (!gameObject.GetComponent<UnitMan>().canmove)
+        {
+            return new List<Vector2Int>();
+        }
         List<Tuple<Vector3Int, float>> next = new List<Tuple<Vector3Int, float>>();
         Vector3Int here = new Vector3Int(position.x, position.y,
             battlefield.GetCellFromXZ(position).GetComponent<BiomeProp>().height);
