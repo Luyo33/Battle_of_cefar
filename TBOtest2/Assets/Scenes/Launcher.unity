@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delayStart: 1
-  maxPlayers: 2
+  maxPlayers: 1
   menuScene: 0
   multiplayerScene: 2
 --- !u!4 &671809030
@@ -1032,6 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isGameLoaded: 0
   currentScene: 0
+  minplayers: 1
   playersInRoom: 0
   myNumberInRoom: 0
   playerInGame: 0
@@ -1069,8 +1070,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 2
-  InstantiationId: 2
+  viewIdField: 1
+  InstantiationId: 1
   isRuntimeInstantiated: 0
 --- !u!1 &982649675
 GameObject:

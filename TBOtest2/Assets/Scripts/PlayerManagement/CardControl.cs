@@ -7,6 +7,7 @@ using Photon.Pun.Demo.PunBasics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Threading;
 
 public class CardControl : MonoBehaviourPun
 {
@@ -20,8 +21,10 @@ public class CardControl : MonoBehaviourPun
     public int deckCount;
 
     // Start is called before the first frame update
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return new WaitWhile(() => gameObject.scene.GetRootGameObjects().Length > 5);
+        battlefield = gameObject.scene.GetRootGameObjects()[5];
         field = battlefield.GetComponent<Manager>();
         deckCount = 0;
         Shuffle();
@@ -40,6 +43,11 @@ public class CardControl : MonoBehaviourPun
     }
     public void take(CardTemplate c)
     {
+        if (battlefield == null)
+        {
+            battlefield = gameObject.scene.GetRootGameObjects()[5];
+            field = battlefield.GetComponent<Manager>();
+        }
         if (c.cardrank == 1)
         {
             GameObject card = Instantiate(EmptyCardR1);
@@ -89,6 +97,11 @@ public class CardControl : MonoBehaviourPun
 
     public GameObject CreateUnit1(Card_R1 template, Vector2Int position)
     {
+        if (battlefield == null)
+        {
+            battlefield = gameObject.scene.GetRootGameObjects()[5];
+            field = battlefield.GetComponent<Manager>();
+        }
         GameObject unit = PhotonNetwork.Instantiate("Unit",new Vector3(position.x,field.GetCellFromXZ(position).GetComponent<BiomeProp>().height,-position.y),Quaternion.identity);
        // if (unit.GetComponent<UnitMan>() == null) should be in the prefab
        // {

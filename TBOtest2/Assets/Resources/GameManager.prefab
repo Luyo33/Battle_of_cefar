@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5582686895771563762}
   - component: {fileID: 5582686895771563773}
-  - component: {fileID: 4348345396233505575}
+  - component: {fileID: 8841123722560994679}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -56,8 +56,8 @@ MonoBehaviour:
   - {fileID: 6206372761850750764, guid: ff69e21a30de14949a9103a6c140e938, type: 3}
   - {fileID: 4439113508636916118, guid: 16d828113629eee41b577a91a57d4507, type: 3}
   Units: []
-  surface: {fileID: 0}
---- !u!114 &4348345396233505575
+  surface: {fileID: 5762896604189937456, guid: 0ab6cd76c7cec1e49878e9e20bebec0d, type: 3}
+--- !u!114 &8841123722560994679
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,10 +72,10 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 0
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 5582686895771563773}
-  viewIdField: 0
-  InstantiationId: 0
+  - {fileID: 0}
+  viewIdField: 3
+  InstantiationId: 3
   isRuntimeInstantiated: 0

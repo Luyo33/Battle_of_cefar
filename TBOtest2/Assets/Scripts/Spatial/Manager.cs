@@ -17,7 +17,6 @@ public class Manager : MonoBehaviourPun //Yael
     public List<GameObject> biomesCell;
     public List<GameObject> Units;
     public GameObject[,] cellMap;
-
     public NavMeshSurface surface;
 
     // Start is called before the first frame update
@@ -175,4 +174,5 @@ public class Manager : MonoBehaviourPun //Yael
 
         return null;
     }
+    
 }

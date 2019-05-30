@@ -16,8 +16,9 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public Card_R2 R2;
     public Card_R3 R3;
     public bool used;
-    
+
     //public enum Tile{ PLAIN, MOUNTAIN, LAKE, DESERT, FOREST, MAP}
+
 
     private void Start()
     {
@@ -52,7 +53,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     //public Tile typeOfTile = Tile.PLAIN;
     public void OnBeginDrag(PointerEventData eventData)
     {
-
+        battlefield = gameObject.scene.GetRootGameObjects()[5];
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             var transform1 = this.transform;

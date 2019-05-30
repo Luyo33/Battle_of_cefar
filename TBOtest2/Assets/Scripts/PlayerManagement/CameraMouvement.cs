@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class CameraMouvement : MonoBehaviour //CAMERA MOUVEMENT!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -18,8 +19,11 @@ public class CameraMouvement : MonoBehaviour //CAMERA MOUVEMENT!!!!!!!!!!!!!!!!!
     public bool shouldZoomOut = true;
     private Vector3 delta;
 
-    void Start()
+
+    private IEnumerator Start()
     {
+        yield return new WaitWhile(()=> gameObject.scene.GetRootGameObjects().Length > 5);
+        target = gameObject.scene.GetRootGameObjects()[5];
         var data = target.GetComponent<Manager>();
         lookOut = Instantiate(lookOut);
         delta = new Vector3(data.sizeX / 2, 0, -data.sizeZ / 2);
