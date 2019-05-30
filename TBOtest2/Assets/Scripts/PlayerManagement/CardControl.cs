@@ -13,7 +13,6 @@ public class CardControl : MonoBehaviourPun
     public GameObject EmptyUnit;
     public GameObject EmptyCardR1;
     public GameObject EmptyCardR2;
-    public GameObject EmptyCardR3;
     public GameObject battlefield;
     public Manager field;
     public DeckBuilder DeckBuilder;
@@ -58,20 +57,6 @@ public class CardControl : MonoBehaviourPun
         if (c.cardrank == 2)
         {
             GameObject card = Instantiate(EmptyCardR2);
-            card.GetComponent<Draggable>().Card = c;
-            card.GetComponent<CardDisplay>().Card = c;
-            card.GetComponent<Draggable>().hand = gameObject;
-            card.GetComponent<Draggable>().invoc = this;
-            card.GetComponent<Draggable>().battlefield = battlefield;
-            card.GetComponent<CardDisplay>().setR(); //here
-            card.GetComponent<Draggable>().setR(); //here
-            card.transform.SetParent(this.transform.parent.GetChild(0));
-            card.GetComponent<CardDisplay>().DisplayUp();
-        }
-
-        if (c.cardrank == 3)
-        {
-            GameObject card = Instantiate(EmptyCardR3);
             card.GetComponent<Draggable>().Card = c;
             card.GetComponent<CardDisplay>().Card = c;
             card.GetComponent<Draggable>().hand = gameObject;

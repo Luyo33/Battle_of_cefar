@@ -215,7 +215,7 @@ MonoBehaviour:
   R1: {fileID: 0}
   R2: {fileID: 0}
   R3: {fileID: 0}
-  battle: {fileID: 5582686895771563772, guid: 5f6d83d6be7f125468cc57f7f920429f, type: 3}
+  battle: {fileID: 0}
   tomouse: 0
   canmove: 0
   canhit: 0

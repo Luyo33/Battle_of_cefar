@@ -382,7 +382,6 @@
           </e>
           <e p="MenuSettings" t="Include">
             <e p="Menu.cs" t="Include" />
-            <e p="OptionsMenu.cs" t="Include" />
             <e p="TranscendentMusic.cs" t="Include" />
           </e>
           <e p="Multiplayer" t="Include">

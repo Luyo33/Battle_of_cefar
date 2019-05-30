@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
 using Image = UnityEngine.UI.Image;
-using System;
 
 public class CardDisplay : MonoBehaviour
 {
@@ -82,18 +81,7 @@ public class CardDisplay : MonoBehaviour
 
         if (CardR3 != null)
         {
-            elementText.text = CardR3.ToString(Card.element);
-            ((string first, int sec), (string third, int fourth)) = CardR3.StatChanges();
-            hpText.text = first + Environment.NewLine + sec.ToString();
-            if (third == "" && fourth == 0)
-            {
-                atkText.text = "";
-            }
-            else
-            {
-               atkText.text = third + Environment.NewLine + fourth.ToString();
-            }
-
+            //text: bonus given
         }
     }
 
@@ -127,20 +115,6 @@ public class CardDisplay : MonoBehaviour
                 atkText.text = "+" + CardR2.bonus.ToString();
             }
             //text: element, stat, statint
-        }
-        if (CardR3 != null)
-        {
-            elementText.text = CardR3.ToString(Card.element);
-            ((string first, int sec), (string third, int fourth)) = CardR3.StatChanges();
-            hpText.text = first + Environment.NewLine + sec.ToString();
-            if (third == "" && fourth == 0)
-            {
-                atkText.text = "";
-            }
-            else
-            {
-                atkText.text = third + Environment.NewLine + fourth.ToString();
-            }
         }
     }
 }
