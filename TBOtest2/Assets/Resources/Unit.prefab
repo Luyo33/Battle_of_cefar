@@ -217,6 +217,8 @@ MonoBehaviour:
   R3: {fileID: 0}
   battle: {fileID: 0}
   tomouse: 0
+  canmove: 0
+  canhit: 0
 --- !u!114 &4792519648085596123
 MonoBehaviour:
   m_ObjectHideFlags: 0

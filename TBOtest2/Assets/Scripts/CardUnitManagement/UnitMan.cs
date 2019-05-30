@@ -12,7 +12,8 @@ public class UnitMan : MonoBehaviourPun
     public Card_R3 R3;
     public GameObject battle;
     public bool tomouse;
-
+    public bool canmove;
+    public bool canhit;
     public void Start()
     {
         if (R1 != null)
@@ -33,6 +34,8 @@ public class UnitMan : MonoBehaviourPun
             statUpdate();
         }
 
+        canmove = true;
+        canhit = true;
         tomouse = true;
     }
 
@@ -64,6 +67,15 @@ public class UnitMan : MonoBehaviourPun
         gameObject.GetComponent<UnitStat>().statUpdate();
         gameObject.GetComponent<UnitMov>().statUpdate();
         gameObject.GetComponent<UnitAtk>().statUpdate();
+        if (canmove)
+        {
+            canhit = true;
+        }
+
+        if (!canhit)
+        {
+            canmove = false;
+        }
     }
 
     
