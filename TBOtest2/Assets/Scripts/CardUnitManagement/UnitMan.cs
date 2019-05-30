@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
 
 public class UnitMan : MonoBehaviourPun
 {
@@ -34,8 +35,6 @@ public class UnitMan : MonoBehaviourPun
             statUpdate();
         }
 
-        canmove = true;
-        canhit = true;
         tomouse = true;
     }
 
@@ -67,16 +66,16 @@ public class UnitMan : MonoBehaviourPun
         gameObject.GetComponent<UnitStat>().statUpdate();
         gameObject.GetComponent<UnitMov>().statUpdate();
         gameObject.GetComponent<UnitAtk>().statUpdate();
-        if (canmove)
-        {
-            canhit = true;
-        }
-
-        if (!canhit)
-        {
-            canmove = false;
-        }
+        
     }
 
-    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            canhit = true;
+            canmove = true;
+            tomouse = true;
+        }
+    }
 }

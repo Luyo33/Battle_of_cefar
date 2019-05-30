@@ -63,6 +63,7 @@ public class PlayerComponent : MonoBehaviourPun
                                 .battle.GetComponent<Manager>()
                                 .GetCellFromXZ(gameObject.GetComponent<UnitMov>().position));
                             gameObject.GetComponent<UnitMan>().canmove = false;
+                            gameObject.GetComponent<UnitMan>().canhit = true;
                         }
                         
                         else
@@ -79,8 +80,6 @@ public class PlayerComponent : MonoBehaviourPun
                             if (ennemy == target)
                             {
                                 atk.attack(ennemy);
-                                gameObject.GetComponent<UnitMan>().canhit = false;
-                                gameObject.GetComponent<UnitMan>().canmove = false;
                                 break;
                             }
                         }
