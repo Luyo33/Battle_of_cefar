@@ -39,6 +39,9 @@ public class DeckBuilder : ScriptableObject
     }
     public void DicoSet()
     {
+        R1s = new Dictionary<Card_R1, int>();
+        R2s = new Dictionary<Card_R2, int>();
+        R3s = new Dictionary<Card_R3, int>();
         foreach (CardTemplate template in raw)
         {
             if (template is Card_R1)
@@ -48,7 +51,6 @@ public class DeckBuilder : ScriptableObject
                 {
                     R1s.Add(r1, 0);
                 }
-
                 R1s[r1] += 1;
             }
             if (template is Card_R2)
@@ -73,4 +75,16 @@ public class DeckBuilder : ScriptableObject
             }
         }
     }
+    
+    public List<CardTemplate> rawclone()
+    {
+        List<CardTemplate> clone = new List<CardTemplate>();
+        foreach (CardTemplate template in raw)
+        {
+            clone.Add(template);
+        }
+        return clone;
+    }
+    
+    
 }

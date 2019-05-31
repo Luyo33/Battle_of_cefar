@@ -7,6 +7,7 @@ using Photon.Pun.Demo.PunBasics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Random = System.Random;
 
 public class CardControl : MonoBehaviourPun
 {
@@ -19,12 +20,37 @@ public class CardControl : MonoBehaviourPun
     public DeckBuilder DeckBuilder;
     public List<CardTemplate> Deck;
     public int deckCount;
+    public List<CardTemplate> hand;
+    public GameObject hero;
+    
+    
 
     // Start is called before the first frame update
     private void Start()
     {
         field = battlefield.GetComponent<Manager>();
         deckCount = 0;
+        BuildDeck();
+        FirstTurn();
+    }
+
+    public void BuildDeck()
+    {
+        Deck = new List<CardTemplate>();
+        Deck = DeckBuilder.rawclone();
+        Shuffle();
+    }
+
+    public void FirstTurn()
+    {
+        Random r = new Random();
+        int n = r.Next(Deck.Count);
+        take(Deck[n]);
+        Deck.Remove(Deck[n]);
+        for (int i = 0; i < 5; i++)
+        {
+            draw();
+        }
         Shuffle();
     }
 
@@ -32,7 +58,7 @@ public class CardControl : MonoBehaviourPun
 
     public void draw()//à utiliser avant toute pioche;
     {
-        if (Deck.Count > deckCount)
+        if (Deck.Count > deckCount && hand.Count < 6)
         {
             take(Deck[deckCount]);
             deckCount++;
@@ -52,7 +78,9 @@ public class CardControl : MonoBehaviourPun
             card.GetComponent<CardDisplay>().setR(); //here
             card.GetComponent<Draggable>().setR(); //here
             card.transform.SetParent(this.transform.parent.GetChild(0));
+            card.transform.rotation = new Quaternion(0,0,0,0);
             card.GetComponent<CardDisplay>().DisplayUp();
+            
         }
 
         if (c.cardrank == 2)
@@ -66,6 +94,7 @@ public class CardControl : MonoBehaviourPun
             card.GetComponent<CardDisplay>().setR(); //here
             card.GetComponent<Draggable>().setR(); //here
             card.transform.SetParent(this.transform.parent.GetChild(0));
+            card.transform.rotation = new Quaternion(0,0,0,0);
             card.GetComponent<CardDisplay>().DisplayUp();
         }
 
@@ -80,9 +109,10 @@ public class CardControl : MonoBehaviourPun
             card.GetComponent<CardDisplay>().setR(); //here
             card.GetComponent<Draggable>().setR(); //here
             card.transform.SetParent(this.transform.parent.GetChild(0));
+            card.transform.rotation = new Quaternion(0,0,0,0);
             card.GetComponent<CardDisplay>().DisplayUp();
         }
-
+        hand.Add(c);
     }
     public void Shuffle()
     {
@@ -120,6 +150,7 @@ public class CardControl : MonoBehaviourPun
         field.Units.Add(unit);
         //unit.transform.parent = something.transform;//for hierarchy
         unit.GetComponent<UnitMan>().statUpdate();
+        hand.Remove(template);
         return unit;
     }
 
@@ -142,6 +173,7 @@ public class CardControl : MonoBehaviourPun
             {
                 Unit.GetComponent<UnitStat>().MvBonus = template.movebonus;
             }
+            hand.Remove(template);
 
             return true;
         }
@@ -159,6 +191,7 @@ public class CardControl : MonoBehaviourPun
             Unit.GetComponent<UnitStat>().atk += template.atkplus;
             Unit.GetComponent<UnitStat>().move += template.moveplus;
             Unit.GetComponent<UnitStat>().range += template.rangeplus;
+            hand.Remove(template);
             return true;
         }
 
