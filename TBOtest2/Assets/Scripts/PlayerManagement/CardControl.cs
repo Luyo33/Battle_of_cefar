@@ -21,6 +21,7 @@ public class CardControl : MonoBehaviourPun
     public List<CardTemplate> Deck;
     public int deckCount;
     public List<CardTemplate> hand;
+    public GameObject hero;
     
     
 
@@ -149,6 +150,7 @@ public class CardControl : MonoBehaviourPun
         field.Units.Add(unit);
         //unit.transform.parent = something.transform;//for hierarchy
         unit.GetComponent<UnitMan>().statUpdate();
+        hand.Remove(template);
         return unit;
     }
 
@@ -171,6 +173,7 @@ public class CardControl : MonoBehaviourPun
             {
                 Unit.GetComponent<UnitStat>().MvBonus = template.movebonus;
             }
+            hand.Remove(template);
 
             return true;
         }
@@ -188,6 +191,7 @@ public class CardControl : MonoBehaviourPun
             Unit.GetComponent<UnitStat>().atk += template.atkplus;
             Unit.GetComponent<UnitStat>().move += template.moveplus;
             Unit.GetComponent<UnitStat>().range += template.rangeplus;
+            hand.Remove(template);
             return true;
         }
 

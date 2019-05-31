@@ -8,6 +8,7 @@ using Photon.Pun;
 public class UnitStat : MonoBehaviourPun
 {
     public Card_R1 template; // find a way to put in template before Start!
+    public bool hero;
     public string name;
     public string description;
     public int move;
