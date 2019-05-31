@@ -48,8 +48,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 0}
-  viewIdField: 0
-  InstantiationId: 0
+  viewIdField: 14
+  InstantiationId: 13
   isRuntimeInstantiated: 0
 --- !u!1001 &1529805115014707920
 PrefabInstance:
@@ -157,6 +157,16 @@ PrefabInstance:
         type: 3}
       propertyPath: biome
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233081476723797374, guid: 260aad0a1712ef74d8e987823ea35140,
+        type: 3}
+      propertyPath: viewIdField
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233081476723797374, guid: 260aad0a1712ef74d8e987823ea35140,
+        type: 3}
+      propertyPath: InstantiationId
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 260aad0a1712ef74d8e987823ea35140, type: 3}

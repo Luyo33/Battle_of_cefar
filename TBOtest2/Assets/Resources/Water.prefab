@@ -103,8 +103,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 5974130982995682622}
-  viewIdField: 0
-  InstantiationId: 0
+  viewIdField: 11
+  InstantiationId: 11
   isRuntimeInstantiated: 0
 --- !u!95 &2405671900774875741
 Animator:
