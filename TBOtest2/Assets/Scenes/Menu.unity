@@ -1118,7 +1118,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1145791330}
+      - m_Target: {fileID: 1145791335}
         m_MethodName: SetResolution
         m_Mode: 0
         m_Arguments:
@@ -2168,7 +2168,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1145791330}
+      - m_Target: {fileID: 1145791335}
         m_MethodName: SetFullscreen
         m_Mode: 0
         m_Arguments:
@@ -2926,7 +2926,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1145791330}
+      - m_Target: {fileID: 1145791335}
         m_MethodName: SetVolume
         m_Mode: 0
         m_Arguments:
@@ -3245,6 +3245,7 @@ GameObject:
   - component: {fileID: 1145791332}
   - component: {fileID: 1145791331}
   - component: {fileID: 1145791330}
+  - component: {fileID: 1145791335}
   m_Layer: 5
   m_Name: Options Menu
   m_TagString: Untagged
@@ -3264,8 +3265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01328ec4017780b46bc6bab37e8b5e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: cfad8178bcaa06a4caa736424b398fd3, type: 2}
-  resolutionDropDown: {fileID: 184715672}
 --- !u!114 &1145791331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3355,6 +3354,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1145791335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1145791329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bc86296a1d6aa44f91b592894fc1d65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolutionDropDown: {fileID: 0}
 --- !u!1 &1255598981
 GameObject:
   m_ObjectHideFlags: 0
@@ -4352,8 +4364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01328ec4017780b46bc6bab37e8b5e13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: cfad8178bcaa06a4caa736424b398fd3, type: 2}
-  resolutionDropDown: {fileID: 0}
 --- !u!1 &1812368530
 GameObject:
   m_ObjectHideFlags: 0
@@ -4616,7 +4626,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1145791330}
+      - m_Target: {fileID: 1145791335}
         m_MethodName: SetQuality
         m_Mode: 0
         m_Arguments:
