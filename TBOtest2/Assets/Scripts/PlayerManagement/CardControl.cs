@@ -24,7 +24,7 @@ public class CardControl : MonoBehaviourPun
     public GameObject hero;
     
     [PunRPC]
-    void CreateUnit(string n, string d, string e, int c, int m, int r, int a, int h, PhotonMessageInfo info)
+    void CreateUnit(PhotonMessageInfo info)
     {
     }
 
@@ -81,7 +81,7 @@ public class CardControl : MonoBehaviourPun
             card.GetComponent<CardDisplay>().setR(); //here
             card.GetComponent<Draggable>().setR(); //here
             card.transform.SetParent(this.transform.parent.GetChild(0));
-            card.transform.rotation = new Quaternion(0,0,0,0);
+            card.transform.rotation = Quaternion.identity;
             card.GetComponent<CardDisplay>().DisplayUp();
             
         }
@@ -97,7 +97,7 @@ public class CardControl : MonoBehaviourPun
             card.GetComponent<CardDisplay>().setR(); //here
             card.GetComponent<Draggable>().setR(); //here
             card.transform.SetParent(this.transform.parent.GetChild(0));
-            card.transform.rotation = new Quaternion(0,0,0,0);
+            card.transform.rotation = Quaternion.identity;
             card.GetComponent<CardDisplay>().DisplayUp();
         }
 
@@ -112,7 +112,7 @@ public class CardControl : MonoBehaviourPun
             card.GetComponent<CardDisplay>().setR(); //here
             card.GetComponent<Draggable>().setR(); //here
             card.transform.SetParent(this.transform.parent.GetChild(0));
-            card.transform.rotation = new Quaternion(0,0,0,0);
+            card.transform.rotation = Quaternion.identity;
             card.GetComponent<CardDisplay>().DisplayUp();
         }
         hand.Add(c);
@@ -135,7 +135,7 @@ public class CardControl : MonoBehaviourPun
     }
     
 
-    public GameObject CreateUnit1(Card_R1 template, Vector2Int position)
+    public void CreateUnit1(Card_R1 template, Vector2Int position)
     {
         GameObject unit = PhotonNetwork.Instantiate("Unit",new Vector3(position.x,field.GetCellFromXZ(position).GetComponent<BiomeProp>().height,-position.y),Quaternion.identity);
         
@@ -158,7 +158,6 @@ public class CardControl : MonoBehaviourPun
         //unit.transform.parent = something.transform;//for hierarchy
         unit.GetComponent<UnitMan>().statUpdate();
         hand.Remove(template);
-        return unit;
     }
 
     public void AssignAppearance(Card_R1 template, GameObject unit)

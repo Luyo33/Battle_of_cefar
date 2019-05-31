@@ -92,8 +92,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                         invoc.hero.GetComponent<UnitMov>().Neighbours.Contains(pos) ||
                         invoc.hero.GetComponent<UnitAtk>().w.Contains(pos))
                     {
-                        GameObject u = invoc.CreateUnit1(R1, pos);
-                        u.GetComponent<UnitMan>().statUpdate();
+                        invoc.CreateUnit1(R1, pos);
                         used = true;
                     }
                     
