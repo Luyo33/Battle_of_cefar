@@ -85,13 +85,13 @@ public class UnitDisplay : MonoBehaviourPun
                     "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " + fifthPart;
              currentToolTipText = text;
          }
-
-         
+         Write();
      }
   
      void OnMouseExit ()
      {
          currentToolTipText = "";
+         Write();
      }
   
      void Write()
@@ -104,10 +104,5 @@ public class UnitDisplay : MonoBehaviourPun
          {
              unitInfo.text = "";
          }
-     }
-
-     void Update()
-     {
-         Write();
      }
 }
