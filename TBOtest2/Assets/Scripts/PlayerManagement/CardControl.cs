@@ -22,6 +22,7 @@ public class CardControl : MonoBehaviourPun
     public int deckCount;
     public List<CardTemplate> hand;
     public GameObject hero;
+    public bool herob;
     
     
 
@@ -30,6 +31,8 @@ public class CardControl : MonoBehaviourPun
     {
         field = battlefield.GetComponent<Manager>();
         deckCount = 0;
+        hero = null;
+        herob = false;
         BuildDeck();
         FirstTurn();
     }
@@ -47,11 +50,11 @@ public class CardControl : MonoBehaviourPun
         int n = r.Next(Deck.Count);
         take(Deck[n]);
         Deck.Remove(Deck[n]);
+        Shuffle();
         for (int i = 0; i < 5; i++)
         {
             draw();
         }
-        Shuffle();
     }
 
     // Update is called once per frame
@@ -144,9 +147,10 @@ public class CardControl : MonoBehaviourPun
         unit.GetComponent<UnitDisplay>().unitInfo = Camera.main.transform.GetChild(0).GetChild(1).GetChild(0)
             .GetComponent<TextMeshProUGUI>();
         unit.GetComponent<UnitMan>().statUpdate();
-        if (hero == null)
+        if (herob == false)
         {
             unit.GetComponent<UnitStat>().hero = true;
+            herob = true;
             hero = unit;
         }
         field.Units.Add(unit);
