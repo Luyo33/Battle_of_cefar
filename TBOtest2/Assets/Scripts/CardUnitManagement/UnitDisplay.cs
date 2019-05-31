@@ -95,14 +95,15 @@ public class UnitDisplay : MonoBehaviourPun
   
      void Write()
      {
-         if (currentToolTipText != "")
-         {
-             unitInfo.text = currentToolTipText;
-         }
-         else
-         {
-             unitInfo.text = "";
-         }
+        if(unitInfo != null)
+            if (currentToolTipText != "")
+            {
+                unitInfo.text = currentToolTipText;
+            }
+            else
+            {
+               unitInfo.text = "";
+            }
      }
 
      void Update()
