@@ -23,7 +23,10 @@ public class CardControl : MonoBehaviourPun
     public List<CardTemplate> hand;
     public GameObject hero;
     
-    
+    [PunRPC]
+    void CreateUnit(string n, string d, string e, int c, int m, int r, int a, int h, PhotonMessageInfo info)
+    {
+    }
 
     // Start is called before the first frame update
     private void Start()
