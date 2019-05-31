@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Volcano Eruption
   m_EditorClassIdentifier: 
   name: Volcano Eruption
-  description: Hides behind the lava
+  description: '"You underestimate my power"'
   element: 1
   cardrank: 2
   biome: 4

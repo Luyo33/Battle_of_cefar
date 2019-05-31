@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8520970249278167792}
   - component: {fileID: 8520970249279166512}
   m_Layer: 0
-  m_Name: Cylinder05
+  m_Name: Executionner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,7 +136,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100034, guid: b7a7070c18efb324fa7e4ed448b8ba31, type: 3}
-  - {fileID: 2100038, guid: b7a7070c18efb324fa7e4ed448b8ba31, type: 3}
+  - {fileID: 2100000, guid: 61e57c621b3c8044ca0e2d1eba8eea07, type: 2}
   - {fileID: 2100036, guid: b7a7070c18efb324fa7e4ed448b8ba31, type: 3}
   - {fileID: 2100032, guid: b7a7070c18efb324fa7e4ed448b8ba31, type: 3}
   m_StaticBatchInfo:

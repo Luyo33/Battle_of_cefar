@@ -105,7 +105,17 @@ ModelImporter:
     4300022: Box007
     4300024: Cylinder08
     4300026: Box008
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #422'
+    second: {fileID: 2100000, guid: 047b051f5d15db94a968f477d09e3f87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #424'
+    second: {fileID: 2100000, guid: 4f58fdafe1e71084e85fd5d19ac5592e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

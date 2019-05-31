@@ -33,6 +33,10 @@ public class UnitStat : MonoBehaviourPun
             name = template.name;
             description = template.description;
             hp += template.hp;
+            if (hero)
+            {
+                hp *= 3;
+            }
             atk = template.atk;
             range = template.range;
             move = template.move;

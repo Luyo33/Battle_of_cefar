@@ -146,8 +146,6 @@ public class CardControl : MonoBehaviourPun
         unit.GetComponent<UnitMan>().statUpdate();
         if (hero == null)
         {
-            unit.GetComponent<UnitStat>().hp += 40;
-            Debug.Log(unit.GetComponent<UnitStat>().hp);
             unit.GetComponent<UnitStat>().hero = true;
             hero = unit;
         }

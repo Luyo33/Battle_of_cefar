@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1026,7 +1026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EmptyUnit: {fileID: 2334186763500800170, guid: 3ecc4ebf761f8fb4db87ef29a0993216,
     type: 3}
-  EmptyCardR1: {fileID: 7162622442927779926, guid: 6f9a09679e908ed4d9663c838bf278a5,
+  EmptyCardR1: {fileID: 5139238814980651337, guid: 8c8e0f691b3d1ef43aa077b664bee8d1,
     type: 3}
   EmptyCardR2: {fileID: 1109077401503720, guid: 8133df6cae55ca746a18cf21c371bcd6,
     type: 3}
@@ -1034,23 +1034,11 @@ MonoBehaviour:
     type: 3}
   battlefield: {fileID: 1737194752}
   field: {fileID: 0}
-  DeckBuilder: {fileID: 11400000, guid: e5dc14550e8d20c49ae99e07cce9b173, type: 2}
-  Deck:
-  - {fileID: 11400000, guid: 4b02ef39e9e9cb3409294f8047a88476, type: 2}
-  - {fileID: 11400000, guid: 79d77f9cc52479540a63e8ca377e6a08, type: 2}
-  - {fileID: 11400000, guid: cb374c11a4cba1c4c8ca07e6d3896c82, type: 2}
-  - {fileID: 11400000, guid: 6d966382eff55fb4aa757bbb21dfd822, type: 2}
-  - {fileID: 11400000, guid: 7671a33c50ccd8f4d8ae27c36350b849, type: 2}
-  - {fileID: 11400000, guid: 6993e39939c4aaa4abb09fed48b8f751, type: 2}
-  - {fileID: 11400000, guid: 7e316ba28e0652341b2111116bfd2738, type: 2}
-  - {fileID: 11400000, guid: 4b02ef39e9e9cb3409294f8047a88476, type: 2}
-  - {fileID: 11400000, guid: 15ca4ebb5e4ff6b4aa8347e9fde2da7c, type: 2}
-  - {fileID: 11400000, guid: 7671a33c50ccd8f4d8ae27c36350b849, type: 2}
-  - {fileID: 11400000, guid: b52ecd661da630845a1f387bc7b285aa, type: 2}
-  - {fileID: 11400000, guid: 2805e12f8ab837c44b5a450197ab8ff2, type: 2}
-  - {fileID: 11400000, guid: 49c785544b7c3fb4fb4bb03d5b9f8ec6, type: 2}
+  DeckBuilder: {fileID: 11400000, guid: da1f19060d50aa44694800edbe16a9c0, type: 2}
+  Deck: []
   deckCount: 0
   hand: []
+  hero: {fileID: 0}
 --- !u!1 &1316462977
 GameObject:
   m_ObjectHideFlags: 0
