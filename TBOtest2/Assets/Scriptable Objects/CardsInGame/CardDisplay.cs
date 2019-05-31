@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -81,7 +82,18 @@ public class CardDisplay : MonoBehaviour
 
         if (CardR3 != null)
         {
-            
+            ((string first, int sec), (string third, int fourth)) = CardR3.StatChanges();
+            elementText.text = CardR3.ToString(Card.element);
+            rankText.text = "R" + CardR3.cardrank;
+            if (third == "" && fourth == 0)
+            {
+                hpText.text = first + Environment.NewLine + sec.ToString();
+            }
+            else
+            {
+                hpText.text = first + Environment.NewLine + sec.ToString();
+                atkText.text = third + Environment.NewLine + fourth.ToString();
+            }
         }
     }
 
@@ -115,6 +127,20 @@ public class CardDisplay : MonoBehaviour
                 atkText.text = "+" + CardR2.bonus.ToString();
             }
             //text: element, stat, statint
+        }
+        if (CardR3 != null)
+        {
+            ((string first, int sec), (string third, int fourth)) = CardR3.StatChanges();
+            elementText.text = CardR3.ToString(Card.element);
+            if (third == "" && fourth == 0)
+            {
+                hpText.text = first + Environment.NewLine + sec.ToString();
+            }
+            else
+            {
+                hpText.text = first + Environment.NewLine + sec.ToString();
+                atkText.text = third + Environment.NewLine + fourth.ToString();
+            }
         }
     }
 }
