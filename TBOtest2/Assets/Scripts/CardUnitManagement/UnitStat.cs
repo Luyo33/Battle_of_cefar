@@ -32,7 +32,7 @@ public class UnitStat : MonoBehaviourPun
             biome = BiomeProp.Biome.Classic;
             name = template.name;
             description = template.description;
-            hp = template.hp;
+            hp += template.hp;
             atk = template.atk;
             range = template.range;
             move = template.move;

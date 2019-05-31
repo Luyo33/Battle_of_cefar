@@ -138,10 +138,7 @@ public class CardControl : MonoBehaviourPun
     public GameObject CreateUnit1(Card_R1 template, Vector2Int position)
     {
         GameObject unit = PhotonNetwork.Instantiate("Unit",new Vector3(position.x,field.GetCellFromXZ(position).GetComponent<BiomeProp>().height,-position.y),Quaternion.identity);
-       // if (unit.GetComponent<UnitMan>() == null) should be in the prefab
-       // {
-      //      unit.AddComponent<UnitMan>();
-     //   }
+        
         unit.GetComponent<UnitMan>().R1 = template;
         unit.GetComponent<UnitMan>().battle = battlefield;
         unit.GetComponent<UnitMan>().Start();
@@ -150,6 +147,13 @@ public class CardControl : MonoBehaviourPun
         unit.GetComponent<UnitDisplay>().unitInfo = Camera.main.transform.GetChild(0).GetChild(1).GetChild(0)
             .GetComponent<TextMeshProUGUI>();
         unit.GetComponent<UnitMan>().statUpdate();
+        if (hero == null)
+        {
+            unit.GetComponent<UnitStat>().hp += 40;
+            Debug.Log(unit.GetComponent<UnitStat>().hp);
+            unit.GetComponent<UnitStat>().hero = true;
+            hero = unit;
+        }
         field.Units.Add(unit);
         //unit.transform.parent = something.transform;//for hierarchy
         unit.GetComponent<UnitMan>().statUpdate();

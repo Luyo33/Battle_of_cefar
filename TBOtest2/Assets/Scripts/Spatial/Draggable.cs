@@ -86,8 +86,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 Vector2Int pos = battlefield.GetComponent<Manager>().Vselected();
                 if (battlefield.GetComponent<Manager>().GetUnitFromXZ(pos) == null)
                 {
-                    if (pos[0] == 0 || pos[1] == 0 || pos[0] == battlefield.GetComponent<Manager>().sizeX - 1 ||
-                        pos[1] == battlefield.GetComponent<Manager>().sizeZ - 1)//spawn sur les côtés
+                    if (invoc.hero == null && (pos[0] == 0 || pos[1] == 0 ||
+                        pos[0] == battlefield.GetComponent<Manager>().sizeX - 1 ||
+                        pos[1] == battlefield.GetComponent<Manager>().sizeZ - 1) ||
+                        invoc.hero.GetComponent<UnitMov>().Neighbours.Contains(pos) ||
+                        invoc.hero.GetComponent<UnitAtk>().w.Contains(pos))
                     {
                         GameObject u = invoc.CreateUnit1(R1, pos);
                         u.GetComponent<UnitMan>().statUpdate();
