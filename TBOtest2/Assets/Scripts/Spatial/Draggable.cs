@@ -96,9 +96,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                         u.GetComponent<UnitMan>().statUpdate();
                         used = true;
                     }
-                    
                 }
-                
             }
 
             if (R2 != null)
