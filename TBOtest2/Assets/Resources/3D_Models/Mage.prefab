@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709845174132012553}
   m_LocalRotation: {x: 0, y: 1, z: -0, w: -0.00000004371139}
-  m_LocalPosition: {x: -4.6254883, y: 221.80731, z: 2.5533447}
+  m_LocalPosition: {x: -4.6254883, y: 47, z: 2.5533447}
   m_LocalScale: {x: 0.12275962, y: 1.8212132, z: 0.12275962}
   m_Children: []
   m_Father: {fileID: 1709845174131780157}
@@ -57,9 +57,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100054, guid: b7a7070c18efb324fa7e4ed448b8ba31, type: 3}
-  - {fileID: 2100056, guid: b7a7070c18efb324fa7e4ed448b8ba31, type: 3}
-  - {fileID: 2100058, guid: b7a7070c18efb324fa7e4ed448b8ba31, type: 3}
+  - {fileID: 2100000, guid: 8b7cd9faca3cb3a45b1bb1c9e8b8c669, type: 2}
+  - {fileID: 2100000, guid: 0d099aeb6f38d2f4091abdf62f7a34d2, type: 2}
+  - {fileID: 2100000, guid: 0d099aeb6f38d2f4091abdf62f7a34d2, type: 2}
   - {fileID: 2100052, guid: b7a7070c18efb324fa7e4ed448b8ba31, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 1709845174135171613}
   - component: {fileID: 1709845174134204637}
   m_Layer: 0
-  m_Name: Cylinder08
+  m_Name: Mage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
