@@ -11,12 +11,14 @@ GameObject:
   - component: {fileID: 4552716009367375588}
   - component: {fileID: 390202728195682884}
   - component: {fileID: 6885641125435035868}
+  - component: {fileID: 5233081476723797374}
   - component: {fileID: 3174641684353976485}
   - component: {fileID: 4040009326354410693}
   - component: {fileID: 2799335971443464760}
   - component: {fileID: 7728933913989540837}
   - component: {fileID: 2864083917123180187}
   - component: {fileID: 5481603557143462035}
+  - component: {fileID: 8898967769807721851}
   m_Layer: 0
   m_Name: Plain
   m_TagString: Untagged
@@ -83,6 +85,28 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5233081476723797374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835602117584543228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 8898967769807721851}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!95 &3174641684353976485
 Animator:
   serializedVersion: 3
@@ -181,3 +205,18 @@ MonoBehaviour:
   biome: 0
   fieldmalus: 0
   height: 0
+--- !u!114 &8898967769807721851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4835602117584543228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0

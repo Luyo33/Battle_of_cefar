@@ -54,36 +54,7 @@ public class Manager : MonoBehaviourPun //Yael
         }
         return new Vector2Int(0,0);
     }
-
-    [PunRPC]
-    void GenerateCellMap(int sizeX, int sizeZ, float varX, float varZ, float deltaX, float deltaZ)
-    {
-        cellMap = new GameObject[sizeX, sizeZ];
-        for (int x = 0; x < cellMap.GetLength(0); x++)
-        {
-            for (int z = 0; z < cellMap.GetLength(1); z++)
-            {
-                float y = Mathf.PerlinNoise(x * stepX + varX, z * stepZ + varZ);
-                GameObject closest = biomesCell[0];
-                foreach (GameObject cell in biomesCell)
-                {
-                    var d = cell.GetComponent<GenerationData>();
-                    var closestData = closest.GetComponent<GenerationData>();
-                    if (closest == null || Mathf.Abs(d.value - y) < (Mathf.Abs(closestData.value - y)))
-                    {
-                        closest = cell;
-                    }
-                }
-                cellMap[x, z] = Instantiate(closest);
-                cellMap[x, z].transform.parent = transform;
-                var data = closest.GetComponent<GenerationData>();
-                int h = data.defaultHeight - data.heightVar + Mathf.RoundToInt(Mathf.PerlinNoise(x * data.step + deltaX, z * data.step + deltaZ) * data.heightVar * 2);
-                cellMap[x, z].transform.Translate(x, z, h);
-                //
-                cellMap[x, z].GetComponent<BiomeProp>().height = h;
-            }
-        }
-    }
+    
 
     void GenerateMap()
     {
@@ -112,7 +83,7 @@ public class Manager : MonoBehaviourPun //Yael
                         closest = cell;
                     }
                 }
-                cellMap[x, z] = Instantiate(closest);
+                cellMap[x, z] = PhotonNetwork.Instantiate(closest.name,new Vector3(0,0,0),Quaternion.identity);
                 cellMap[x,z].transform.parent = transform;
                 var data = closest.GetComponent<GenerationData>();
                 int h = data.defaultHeight - data.heightVar + Mathf.RoundToInt(Mathf.PerlinNoise(x * data.step + deltaX, z * data.step + deltaZ)*data.heightVar*2);
