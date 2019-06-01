@@ -26,10 +26,7 @@ public class Manager : MonoBehaviour //Yael
         surface.BuildNavMesh();
     }
 
-    private void Update()
-    {
-        Units = Units.Where(item => item != null).ToList();;
-    }
+    
 
     public GameObject selected()
     {

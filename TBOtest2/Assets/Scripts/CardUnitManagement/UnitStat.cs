@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using UnityEngine;
@@ -86,7 +87,11 @@ public class UnitStat : MonoBehaviourPun
 
         if (candie && hp < 1)
         {
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
+            gameObject.GetComponent<UnitMan>().battle.GetComponent<Manager>().Units = gameObject.GetComponent<UnitMan>()
+                .battle.GetComponent<Manager>()
+                .Units.Where(item => item != null)
+                .ToList();
         }
     }
     
