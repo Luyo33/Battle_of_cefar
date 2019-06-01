@@ -19,6 +19,10 @@ GameObject:
   - component: {fileID: 8310940271501803203}
   - component: {fileID: 6896294285185924884}
   - component: {fileID: 4535780056965527892}
+  - component: {fileID: 8377904473346853452}
+  - component: {fileID: 846592837489074014}
+  - component: {fileID: 6718627175209097895}
+  - component: {fileID: 2782570592937686993}
   - component: {fileID: 4792519648085596123}
   m_Layer: 0
   m_Name: Unit
@@ -182,8 +186,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 6896294285185924884}
-  viewIdField: 1
-  InstantiationId: 1
+  viewIdField: 3
+  InstantiationId: 3
   isRuntimeInstantiated: 0
 --- !u!114 &6896294285185924884
 MonoBehaviour:
@@ -219,6 +223,83 @@ MonoBehaviour:
   tomouse: 0
   canmove: 0
   canhit: 0
+--- !u!114 &8377904473346853452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334186763500800170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e996e0b35c64046977ee9525931f9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battle: {fileID: 0}
+  battlefield: {fileID: 0}
+  position: {x: 0, y: 0}
+  Neighbours: []
+  move: 0
+  biome: 0
+  biomebonus: 0
+  givebonus: 0
+--- !u!114 &846592837489074014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334186763500800170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a1a993f381deb47aca9a87d4aa9a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  template: {fileID: 0}
+  hero: 0
+  name: 
+  description: 
+  move: 0
+  range: 0
+  atk: 0
+  hp: 0
+  element: 0
+  biome: 0
+  statBonus: 0
+  stat: 0
+  MvBonus: 0
+  rank: 0
+--- !u!114 &6718627175209097895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334186763500800170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590005903bd08f149a9986ba4ad185e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battle: {fileID: 0}
+  battlefield: {fileID: 0}
+  position: {x: 0, y: 0}
+  Element: 0
+  targets: []
+  w: []
+--- !u!114 &2782570592937686993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2334186763500800170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2e994d85bfb0e4ba5d0d14278292b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unitInfo: {fileID: 0}
 --- !u!114 &4792519648085596123
 MonoBehaviour:
   m_ObjectHideFlags: 0

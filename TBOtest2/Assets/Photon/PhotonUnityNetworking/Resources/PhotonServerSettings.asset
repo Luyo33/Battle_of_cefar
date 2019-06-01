@@ -42,4 +42,5 @@ MonoBehaviour:
   - SyncUnitInfo
   - SyncSelect
   - BuildCellMap
+  - SyncStat
   DisableAutoOpenWizard: 1

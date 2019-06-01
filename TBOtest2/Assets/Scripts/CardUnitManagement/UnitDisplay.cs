@@ -23,7 +23,8 @@ public class UnitDisplay : MonoBehaviourPun
 
     public void SetUnitInfo()
     {
-        photonView.RPC("SyncUnitInfo", RpcTarget.All);
+        unitInfo = Camera.main.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
+        photonView.RPC("SyncUnitInfo", RpcTarget.Others);
     }
      void OnMouseEnter ()
      {
