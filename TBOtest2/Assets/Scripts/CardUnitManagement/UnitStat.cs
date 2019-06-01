@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using Photon.Pun;
 
-public class UnitStat : MonoBehaviourPun
+public class UnitStat : MonoBehaviourPun,IPunObservable
 {
     public Card_R1 template; // find a way to put in template before Start!
     public bool hero;
@@ -102,5 +102,9 @@ public class UnitStat : MonoBehaviourPun
             Debug.Log(biome);
             Debug.Log(statBonus);
         }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
     }
 }

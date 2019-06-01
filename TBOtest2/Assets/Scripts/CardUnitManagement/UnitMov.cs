@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class UnitMov : MonoBehaviourPun
+public class UnitMov : MonoBehaviourPun,IPunObservable
 {
     public GameObject battle;
     public Manager battlefield;
@@ -151,5 +151,10 @@ public class UnitMov : MonoBehaviourPun
         }
 
         return works;
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        throw new NotImplementedException();
     }
 }

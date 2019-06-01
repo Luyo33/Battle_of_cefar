@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Photon.Pun;
 
-public class UnitAtk : MonoBehaviourPun
+public class UnitAtk : MonoBehaviourPun,IPunObservable
 {
     public GameObject battle;
     public Manager battlefield;
@@ -155,5 +155,9 @@ public class UnitAtk : MonoBehaviourPun
             return 2;
         }
         return 1;
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
     }
 }

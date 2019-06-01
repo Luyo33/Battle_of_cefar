@@ -7,7 +7,7 @@ using Photon.Pun;
 using TMPro;
 using UnityEngine.Experimental.UIElements;
 
-public class UnitDisplay : MonoBehaviourPun
+public class UnitDisplay : MonoBehaviourPun,IPunObservable
 {
 
      private string text;
@@ -203,4 +203,8 @@ public class UnitDisplay : MonoBehaviourPun
              unitInfo.text = "";
          }
      }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+    }
 }
