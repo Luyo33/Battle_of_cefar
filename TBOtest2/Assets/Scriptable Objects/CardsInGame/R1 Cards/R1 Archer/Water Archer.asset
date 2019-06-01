@@ -16,6 +16,7 @@ MonoBehaviour:
   description: Drowned from distance
   element: 2
   cardrank: 1
+  model: 1
   move: 5
   range: 3
   atk: 8

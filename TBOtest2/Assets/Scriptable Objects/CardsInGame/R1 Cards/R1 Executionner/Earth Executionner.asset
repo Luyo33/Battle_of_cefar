@@ -16,6 +16,7 @@ MonoBehaviour:
   description: When he hits the ground, an earthquake will happen
   element: 4
   cardrank: 1
+  model: 3
   move: 3
   range: 1
   atk: 16

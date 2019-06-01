@@ -16,6 +16,7 @@ MonoBehaviour:
   description: '"I''m watching you"'
   element: 3
   cardrank: 1
+  model: 2
   move: 5
   range: 2
   atk: 12

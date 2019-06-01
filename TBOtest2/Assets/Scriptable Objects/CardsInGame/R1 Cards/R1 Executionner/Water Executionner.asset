@@ -16,6 +16,7 @@ MonoBehaviour:
   description: He will throw you in a watery grave
   element: 2
   cardrank: 1
+  model: 3
   move: 3
   range: 1
   atk: 16

@@ -16,6 +16,7 @@ MonoBehaviour:
   description: Danger is from above
   element: 3
   cardrank: 1
+  model: 4
   move: 4
   range: 1
   atk: 11

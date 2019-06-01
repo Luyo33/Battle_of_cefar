@@ -16,6 +16,7 @@ MonoBehaviour:
   description: He has to deafeat the Fire Lord
   element: 3
   cardrank: 1
+  model: 5
   move: 6
   range: 4
   atk: 8

@@ -16,6 +16,7 @@ MonoBehaviour:
   description: Your basic buddy
   element: 0
   cardrank: 1
+  model: 4
   move: 4
   range: 1
   atk: 11

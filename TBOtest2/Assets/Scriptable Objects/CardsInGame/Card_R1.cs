@@ -17,6 +17,13 @@ public class Card_R1 : CardTemplate
         atk = a;
         hp = h;
     }
+
+    public enum Model
+    {
+        None, Archer, Assassin, Executioner, Knight, Mage
+    }
+
+    public Model model;
     public int move;
     public int range;
     public int atk;

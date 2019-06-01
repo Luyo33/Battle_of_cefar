@@ -16,6 +16,7 @@ MonoBehaviour:
   description: Death from above
   element: 3
   cardrank: 1
+  model: 3
   move: 3
   range: 1
   atk: 16

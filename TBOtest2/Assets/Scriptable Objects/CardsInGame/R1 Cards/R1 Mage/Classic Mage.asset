@@ -16,6 +16,7 @@ MonoBehaviour:
   description: He is the fastest and can outrange anyone but does not hit very hard
   element: 0
   cardrank: 1
+  model: 5
   move: 6
   range: 4
   atk: 8

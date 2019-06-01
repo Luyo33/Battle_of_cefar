@@ -16,6 +16,7 @@ MonoBehaviour:
   description: Moves a bit faster and hits from afar
   element: 0
   cardrank: 1
+  model: 1
   move: 5
   range: 3
   atk: 8
