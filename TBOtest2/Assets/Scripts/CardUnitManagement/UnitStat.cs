@@ -22,34 +22,37 @@ public class UnitStat : MonoBehaviourPun
     public float MvBonus = 0f;
     public int rank; // 0 = trapcard ;
     
+    [PunRPC]
+    void SyncHero()
+    {
+        hero = true;
+    }
+
+
+    public void SetHero()
+    {
+        photonView.RPC("SyncHero", RpcTarget.All);
+    }
 
     private void Start()
     {
-        try
+        template = gameObject.GetComponent<UnitMan>().R1;
+        rank = 1;
+        biome = BiomeProp.Biome.Classic;
+        name = template.name;
+        description = template.description;
+        hp += template.hp;
+        if (hero)
         {
-            template = gameObject.GetComponent<UnitMan>().R1;
-            rank = 1;
-            biome = BiomeProp.Biome.Classic;
-            name = template.name;
-            description = template.description;
-            hp += template.hp;
-            if (hero)
-            {
-                hp *= 3;
-            }
-            atk = template.atk;
-            range = template.range;
-            move = template.move;
-            element = template.element;
-            stat = CardTemplate.Stat.none;
-                
+            hp *= 3;
         }
-        catch (Exception e)
-        {
-            Debug.Log("this shouldn't be here");
-            Debug.Log(e);
-        }
-        
+        atk = template.atk;
+        range = template.range;
+        move = template.move;
+        element = template.element;
+        stat = CardTemplate.Stat.none;
+
+
     }
  
     public void statUpdate()

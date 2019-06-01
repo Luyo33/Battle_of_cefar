@@ -14,7 +14,17 @@ public class UnitDisplay : MonoBehaviourPun
   
      private string currentToolTipText = "";
      public TextMeshProUGUI unitInfo;
-  
+
+    [PunRPC]
+    void SyncUnitInfo(PhotonMessageInfo info)
+    {
+        unitInfo = Camera.main.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
+    }
+
+    public void SetUnitInfo()
+    {
+        photonView.RPC("SyncUnitInfo", RpcTarget.All);
+    }
      void OnMouseEnter ()
      {
          if (gameObject.GetComponent<UnitStat>().hero)

@@ -38,6 +38,7 @@ public class UnitMan : MonoBehaviourPun
     }
     public void Start()
     {
+        battle = gameObject.scene.GetRootGameObjects()[0];
         if (R1 != null)
         {
             string n = R1.name, d = R1.description, e = R1.ToString(R1.element);

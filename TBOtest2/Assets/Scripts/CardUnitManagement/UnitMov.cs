@@ -15,6 +15,11 @@ public class UnitMov : MonoBehaviourPun
     public float biomebonus = 0;
     public bool givebonus = false;
 
+    [PunRPC]
+    void SyncPosition(int x, int y, PhotonMessageInfo info)
+    {
+        position = new Vector2Int(x, y);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -29,25 +34,22 @@ public class UnitMov : MonoBehaviourPun
 
     public void statUpdate()
     {
-        try
-        {
-            move = gameObject.GetComponent<UnitStat>().move;
-            biome = gameObject.GetComponent<UnitStat>().biome;
-            ActivateMovBonus();
-            Neighbours = AvailableFields();
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
-        
-    }
+        move = gameObject.GetComponent<UnitStat>().move;
+        biome = gameObject.GetComponent<UnitStat>().biome;
+        ActivateMovBonus();
+        Neighbours = AvailableFields();
 
+    }
+    public void SetPosition(Vector2Int v)
+    {
+        position = v;
+        photonView.RPC("SyncPosition", RpcTarget.Others, v.x, v.y);
+    }
     public void OnMouseOver()
     {
         foreach (Vector2Int neighbour in Neighbours)
         {
-                battle.GetComponent<Manager>().GetCellFromXZ(neighbour).GetComponent<Selector>().Highlight();
+            battle.GetComponent<Manager>().GetCellFromXZ(neighbour).GetComponent<Selector>().Highlight();
                 
         }
     }

@@ -24,7 +24,6 @@ public class CardControl : MonoBehaviourPun
     public GameObject hero;
     public bool herob;
     
-    
 
     // Start is called before the first frame update
     private void Start()
@@ -142,14 +141,13 @@ public class CardControl : MonoBehaviourPun
         unit.GetComponent<UnitMan>().R1 = template;
         unit.GetComponent<UnitMan>().battle = battlefield;
         unit.GetComponent<UnitMan>().Start();
-        unit.AddComponent<UnitMov>().position = position;
-        unit.GetComponent<PlayerComponent>().select = unit.GetComponent<Select>();
-        unit.GetComponent<UnitDisplay>().unitInfo = Camera.main.transform.GetChild(0).GetChild(1).GetChild(0)
-            .GetComponent<TextMeshProUGUI>();
+        unit.AddComponent<UnitMov>().SetPosition(position);
+        unit.GetComponent<PlayerComponent>().SetSelect();
+        unit.GetComponent<UnitDisplay>().SetUnitInfo();
         unit.GetComponent<UnitMan>().statUpdate();
-        if (herob == false)
+        if (!herob)
         {
-            unit.GetComponent<UnitStat>().hero = true;
+            unit.GetComponent<UnitStat>().SetHero();
             herob = true;
             hero = unit;
         }

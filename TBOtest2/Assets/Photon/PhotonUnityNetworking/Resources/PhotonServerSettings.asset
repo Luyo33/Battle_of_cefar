@@ -36,4 +36,10 @@ MonoBehaviour:
   - RPC_LoadedGameScene
   - RPC_SetValues
   - PutPiece
+  - OnCreateUnit
+  - SyncHero
+  - SyncPosition
+  - SyncUnitInfo
+  - SyncSelect
+  - BuildCellMap
   DisableAutoOpenWizard: 1
