@@ -75,7 +75,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log(eventData.button);
+        Debug.Log(eventData.button.ToString());
         if (eventData.button == PointerEventData.InputButton.Right)
         {
             
@@ -87,7 +87,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 Vector2Int pos = battlefield.GetComponent<Manager>().Vselected();
                 if (battlefield.GetComponent<Manager>().GetUnitFromXZ(pos) == null)
                 {
-                    if (hand.GetComponent<CardControl>().herob == false /*&& 
+                    if (invoc.herob == false /*&& 
                         (pos[0] == 0 || pos[1] == 0 ||
                         pos[0] == battlefield.GetComponent<Manager>().sizeX - 1 ||
                         pos[1] == battlefield.GetComponent<Manager>().sizeZ - 1)*/ ||
@@ -97,6 +97,10 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                         GameObject u = invoc.CreateUnit1(R1, pos);
                         u.GetComponent<UnitMan>().statUpdate();
                         used = true;
+                    }
+                    else
+                    {
+                        used = false;
                     }
                 }
             }
@@ -125,7 +129,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                     {
                         if (p.selected)
                         {
-                             used = invoc.R2R3(R3, unit);
+                            used = invoc.R2R3(R3, unit);
                             break;
                         }
                     }
