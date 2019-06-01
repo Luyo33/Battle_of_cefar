@@ -13,6 +13,7 @@ public class PhotonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     public int currentScene;
 
     Player[] photonPlayers;
+    public int minplayers;
     public int playersInRoom;
     public int myNumberInRoom;
 
@@ -71,7 +72,7 @@ public class PhotonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     {
         if (MultiplayerSetting.multiplayerSetting.delayStart)
         {
-            if (playersInRoom == 1)
+            if (playersInRoom == minplayers-1)
             {
                 RestartTimer();
             }

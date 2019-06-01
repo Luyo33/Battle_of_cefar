@@ -24,6 +24,16 @@ public class PlayerComponent : MonoBehaviourPun
         selected = false;
     }
 
+    [PunRPC]
+    public void SyncSelect(PhotonMessageInfo info)
+    {
+        select = GetComponent<Select>();
+    }
+
+    public void SetSelect()
+    {
+        photonView.RPC("SyncSelect", RpcTarget.All);
+    }
 
     void Start()
     {

@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = System.Random;
+using Photon.Pun;
 
 public class Manager : MonoBehaviour //Yael
 {
