@@ -27,36 +27,27 @@ public class UnitStat : MonoBehaviourPun
 
     private void Start()
     {
-        try
+        template = gameObject.GetComponent<UnitMan>().R1;
+        rank = 1;
+        biome = BiomeProp.Biome.Classic;
+        name = template.name;
+        description = template.description;
+        hp += template.hp;
+        if (hero)
         {
-            template = gameObject.GetComponent<UnitMan>().R1;
-            rank = 1;
-            biome = BiomeProp.Biome.Classic;
-            name = template.name;
-            description = template.description;
-            hp += template.hp;
-            if (hero)
-            {
-                hp *= 3;
-                
-            }
+            hp *= 3;
+        }
 
-            if (hp != 0)
-            {
-                candie = true;
-            }
-            atk = template.atk;
-            range = template.range;
-            move = template.move;
-            element = template.element;
-            stat = CardTemplate.Stat.none;
-            
-        }
-        catch (Exception e)
+        if (hp != 0)
         {
-            Debug.Log("this shouldn't be here");
-            Debug.Log(e);
+            candie = true;
         }
+
+        atk = template.atk;
+        range = template.range;
+        move = template.move;
+        element = template.element;
+        stat = CardTemplate.Stat.none;
         
     }
  

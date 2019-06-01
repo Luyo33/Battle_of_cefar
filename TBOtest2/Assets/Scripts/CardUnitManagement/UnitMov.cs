@@ -29,17 +29,12 @@ public class UnitMov : MonoBehaviourPun
 
     public void statUpdate()
     {
-        try
-        {
-            move = gameObject.GetComponent<UnitStat>().move;
-            biome = gameObject.GetComponent<UnitStat>().biome;
-            ActivateMovBonus();
-            Neighbours = AvailableFields();
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
+        move = gameObject.GetComponent<UnitStat>().move;
+        biome = gameObject.GetComponent<UnitStat>().biome;
+        ActivateMovBonus();
+        Neighbours = new List<Vector2Int>();
+        Neighbours.Add(new Vector2Int(-1,-1));
+        Neighbours = AvailableFields();
         
     }
 
