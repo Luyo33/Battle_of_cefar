@@ -17,9 +17,9 @@ public class UnitMan : MonoBehaviourPun
     public bool canhit;
 
     [PunRPC]
-    void PutPiece(string n, string d, string e, int c, int m, int r, int a, int h, PhotonMessageInfo info)
+    void PutPiece(string n, string d, string e, int c, int m, int r, int a, int h, Card_R1.Model mo, PhotonMessageInfo info)
     {
-        R1 = new Card_R1(n, d, e, c, m, r, a, h);
+        R1 = new Card_R1(n, d, e, c, m, r, a, h, mo);
         if (gameObject.GetComponent<UnitStat>() == null)
         {
             gameObject.AddComponent<UnitStat>();
