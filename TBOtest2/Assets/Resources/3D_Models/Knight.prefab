@@ -170,6 +170,12 @@ GameObject:
   - component: {fileID: 3705343680386177330}
   - component: {fileID: 3705343680385407250}
   - component: {fileID: 3705343680384408530}
+  - component: {fileID: 3889768193541156490}
+  - component: {fileID: 7799040291129228164}
+  - component: {fileID: 2521005440837737803}
+  - component: {fileID: 4896178012732493655}
+  - component: {fileID: 6804561604177695877}
+  - component: {fileID: 8634855417852705429}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -184,15 +190,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3705343680386663698}
-  m_LocalRotation: {x: 0.86679673, y: 0.37248787, z: 0.28504413, w: -0.16931048}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2049.3254, y: 313.26715, z: 238.91763}
-  m_LocalScale: {x: 7.548608, y: 0.508817, z: 7.548608}
+  m_LocalScale: {x: 0.01, y: 0.0009, z: 0.01}
   m_Children:
   - {fileID: 3705343680386177328}
   - {fileID: 3705343680386177316}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -30.389002, y: -565.254, z: 140.45401}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3705343680385407250
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -238,3 +244,99 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &3889768193541156490
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705343680386663698}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 43.828392
+  m_Height: 1681.3
+  m_Direction: 1
+  m_Center: {x: 0, y: 853, z: 0}
+--- !u!195 &7799040291129228164
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705343680386663698}
+  m_Enabled: 1
+  m_AgentTypeID: -1372625422
+  m_Radius: 43.82839
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1681.3
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &2521005440837737803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705343680386663698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6037f57fc981e342a69faf96688db0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4896178012732493655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705343680386663698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eeb4ef103f5d4d40bef45c697ba0d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  motor: {fileID: 0}
+  select: {fileID: 0}
+  selected: 0
+--- !u!114 &6804561604177695877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705343680386663698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8369b4dd50b303e40aafe2dcbd47df73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  R1: {fileID: 0}
+  R2: {fileID: 0}
+  R3: {fileID: 0}
+  battle: {fileID: 5582686895771563772, guid: 5f6d83d6be7f125468cc57f7f920429f, type: 3}
+  tomouse: 0
+  canmove: 0
+  canhit: 0
+--- !u!114 &8634855417852705429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3705343680386663698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7edeba5b27b3247ac6f1f971d467a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0

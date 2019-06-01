@@ -91,6 +91,12 @@ GameObject:
   - component: {fileID: 1709845174131780157}
   - component: {fileID: 1709845174135171613}
   - component: {fileID: 1709845174134204637}
+  - component: {fileID: 4281863108098848996}
+  - component: {fileID: 1358728945455822020}
+  - component: {fileID: 5024495962172936626}
+  - component: {fileID: 2577586752677770390}
+  - component: {fileID: 2428447155893621694}
+  - component: {fileID: 417502955738832615}
   m_Layer: 0
   m_Name: Mage
   m_TagString: Untagged
@@ -107,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 1709845174132012573}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000004371139}
   m_LocalPosition: {x: -4261.2817, y: -188.84755, z: 251.81856}
-  m_LocalScale: {x: 7.548608, y: 0.508817, z: 7.548608}
+  m_LocalScale: {x: 0.01, y: 0.001, z: 0.01}
   m_Children:
   - {fileID: 1709845174131780137}
   m_Father: {fileID: 0}
@@ -158,3 +164,99 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &4281863108098848996
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709845174132012573}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 43.8284
+  m_Height: 1309.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 673.9, z: 0}
+--- !u!195 &1358728945455822020
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709845174132012573}
+  m_Enabled: 1
+  m_AgentTypeID: -1372625422
+  m_Radius: 43.8284
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1309.5
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &5024495962172936626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709845174132012573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6037f57fc981e342a69faf96688db0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2577586752677770390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709845174132012573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eeb4ef103f5d4d40bef45c697ba0d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  motor: {fileID: 0}
+  select: {fileID: 0}
+  selected: 0
+--- !u!114 &2428447155893621694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709845174132012573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8369b4dd50b303e40aafe2dcbd47df73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  R1: {fileID: 0}
+  R2: {fileID: 0}
+  R3: {fileID: 0}
+  battle: {fileID: 5582686895771563772, guid: 5f6d83d6be7f125468cc57f7f920429f, type: 3}
+  tomouse: 0
+  canmove: 0
+  canhit: 0
+--- !u!114 &417502955738832615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709845174132012573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7edeba5b27b3247ac6f1f971d467a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0

@@ -247,6 +247,12 @@ GameObject:
   - component: {fileID: 3963706480810077156}
   - component: {fileID: 8488801365689916463}
   - component: {fileID: 7684730647881217396}
+  - component: {fileID: 3583684505976409425}
+  - component: {fileID: 7274322033147702880}
+  - component: {fileID: 8118320873374232200}
+  - component: {fileID: 3367883620936464406}
+  - component: {fileID: 7462705186807640699}
+  - component: {fileID: 3091834511098701448}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Untagged
@@ -262,8 +268,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9179634628588632171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -517.7062, y: 549.238, z: 1287.1859}
-  m_LocalScale: {x: 7.548608, y: 0.508817, z: 7.548608}
+  m_LocalPosition: {x: -517.7062, y: 492, z: 1287.1859}
+  m_LocalScale: {x: 0.01, y: 0.001, z: 0.01}
   m_Children:
   - {fileID: 9016877967084849081}
   - {fileID: 4330472246366903416}
@@ -296,7 +302,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b7a7070c18efb324fa7e4ed448b8ba31, type: 3}
+  - {fileID: 2100000, guid: fefaceacf06dfbb4b84c647018e8f7a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -316,3 +322,99 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!136 &3583684505976409425
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179634628588632171}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 43.828384
+  m_Height: 1884
+  m_Direction: 1
+  m_Center: {x: 0, y: 887, z: 0}
+--- !u!195 &7274322033147702880
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179634628588632171}
+  m_Enabled: 1
+  m_AgentTypeID: -1372625422
+  m_Radius: 43.82838
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1395
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &8118320873374232200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179634628588632171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6037f57fc981e342a69faf96688db0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3367883620936464406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179634628588632171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eeb4ef103f5d4d40bef45c697ba0d86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  motor: {fileID: 0}
+  select: {fileID: 0}
+  selected: 0
+--- !u!114 &7462705186807640699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179634628588632171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8369b4dd50b303e40aafe2dcbd47df73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  R1: {fileID: 0}
+  R2: {fileID: 0}
+  R3: {fileID: 0}
+  battle: {fileID: 5582686895771563772, guid: 5f6d83d6be7f125468cc57f7f920429f, type: 3}
+  tomouse: 0
+  canmove: 0
+  canhit: 0
+--- !u!114 &3091834511098701448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9179634628588632171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7edeba5b27b3247ac6f1f971d467a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0
