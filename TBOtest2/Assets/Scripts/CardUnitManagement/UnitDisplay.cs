@@ -15,174 +15,30 @@ public class UnitDisplay : MonoBehaviourPun
      private string currentToolTipText = "";
      public TextMeshProUGUI unitInfo;
   
-     void OnMouseEnter ()
+     void OnMouseEnter()
      {
+         string rank = " R" + gameObject.GetComponent<UnitStat>().rank.ToString();
+         string hp = " HP = " + gameObject.GetComponent<UnitStat>().hp.ToString();
+         string atk = " ATK = " + gameObject.GetComponent<UnitStat>().atk.ToString();
+         string range = "RNG = " + gameObject.GetComponent<UnitStat>().range.ToString();
+         string move = " MOV = " + gameObject.GetComponent<UnitStat>().move.ToString();
+         string element = "ELEMENT = " + gameObject.GetComponent<UnitStat>().element.ToString();
+         string hero = "";
+         string bonus = "";
          if (gameObject.GetComponent<UnitStat>().hero)
          {
-             string seventhPart = "HERO";
-             if (gameObject.GetComponent<UnitStat>().stat != CardTemplate.Stat.none)
-             {
-                 if (gameObject.GetComponent<UnitStat>().stat == CardTemplate.Stat.atk)
-                 {
-                     string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
-                     string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
-                     string thirdPart = gameObject.GetComponent<UnitStat>().move.ToString();
-                     string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
-                     string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
-                     string sixthPart = gameObject.GetComponent<UnitStat>().biome.ToString();
-                     text = "HP = " + firstPart + "   " + "ATK = " + secondPart + Environment.NewLine + "MOVE = " +
-                            thirdPart + " " + "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " 
-                            + fifthPart + Environment.NewLine + seventhPart + Environment.NewLine + "BONUS " + 
-                         gameObject.GetComponent<UnitStat>().stat.ToString() + "ON " + sixthPart;
-                     currentToolTipText = text;
-                 }
-
-                 if (gameObject.GetComponent<UnitStat>().stat == CardTemplate.Stat.def)
-                 {
-                     string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
-                     string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
-                     string thirdPart = gameObject.GetComponent<UnitStat>().move.ToString();
-                     string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
-                     string fifthPart = gameObject.GetComponent<UnitStat>().statBonus.ToString();
-                     string sixthPart = gameObject.GetComponent<UnitStat>().element.ToString();
-                     string eigthPart = gameObject.GetComponent<UnitStat>().biome.ToString();
-                     text = "HP = " + firstPart + "   " + "ATK = " + secondPart + Environment.NewLine + "MOVE = " +
-                            thirdPart + " " +
-                            "RANGE = " + fourthPart + Environment.NewLine + "DEF = " + fifthPart + " ELEMENT = " +
-                            sixthPart + Environment.NewLine + seventhPart + Environment.NewLine + "BONUS " + 
-                         gameObject.GetComponent<UnitStat>().stat.ToString() + " ON " + eigthPart;
-                     currentToolTipText = text;
-                 }
-
-                 if (gameObject.GetComponent<UnitStat>().stat == CardTemplate.Stat.move)
-                 {
-                     string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
-                     string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
-                     string thirdPart = (gameObject.GetComponent<UnitStat>().move
-                                         + gameObject.GetComponent<UnitStat>().statBonus).ToString();
-                     string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
-                     string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
-                     string sixthPart = gameObject.GetComponent<UnitStat>().biome.ToString();
-                     text = "HP = " + firstPart + "   " + "ATK = " + secondPart + Environment.NewLine + "MOVE = " +
-                            thirdPart + " " + "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " 
-                            + fifthPart + Environment.NewLine + seventhPart + Environment.NewLine + "BONUS " + 
-                            gameObject.GetComponent<UnitStat>().stat.ToString() + " ON " + sixthPart;
-                     currentToolTipText = text;
-                 }
-
-                 if (gameObject.GetComponent<UnitStat>().stat == CardTemplate.Stat.range)
-                 {
-                     string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
-                     string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
-                     string thirdPart = (gameObject.GetComponent<UnitStat>().move +
-                                         gameObject.GetComponent<UnitStat>().statBonus).ToString();
-                     string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
-                     string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
-                     string sixthPart = gameObject.GetComponent<UnitStat>().biome.ToString();
-                     text = "HP = " + firstPart + "   " + "ATK = " + secondPart + Environment.NewLine + "MOVE = " +
-                            thirdPart + " " + "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " 
-                            + fifthPart + Environment.NewLine + seventhPart + Environment.NewLine + "BONUS " + 
-                            gameObject.GetComponent<UnitStat>().stat.ToString() + " ON " + sixthPart;
-                     currentToolTipText = text;
-                 }
-             }
-
-             else
-             {
-                 string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
-                 string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
-                 string thirdPart = gameObject.GetComponent<UnitStat>().move.ToString();
-                 string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
-                 string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
-                 text = "HP = " + firstPart + "   " + "ATK = " + secondPart + Environment.NewLine + "MOVE = " +
-                        thirdPart + " " + "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " 
-                        + fifthPart + Environment.NewLine + seventhPart;
-                 currentToolTipText = text;
-             }
+             hero = Environment.NewLine + "HERO";
          }
-         else
+
+         if (gameObject.GetComponent<UnitStat>().statBonus != 0)
          {
-             if (gameObject.GetComponent<UnitStat>().stat != CardTemplate.Stat.none)
-             {
-                 if (gameObject.GetComponent<UnitStat>().stat == CardTemplate.Stat.atk)
-                 {
-                     string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
-                     string secondPart = (gameObject.GetComponent<UnitStat>().atk +
-                                          gameObject.GetComponent<UnitStat>().statBonus).ToString();
-                     string thirdPart = gameObject.GetComponent<UnitStat>().move.ToString();
-                     string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
-                     string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
-                     string sixthPart = gameObject.GetComponent<UnitStat>().biome.ToString();
-                     text = "HP = " + firstPart + "   " + "ATK = " + secondPart + Environment.NewLine + "MOVE = " +
-                            thirdPart + " " + "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " 
-                            + fifthPart + Environment.NewLine + "BONUS " + 
-                            gameObject.GetComponent<UnitStat>().stat.ToString() + " ON " + sixthPart;
-                     currentToolTipText = text;
-                 }
-
-                 if (gameObject.GetComponent<UnitStat>().stat == CardTemplate.Stat.def)
-                 {
-                     string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
-                     string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
-                     string thirdPart = gameObject.GetComponent<UnitStat>().move.ToString();
-                     string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
-                     string fifthPart = gameObject.GetComponent<UnitStat>().statBonus.ToString();
-                     string sixthPart = gameObject.GetComponent<UnitStat>().element.ToString();
-                     string eigthPart = gameObject.GetComponent<UnitStat>().biome.ToString();
-                     text = "HP = " + firstPart + "   " + "ATK = " + secondPart + Environment.NewLine + "MOVE = " +
-                            thirdPart + " " + "RANGE = " + fourthPart + Environment.NewLine + "DEF = " + fifthPart +
-                            " ELEMENT = " + sixthPart + Environment.NewLine + "BONUS " + 
-                            gameObject.GetComponent<UnitStat>().stat.ToString() + " ON " + eigthPart;
-                     currentToolTipText = text;
-                 }
-
-                 if (gameObject.GetComponent<UnitStat>().stat == CardTemplate.Stat.move)
-                 {
-                     string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
-                     string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
-                     string thirdPart = (gameObject.GetComponent<UnitStat>().move
-                                         + gameObject.GetComponent<UnitStat>().statBonus).ToString();
-                     string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
-                     string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
-                     string sixthPart = gameObject.GetComponent<UnitStat>().biome.ToString();
-                     text = "HP = " + firstPart + "   " + "ATK = " + secondPart + Environment.NewLine + "MOVE = " +
-                            thirdPart + " " + "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " 
-                            + fifthPart + Environment.NewLine + "BONUS " + 
-                            gameObject.GetComponent<UnitStat>().stat.ToString() + " ON " + sixthPart;
-                     currentToolTipText = text;
-                 }
-
-                 if (gameObject.GetComponent<UnitStat>().stat == CardTemplate.Stat.range)
-                 {
-                     string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
-                     string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
-                     string thirdPart = (gameObject.GetComponent<UnitStat>().move +
-                                         gameObject.GetComponent<UnitStat>().statBonus).ToString();
-                     string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
-                     string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
-                     string sixthPart = gameObject.GetComponent<UnitStat>().biome.ToString();
-                     text = "HP = " + firstPart + "   " + "ATK = " + secondPart + Environment.NewLine + "MOVE = " +
-                            thirdPart + " " + "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " 
-                            + fifthPart + Environment.NewLine + "BONUS " + 
-                            gameObject.GetComponent<UnitStat>().stat.ToString() + " ON " + sixthPart;
-                     currentToolTipText = text;
-                 }
-             }
-
-             else
-             {
-                 string firstPart = gameObject.GetComponent<UnitStat>().hp.ToString();
-                 string secondPart = gameObject.GetComponent<UnitStat>().atk.ToString();
-                 string thirdPart = gameObject.GetComponent<UnitStat>().move.ToString();
-                 string fourthPart = gameObject.GetComponent<UnitStat>().range.ToString();
-                 string fifthPart = gameObject.GetComponent<UnitStat>().element.ToString();
-                 text = "HP = " + firstPart + "   " + "ATK = " + secondPart + Environment.NewLine + "MOVE = " +
-                        thirdPart + " " + "RANGE = " + fourthPart + Environment.NewLine + "ELEMENT = " 
-                        + fifthPart;
-                 currentToolTipText = text;
-             }
+             bonus =  Environment.NewLine + "BONUS : " + gameObject.GetComponent<UnitStat>().stat.ToString() +
+                      "+"+gameObject.GetComponent<UnitStat>().statBonus + " ON " + gameObject.GetComponent<UnitStat>().biome.ToString();
          }
 
+         text =  rank + Environment.NewLine + hp + Environment.NewLine + atk + Environment.NewLine + range + Environment.NewLine + move + Environment.NewLine + element
+                + hero + bonus;
+         currentToolTipText = text;
          Write();
      }
   

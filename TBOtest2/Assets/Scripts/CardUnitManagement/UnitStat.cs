@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using UnityEngine;
 using Photon.Pun;
 
@@ -15,6 +16,7 @@ public class UnitStat : MonoBehaviourPun
     public int range;
     public int atk;
     public int hp;
+    public bool candie;
     public CardTemplate.Element element;
     public BiomeProp.Biome biome;
     public int statBonus = 0;
@@ -36,13 +38,19 @@ public class UnitStat : MonoBehaviourPun
             if (hero)
             {
                 hp *= 3;
+                
+            }
+
+            if (hp != 0)
+            {
+                candie = true;
             }
             atk = template.atk;
             range = template.range;
             move = template.move;
             element = template.element;
             stat = CardTemplate.Stat.none;
-                
+            
         }
         catch (Exception e)
         {
@@ -77,7 +85,10 @@ public class UnitStat : MonoBehaviourPun
             move += R3.moveplus;
         }
 
-        
+        if (candie && hp < 1)
+        {
+            Destroy(gameObject);
+        }
     }
     
     public void Update()
