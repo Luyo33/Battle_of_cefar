@@ -22,7 +22,7 @@ public class UnitMov : MonoBehaviourPun
     }
 
     [PunRPC]
-    void SyncStat(PhotonMessageInfo info)
+    void SyncMoveStat(PhotonMessageInfo info)
     {
         move = gameObject.GetComponent<UnitStat>().move;
         biome = gameObject.GetComponent<UnitStat>().biome;
@@ -38,6 +38,7 @@ public class UnitMov : MonoBehaviourPun
         //position = new Vector2Int((int)gameObject.transform.position.x,(int)gameObject.transform.position.z);
         position = battlefield.Vselected();
         Neighbours = new List<Vector2Int>();
+        photonView.RPC("SyncStart", RpcTarget.Others);
         //Debug.Log("UnitCanMove");
     }
 
@@ -46,7 +47,8 @@ public class UnitMov : MonoBehaviourPun
         move = gameObject.GetComponent<UnitStat>().move;
         biome = gameObject.GetComponent<UnitStat>().biome;
         ActivateMovBonus();
-        photonView.RPC("SyncStat", RpcTarget.Others);
+        Neighbours = AvailableFields();
+        photonView.RPC("SyncMoveStat", RpcTarget.Others);
     }
     public void SetPosition(Vector2Int v)
     {
@@ -72,21 +74,13 @@ public class UnitMov : MonoBehaviourPun
 
     private void ActivateMovBonus() //to call on R2 card placement
     {
-        try
+        float bonus = gameObject.GetComponent<UnitStat>().MvBonus;
+        if (bonus > 0)
         {
-            float bonus = gameObject.GetComponent<UnitStat>().MvBonus;
-            if (bonus > 0)
-            {
-                biomebonus = bonus;
-                biome = gameObject.GetComponent<UnitStat>().biome;
-                givebonus = true;
-            }
+            biomebonus = bonus;
+            biome = gameObject.GetComponent<UnitStat>().biome;
+            givebonus = true;
         }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
-        
     }
 
     private List<Vector2Int> AvailableFields() //idea: have as flight bonus the faculty to have h+1

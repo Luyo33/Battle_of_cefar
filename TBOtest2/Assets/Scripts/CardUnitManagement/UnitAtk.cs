@@ -13,7 +13,6 @@ public class UnitAtk : MonoBehaviourPun
     public CardTemplate.Element Element;
     public List<GameObject> targets;
     public List<Vector2Int> w;
-    
     void Start()
     {
         battle = gameObject.GetComponent<UnitMan>().battle;

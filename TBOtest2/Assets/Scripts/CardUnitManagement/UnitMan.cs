@@ -21,8 +21,17 @@ public class UnitMan : MonoBehaviourPun
     {
         R1 = new Card_R1(n, d, e, c, m, r, a, h);
         tomouse = true;
+        //battle.GetComponent<Manager>().Units.Add(gameObject);
         statUpdate();
     }
+    [PunRPC]
+    void StartTurn(PhotonMessageInfo info)
+    {
+        canhit = true;
+        canmove = true;
+        tomouse = true;
+    }
+
     public void Start()
     {
         battle = gameObject.scene.GetRootGameObjects()[0];
@@ -31,6 +40,7 @@ public class UnitMan : MonoBehaviourPun
             string n = R1.name, d = R1.description, e = R1.ToString(R1.element);
             int c = R1.cardrank, m = R1.move, r = R1.range, a = R1.atk, h = R1.hp;
             photonView.RPC("PutPiece", RpcTarget.Others, n, d, e, c, m, r, a, h);
+            //battle.GetComponent<Manager>().Units.Add(gameObject);
             statUpdate();
         }
 
@@ -72,9 +82,10 @@ public class UnitMan : MonoBehaviourPun
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            canhit = true;
-            canmove = true;
-            tomouse = true;
+            //canhit = true;
+            //canmove = true;
+            //tomouse = true;
+            photonView.RPC("StartTurn", RpcTarget.All);
         }
     }
 }

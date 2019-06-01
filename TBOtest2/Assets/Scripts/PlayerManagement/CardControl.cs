@@ -141,7 +141,7 @@ public class CardControl : MonoBehaviourPun
         unit.GetComponent<UnitMan>().R1 = template;
         unit.GetComponent<UnitMan>().battle = battlefield;
         unit.GetComponent<UnitMan>().Start();
-        unit.AddComponent<UnitMov>().SetPosition(position);
+        unit.GetComponent<UnitMov>().SetPosition(position);
         unit.GetComponent<PlayerComponent>().SetSelect();
         unit.GetComponent<UnitDisplay>().SetUnitInfo();
         unit.GetComponent<UnitMan>().statUpdate();
