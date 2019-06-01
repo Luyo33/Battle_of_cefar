@@ -188,7 +188,7 @@ public class CardControl : MonoBehaviourPun
     public bool R2R3(Card_R3 template, GameObject Unit)
     {
         UnitStat u = Unit.GetComponent<UnitStat>();
-        if (u.element == template.element && u.rank != 3)
+        if (u.element == template.element && u.rank == 2)
         {
             Unit.GetComponent<UnitMan>().R3 = template;
             Unit.GetComponent<UnitStat>().hp += template.hpplus;

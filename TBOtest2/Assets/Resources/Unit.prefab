@@ -173,7 +173,11 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 6896294285185924884}
 <<<<<<< HEAD
+<<<<<<< HEAD
   viewIdField: 0
+=======
+  viewIdField: 1
+>>>>>>> cf8ca6a1bf86c813b156c19f06da56c6e5721ea7
   InstantiationId: 1
 =======
   viewIdField: 3

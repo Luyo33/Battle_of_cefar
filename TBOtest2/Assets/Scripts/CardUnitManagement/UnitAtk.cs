@@ -122,6 +122,7 @@ public class UnitAtk : MonoBehaviourPun
         int plusatk = u1.stat == CardTemplate.Stat.atk && u1.biome == battlefield.GetCellFromXZ(gameObject.GetComponent<UnitMov>().position).GetComponent<BiomeProp>().biome? u1.statBonus:0;
         int plusdef = u2.stat == CardTemplate.Stat.def && u2.biome == battlefield.GetCellFromXZ(target.GetComponent<UnitMov>().position).GetComponent<BiomeProp>().biome? u2.statBonus:0;
         target.GetComponent<UnitStat>().hp -= (u1.atk + plusatk - plusdef) * damage(u2.element);
+        target.GetComponent<UnitMan>().statUpdate();
         gameObject.GetComponent<UnitMan>().canhit = false;
         gameObject.GetComponent<UnitMan>().canmove = false;
         

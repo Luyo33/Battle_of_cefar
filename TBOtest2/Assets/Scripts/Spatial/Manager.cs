@@ -25,7 +25,12 @@ public class Manager : MonoBehaviour //Yael
         GenerateMap();
         surface.BuildNavMesh();
     }
-    
+
+    private void Update()
+    {
+        Units = Units.Where(item => item != null).ToList();;
+    }
+
     public GameObject selected()
     {
         foreach (GameObject c in cellMap)
@@ -132,8 +137,15 @@ public class Manager : MonoBehaviour //Yael
     
     public GameObject GetUnitFromXZ(Vector2Int pos)
     {
+        Units = Units.Where(item => item != null).ToList();
         foreach (GameObject u in Units)
         {
+            if(u is null)
+            {
+                Units.Remove(u);
+                continue;
+                
+            }
             UnitMov m = u.GetComponent<UnitMov>();
             if (m.position == pos)
             {

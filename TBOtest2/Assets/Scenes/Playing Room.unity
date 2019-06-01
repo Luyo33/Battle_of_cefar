@@ -937,8 +937,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -37.34, y: 0}
-  m_SizeDelta: {x: -74.68, y: 100}
+  m_AnchoredPosition: {x: 25.174988, y: 0}
+  m_SizeDelta: {x: -150.35, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1097166736
 MonoBehaviour:
@@ -1039,6 +1039,7 @@ MonoBehaviour:
   deckCount: 0
   hand: []
   hero: {fileID: 0}
+  herob: 0
 --- !u!1 &1316462977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,18 +1066,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316462977}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00012207028}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00016784664}
   m_LocalScale: {x: 1.2741, y: 1.2741, z: 1.2741}
   m_Children:
   - {fileID: 819428015}
   m_Father: {fileID: 907198663}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 173.29999, y: 61.100006}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0.000045776367}
+  m_SizeDelta: {x: 79.8, y: -59.4}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1316462979
 MonoBehaviour:
   m_ObjectHideFlags: 0
