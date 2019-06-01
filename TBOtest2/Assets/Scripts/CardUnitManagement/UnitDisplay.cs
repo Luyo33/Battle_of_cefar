@@ -10,7 +10,6 @@ using UnityEngine.Experimental.UIElements;
 public class UnitDisplay : MonoBehaviourPun
 {
 
-<<<<<<< HEAD
     private string text;
 
     private string currentToolTipText = "";
@@ -27,58 +26,7 @@ public class UnitDisplay : MonoBehaviourPun
         unitInfo = Camera.main.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
         photonView.RPC("SyncUnitInfo", RpcTarget.Others);
     }
-        void OnMouseEnter()
-    {
-        string rank = " R" + gameObject.GetComponent<UnitStat>().rank.ToString();
-        string hp = " HP = " + gameObject.GetComponent<UnitStat>().hp.ToString();
-        string atk = " ATK = " + gameObject.GetComponent<UnitStat>().atk.ToString();
-        string range = "RNG = " + gameObject.GetComponent<UnitStat>().range.ToString();
-        string move = " MOV = " + gameObject.GetComponent<UnitStat>().move.ToString();
-        string element = "ELEMENT = " + gameObject.GetComponent<UnitStat>().element.ToString();
-        string hero = "";
-        string bonus = "";
-        if (gameObject.GetComponent<UnitStat>().hero)
-        {
-            hero = Environment.NewLine + "HERO";
-        }
-
-        if (gameObject.GetComponent<UnitStat>().statBonus != 0)
-        {
-            bonus = Environment.NewLine + "BONUS : " + gameObject.GetComponent<UnitStat>().stat.ToString() +
-                     "+" + gameObject.GetComponent<UnitStat>().statBonus + " ON " + gameObject.GetComponent<UnitStat>().biome.ToString();
-        }
-
-        text = rank + Environment.NewLine + hp + Environment.NewLine + atk + Environment.NewLine + range + Environment.NewLine + move + Environment.NewLine + element
-               + hero + bonus;
-        currentToolTipText = text;
-        Write();
-    }
-
-    void OnMouseExit()
-    {
-        currentToolTipText = "";
-        Write();
-    }
-
-    void Write()
-    {
-        if (currentToolTipText != "")
-        {
-            unitInfo.text = currentToolTipText;
-        }
-        else
-        {
-            unitInfo.text = "";
-        }
-    }
-}
-=======
-     private string text;
-  
-     private string currentToolTipText = "";
-     public TextMeshProUGUI unitInfo;
-  
-     void OnMouseEnter()
+    void OnMouseEnter()
      {
          string rank = " R" + gameObject.GetComponent<UnitStat>().rank.ToString();
          string hp = " HP = " + gameObject.GetComponent<UnitStat>().hp.ToString();
@@ -123,4 +71,3 @@ public class UnitDisplay : MonoBehaviourPun
          }
      }
 }
->>>>>>> cf8ca6a1bf86c813b156c19f06da56c6e5721ea7

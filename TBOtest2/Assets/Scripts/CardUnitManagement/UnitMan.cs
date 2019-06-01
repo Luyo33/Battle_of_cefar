@@ -19,24 +19,7 @@ public class UnitMan : MonoBehaviourPun
     [PunRPC]
     void PutPiece(string n, string d, string e, int c, int m, int r, int a, int h, Card_R1.Model mo, PhotonMessageInfo info)
     {
-<<<<<<< HEAD
         R1 = new Card_R1(n, d, e, c, m, r, a, h, mo);
-        if (gameObject.GetComponent<UnitStat>() == null)
-        {
-            gameObject.AddComponent<UnitStat>();
-        }
-        if (gameObject.GetComponent<UnitMov>() == null)
-        {
-            gameObject.AddComponent<UnitMov>();
-
-        }
-        if (gameObject.GetComponent<UnitAtk>() == null)
-        {
-            gameObject.AddComponent<UnitAtk>();
-        }
-=======
-        R1 = new Card_R1(n, d, e, c, m, r, a, h);
->>>>>>> CopyAristide
         tomouse = true;
         //battle.GetComponent<Manager>().Units.Add(gameObject);
         statUpdate();
@@ -56,7 +39,8 @@ public class UnitMan : MonoBehaviourPun
         {
             string n = R1.name, d = R1.description, e = R1.ToString(R1.element);
             int c = R1.cardrank, m = R1.move, r = R1.range, a = R1.atk, h = R1.hp;
-            photonView.RPC("PutPiece", RpcTarget.Others, n, d, e, c, m, r, a, h);
+            Card_R1.Model mo = R1.model;
+            photonView.RPC("PutPiece", RpcTarget.Others, n, d, e, c, m, r, a, h, mo);
             //battle.GetComponent<Manager>().Units.Add(gameObject);
             statUpdate();
         }

@@ -45,32 +45,18 @@ public class UnitStat : MonoBehaviourPun
         description = template.description;
         hp += template.hp;
         if (hero)
-<<<<<<< HEAD
         {
             hp *= 3;
         }
-=======
-        {
-            hp *= 3;
-        }
-
         if (hp != 0)
         {
             candie = true;
         }
-
->>>>>>> cf8ca6a1bf86c813b156c19f06da56c6e5721ea7
         atk = template.atk;
         range = template.range;
         move = template.move;
         element = template.element;
         stat = CardTemplate.Stat.none;
-<<<<<<< HEAD
-
-
-=======
-        
->>>>>>> cf8ca6a1bf86c813b156c19f06da56c6e5721ea7
     }
  
     public void statUpdate()

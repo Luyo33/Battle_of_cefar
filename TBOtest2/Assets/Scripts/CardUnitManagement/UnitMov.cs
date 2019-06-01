@@ -47,7 +47,6 @@ public class UnitMov : MonoBehaviourPun
         move = gameObject.GetComponent<UnitStat>().move;
         biome = gameObject.GetComponent<UnitStat>().biome;
         ActivateMovBonus();
-<<<<<<< HEAD
         Neighbours = AvailableFields();
         photonView.RPC("SyncMoveStat", RpcTarget.Others);
     }
@@ -55,12 +54,7 @@ public class UnitMov : MonoBehaviourPun
     {
         position = v;
         photonView.RPC("SyncPosition", RpcTarget.Others, v.x, v.y);
-=======
-        Neighbours = new List<Vector2Int>();
-        Neighbours.Add(new Vector2Int(-1,-1));
         Neighbours = AvailableFields();
-        
->>>>>>> cf8ca6a1bf86c813b156c19f06da56c6e5721ea7
     }
     public void OnMouseOver()
     {
