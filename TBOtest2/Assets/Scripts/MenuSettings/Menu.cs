@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
@@ -7,6 +8,10 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
+
+    public InputField inputFieldText;
+
+    private string username;
     //Everything below is for the main menu
     public void PlayGame()
     {
@@ -24,4 +29,17 @@ public class Menu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void SetUsername()
+    {
+        Debug.Log(inputFieldText.text);
+        username = inputFieldText.text;
+        Debug.Log(username);
+    }
+    
+    public string GetUsername()
+    {
+        return username;
+    }
+    
 }
