@@ -62,14 +62,14 @@ public class UnitStat : MonoBehaviourPun
  
     public void statUpdate()
     {
-        template = gameObject.GetComponent<UnitMan>().R1;
-        name = template.name;
-        description = template.description;
-        atk = template.atk;
-        //hp = template.hp;
-        range = template.range;
-        move = template.move;
-        element = template.element;
+    //    template = gameObject.GetComponent<UnitMan>().R1;
+    //    name = template.name;
+    //    description = template.description;
+    //    atk = template.atk;
+    //    //hp = template.hp;
+    //    range = template.range;
+    //    move = template.move;
+    //    element = template.element;
         if (gameObject.GetComponent<UnitMan>().R2 != null)
         {
             stat = gameObject.GetComponent<UnitMan>().R2.stat;

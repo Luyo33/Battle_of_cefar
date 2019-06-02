@@ -8,9 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
-    <ProjectGuid>{77446C08-6EE1-25B9-8EE1-B0E3B884AF4C}</ProjectGuid>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{0EFC63E7-FF7C-2990-1ED6-A249EA6835C6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>PhotonUnityNetworking.Utilities</AssemblyName>
