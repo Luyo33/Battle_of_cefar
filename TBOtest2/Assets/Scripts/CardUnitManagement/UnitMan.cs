@@ -24,13 +24,14 @@ public class UnitMan : MonoBehaviourPun
         //battle.GetComponent<Manager>().Units.Add(gameObject);
         statUpdate();
     }
-    [PunRPC]
-    void StartTurn(PhotonMessageInfo info)
+
+    public void StartTurn()
     {
         canhit = true;
         canmove = true;
         tomouse = true;
     }
+
 
     public void Start()
     {
@@ -81,12 +82,5 @@ public class UnitMan : MonoBehaviourPun
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //canhit = true;
-            //canmove = true;
-            //tomouse = true;
-            photonView.RPC("StartTurn", RpcTarget.All);
-        }
     }
 }

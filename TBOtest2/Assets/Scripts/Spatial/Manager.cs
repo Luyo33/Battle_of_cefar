@@ -26,7 +26,13 @@ public class Manager : MonoBehaviour //Yael
         surface.BuildNavMesh();
     }
 
-    
+    public void OnClickStartTurn()
+    {
+        foreach(GameObject unit in Units)
+        {
+            unit.GetComponent<UnitMan>().StartTurn();
+        }
+    }
 
     public GameObject selected()
     {
