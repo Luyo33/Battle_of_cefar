@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Classic Mage
   description: He is the fastest and can outrange anyone but does not hit very hard
   element: 0
+  sprite: {fileID: 21300000, guid: ea9719cabc2657540aa51ff9d181165c, type: 3}
   cardrank: 1
   model: 5
   move: 6

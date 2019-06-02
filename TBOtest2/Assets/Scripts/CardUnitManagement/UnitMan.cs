@@ -44,7 +44,6 @@ public class UnitMan : MonoBehaviourPun
             photonView.RPC("PutPiece", RpcTarget.Others, n, d, e, c, m, r, a, h, mo);
             //battle.GetComponent<Manager>().Units.Add(gameObject);
             statUpdate();
-            
         }
 
         tomouse = true;
@@ -78,8 +77,57 @@ public class UnitMan : MonoBehaviourPun
         gameObject.GetComponent<UnitStat>().statUpdate();
         gameObject.GetComponent<UnitMov>().statUpdate();
         gameObject.GetComponent<UnitAtk>().statUpdate();
-        
+        AssignAppearance();
     }
+    
+    public void AssignAppearance()
+    {
+        CardTemplate.Element element = R1.element;
+        Material mat = Resources.Load("Good", typeof(Material)) as Material;
+        Debug.Log(gameObject.GetPhotonView().Owner.ActorNumber);
+        if (gameObject.GetPhotonView().Owner.ActorNumber == 1)
+        {
+            if (R1.element == CardTemplate.Element.Earth)
+            {
+                mat = Resources.Load("GoodYellow", typeof(Material)) as Material;
+            }
+            if (R1.element == CardTemplate.Element.Fire)
+            {
+                mat = Resources.Load("GoodRed", typeof(Material)) as Material;
+            }
+            if (R1.element == CardTemplate.Element.Water)
+            {
+                mat = Resources.Load("GoodBlue", typeof(Material)) as Material;
+            }
+            if (R1.element == CardTemplate.Element.Wind)
+            {
+                mat = Resources.Load("GoodGreen", typeof(Material)) as Material;
+            }
+        }
+        else
+        {
+            mat = Resources.Load("Bad", typeof(Material)) as Material;
+            if (R1.element == CardTemplate.Element.Earth)
+            {
+                mat = Resources.Load("BadYellow", typeof(Material)) as Material;
+            }
+            if (R1.element == CardTemplate.Element.Fire)
+            {
+                mat = Resources.Load("BadRed", typeof(Material)) as Material;
+            }
+            if (R1.element == CardTemplate.Element.Water)
+            {
+                mat = Resources.Load("BadBlue", typeof(Material)) as Material;
+            }
+            if (R1.element == CardTemplate.Element.Wind)
+            {
+                mat = Resources.Load("BadGreen", typeof(Material)) as Material;
+            }
+        }
+
+        gameObject.GetComponent<MeshRenderer>().material = mat;
+    }
+
 
     private void Update()
     {

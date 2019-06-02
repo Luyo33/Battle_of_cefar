@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Earth Mage
   description: She is Blind but can see throught her feet
   element: 4
+  sprite: {fileID: 21300000, guid: 019c54383f40ef640bcff336ae1347b1, type: 3}
   cardrank: 1
   model: 5
   move: 6

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Fire Mage
   description: '"Fireballs"'
   element: 1
+  sprite: {fileID: 21300000, guid: 10c1dc1776c4d774b830ce514a4674b2, type: 3}
   cardrank: 1
   model: 5
   move: 6
