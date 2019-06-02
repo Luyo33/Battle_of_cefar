@@ -8,6 +8,7 @@ public abstract class CardTemplate : ScriptableObject
     public string name;
     public string description;
     public Element element;
+    public Sprite sprite;
 
     public int cardrank;// 0 = trapcard ;
     public enum Stat //stat affected by bonus

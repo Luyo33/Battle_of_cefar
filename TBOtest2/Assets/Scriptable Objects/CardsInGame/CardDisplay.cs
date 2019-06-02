@@ -45,6 +45,7 @@ public class CardDisplay : MonoBehaviour
         nameText.text = Card.name;
         descriptionText.text = Card.description;
         rankText.text = "R" + Card.cardrank.ToString();
+        artworkImage.sprite = Card.sprite;
         if (Card is Card_R1)
         {
             CardR1 = Card as Card_R1;
@@ -95,19 +96,6 @@ public class CardDisplay : MonoBehaviour
             }
         }
     }
-    
-    void OnMouseOver()
-    {
-        Debug.Log("You are over a card");
-        Vector3 scale = gameObject.transform.localScale;
-        gameObject.transform.localScale = new Vector3(scale.x * 2, scale.y * 2, scale.z * 2);
-    }
-
-    void OnMouseExit()
-    {
-        Vector3 scale = gameObject.transform.localScale;
-        gameObject.transform.localScale = new Vector3(scale.x / 2, scale.y / 2, scale.z / 2);
-    }
 
     public void setR()
     {
@@ -120,6 +108,7 @@ public class CardDisplay : MonoBehaviour
         descriptionText.text = Card.description;
         rankText.text = "R" + Card.cardrank.ToString();
         elementText.text = Card.ToString(Card.element);
+        artworkImage.sprite = Card.sprite;
         if (CardR1 != null)
         {
             elementText.text = CardR1.ToString(Card.element);

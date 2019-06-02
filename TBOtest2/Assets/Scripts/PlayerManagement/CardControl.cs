@@ -12,6 +12,11 @@ using Random = System.Random;
 public class CardControl : MonoBehaviourPun
 {
     public GameObject EmptyUnit;
+    public GameObject EmptyArcher;
+    public GameObject EmptyAssassin;
+    public GameObject EmptyExecutioner;
+    public GameObject EmptyKnight;
+    public GameObject EmptyMage;
     public GameObject EmptyCardR1;
     public GameObject EmptyCardR2;
     public GameObject EmptyCardR3;
@@ -23,11 +28,19 @@ public class CardControl : MonoBehaviourPun
     public List<CardTemplate> hand;
     public GameObject hero;
     public bool herob;
-    
+
+    public Dictionary<Card_R1.Model, GameObject> mod;
 
     // Start is called before the first frame update
     private void Start()
     {
+        mod = new Dictionary<Card_R1.Model, GameObject>();
+        mod.Add(Card_R1.Model.None, EmptyUnit);
+        mod.Add(Card_R1.Model.Archer, EmptyArcher);
+        mod.Add(Card_R1.Model.Assassin, EmptyAssassin);
+        mod.Add(Card_R1.Model.Executioner, EmptyExecutioner);
+        mod.Add(Card_R1.Model.Knight, EmptyKnight);
+        mod.Add(Card_R1.Model.Mage, EmptyMage);
         field = battlefield.GetComponent<Manager>();
         deckCount = 0;
         hero = null;
@@ -69,7 +82,7 @@ public class CardControl : MonoBehaviourPun
     }
     public void take(CardTemplate c)
     {
-        if (c.cardrank == 1)
+        if (c is Card_R1)
         {
             GameObject card = Instantiate(EmptyCardR1);
             card.GetComponent<Draggable>().Card = c;
@@ -85,7 +98,7 @@ public class CardControl : MonoBehaviourPun
             
         }
 
-        if (c.cardrank == 2)
+        if (c is Card_R2)
         {
             GameObject card = Instantiate(EmptyCardR2);
             card.GetComponent<Draggable>().Card = c;
@@ -100,7 +113,7 @@ public class CardControl : MonoBehaviourPun
             card.GetComponent<CardDisplay>().DisplayUp();
         }
 
-        if (c.cardrank == 3)
+        if (c is Card_R3)
         {
             GameObject card = Instantiate(EmptyCardR3);
             card.GetComponent<Draggable>().Card = c;
@@ -136,8 +149,10 @@ public class CardControl : MonoBehaviourPun
 
     public GameObject CreateUnit1(Card_R1 template, Vector2Int position)
     {
-        GameObject unit = PhotonNetwork.Instantiate("Unit",new Vector3(position.x,field.GetCellFromXZ(position).GetComponent<BiomeProp>().height,-position.y),Quaternion.identity);
-        
+        GameObject inst = mod[template.model];
+        GameObject unit = PhotonNetwork.Instantiate(inst.name,
+            new Vector3(position.x, field.GetCellFromXZ(position).GetComponent<BiomeProp>().height, -position.y),
+            Quaternion.identity);
         unit.GetComponent<UnitMan>().R1 = template;
         unit.GetComponent<UnitMan>().battle = battlefield;
         unit.GetComponent<UnitMan>().Start();
@@ -201,4 +216,5 @@ public class CardControl : MonoBehaviourPun
 
         return false;
     }
+    
 }

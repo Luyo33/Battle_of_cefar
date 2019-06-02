@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -303,16 +303,6 @@ PrefabInstance:
       propertyPath: stepZ
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 5870550867594606291, guid: 5f6d83d6be7f125468cc57f7f920429f,
-        type: 3}
-      propertyPath: viewIdField
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870550867594606291, guid: 5f6d83d6be7f125468cc57f7f920429f,
-        type: 3}
-      propertyPath: InstantiationId
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1255134091023950544, guid: 5f6d83d6be7f125468cc57f7f920429f,
         type: 3}
       propertyPath: m_Enabled
@@ -324,6 +314,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2334186763500800170, guid: 17d4c6bfc23a87e4e8f2e3ce7cb71e99,
         type: 3}
+    - target: {fileID: 5870550867594606291, guid: 5f6d83d6be7f125468cc57f7f920429f,
+        type: 3}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870550867594606291, guid: 5f6d83d6be7f125468cc57f7f920429f,
+        type: 3}
+      propertyPath: InstantiationId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5870550867594606291, guid: 5f6d83d6be7f125468cc57f7f920429f,
         type: 3}
       propertyPath: viewIdField
@@ -1140,6 +1140,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EmptyUnit: {fileID: 2334186763500800170, guid: 3ecc4ebf761f8fb4db87ef29a0993216,
     type: 3}
+  EmptyArcher: {fileID: 9179634628588632171, guid: a7a086dea6d9ea44189e9007c8d079d2,
+    type: 3}
+  EmptyAssassin: {fileID: 7164043886111441507, guid: 44a7c39c165e43843a5768c8b8b419d5,
+    type: 3}
+  EmptyExecutioner: {fileID: 8520970249277163248, guid: f651581ef23c1db42a02b152edca88de,
+    type: 3}
+  EmptyKnight: {fileID: 3705343680386663698, guid: 29bfd10f0fbbca14ba2a9bf77594f175,
+    type: 3}
+  EmptyMage: {fileID: 1709845174132012573, guid: c08f434e8ee829344b84625b8f3f8c2d,
+    type: 3}
   EmptyCardR1: {fileID: 5139238814980651337, guid: 8c8e0f691b3d1ef43aa077b664bee8d1,
     type: 3}
   EmptyCardR2: {fileID: 1109077401503720, guid: 8133df6cae55ca746a18cf21c371bcd6,
@@ -1189,7 +1199,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000045776367}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 79.8, y: -59.4}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1316462979
@@ -1474,10 +1484,10 @@ RectTransform:
   m_Father: {fileID: 907198663}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.75600004, y: 0.22767982}
-  m_AnchorMax: {x: 0.9396609, y: 0.3}
-  m_AnchoredPosition: {x: -0.1000061, y: 0.19999695}
-  m_SizeDelta: {x: 3, y: -1}
+  m_AnchorMin: {x: 0.74200004, y: 0.31949368}
+  m_AnchorMax: {x: 0.9312254, y: 0.3886709}
+  m_AnchoredPosition: {x: 0.3000183, y: -0.79999924}
+  m_SizeDelta: {x: -1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136263212
 MonoBehaviour:

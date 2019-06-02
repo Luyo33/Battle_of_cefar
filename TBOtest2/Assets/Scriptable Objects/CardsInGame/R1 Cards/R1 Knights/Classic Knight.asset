@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Classic Knight
   description: Your basic buddy
   element: 0
+  sprite: {fileID: 21300000, guid: 866928d28b8f01a428d48c2b672a4fed, type: 3}
   cardrank: 1
   model: 4
   move: 4

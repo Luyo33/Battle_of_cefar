@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Air Knight
   description: Danger is from above
   element: 3
+  sprite: {fileID: 21300000, guid: a112b3475415b0648bc49bdba773b0e7, type: 3}
   cardrank: 1
   model: 4
   move: 4

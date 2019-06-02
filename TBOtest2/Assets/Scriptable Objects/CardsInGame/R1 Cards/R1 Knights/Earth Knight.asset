@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Earth Knight
   description: He will bury you to the groud
   element: 4
+  sprite: {fileID: 21300000, guid: a03416c0dee5d324fa13b930ce23b520, type: 3}
   cardrank: 1
   model: 4
   move: 4

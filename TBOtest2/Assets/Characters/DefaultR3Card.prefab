@@ -342,7 +342,7 @@ MonoBehaviour:
   rankText: {fileID: 2192801917523307226}
   atkText: {fileID: 4208080987609405743}
   hpText: {fileID: 4208080987940189685}
-  artworkImage: {fileID: 0}
+  artworkImage: {fileID: 4208080986500822301}
 --- !u!114 &4208080986910555670
 MonoBehaviour:
   m_ObjectHideFlags: 0

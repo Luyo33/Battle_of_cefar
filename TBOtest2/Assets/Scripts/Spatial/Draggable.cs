@@ -153,7 +153,5 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             
         }
     }
-
-    
 }
 
