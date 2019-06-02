@@ -23,7 +23,6 @@ public class CardDisplay : MonoBehaviour
     public TextMeshProUGUI hpText;
 
     public Image artworkImage;
-    
     public Color32 setColor(CardTemplate c)
     {
         if (c.element == CardTemplate.Element.Classic)
@@ -95,6 +94,19 @@ public class CardDisplay : MonoBehaviour
                 atkText.text = third + Environment.NewLine + fourth.ToString();
             }
         }
+    }
+    
+    void OnMouseOver()
+    {
+        Debug.Log("You are over a card");
+        Vector3 scale = gameObject.transform.localScale;
+        gameObject.transform.localScale = new Vector3(scale.x * 2, scale.y * 2, scale.z * 2);
+    }
+
+    void OnMouseExit()
+    {
+        Vector3 scale = gameObject.transform.localScale;
+        gameObject.transform.localScale = new Vector3(scale.x / 2, scale.y / 2, scale.z / 2);
     }
 
     public void setR()

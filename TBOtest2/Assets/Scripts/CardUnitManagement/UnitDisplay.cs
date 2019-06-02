@@ -28,7 +28,7 @@ public class UnitDisplay : MonoBehaviourPun
     }
     void OnMouseEnter()
      {
-         string rank = " R" + gameObject.GetComponent<UnitStat>().rank.ToString();
+         string rank = "";
          string hp = " HP = " + gameObject.GetComponent<UnitStat>().hp.ToString();
          string atk = " ATK = " + gameObject.GetComponent<UnitStat>().atk.ToString();
          string range = "RNG = " + gameObject.GetComponent<UnitStat>().range.ToString();
@@ -45,6 +45,25 @@ public class UnitDisplay : MonoBehaviourPun
          {
              bonus =  Environment.NewLine + "BONUS : " + gameObject.GetComponent<UnitStat>().stat.ToString() +
                       "+"+gameObject.GetComponent<UnitStat>().statBonus + " ON " + gameObject.GetComponent<UnitStat>().biome.ToString();
+         }
+
+         if (gameObject.GetComponent<UnitMan>().R1)
+         {
+             if (gameObject.GetComponent<UnitMan>().R2)
+             {
+                 if (gameObject.GetComponent<UnitMan>().R3)
+                 {
+                     rank = "R3";
+                 }
+                 else
+                 {
+                     rank = "R2";
+                 }
+             }
+             else
+             {
+                 rank = "R1";
+             }
          }
 
          text =  rank + Environment.NewLine + hp + Environment.NewLine + atk + Environment.NewLine + range + Environment.NewLine + move + Environment.NewLine + element
