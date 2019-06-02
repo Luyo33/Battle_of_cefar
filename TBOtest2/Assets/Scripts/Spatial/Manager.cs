@@ -26,7 +26,7 @@ public class Manager : MonoBehaviour //Yael
         surface.BuildNavMesh();
     }
 
-    public void OnClickStartTurn()
+    public void OnClickEndTurn()
     {
         foreach(GameObject unit in Units)
         {

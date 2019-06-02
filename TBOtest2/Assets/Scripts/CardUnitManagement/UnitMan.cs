@@ -24,11 +24,18 @@ public class UnitMan : MonoBehaviourPun
         //battle.GetComponent<Manager>().Units.Add(gameObject);
         statUpdate();
     }
-
+    
     public void StartTurn()
     {
         canhit = true;
         canmove = true;
+        tomouse = true;
+    }
+    
+    public void EndTurn()
+    {
+        canhit = false;
+        canhit = false;
         tomouse = true;
     }
 
