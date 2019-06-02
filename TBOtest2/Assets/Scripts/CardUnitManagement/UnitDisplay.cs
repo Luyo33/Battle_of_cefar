@@ -14,17 +14,10 @@ public class UnitDisplay : MonoBehaviourPun
 
     private string currentToolTipText = "";
     public TextMeshProUGUI unitInfo;
-
-    [PunRPC]
-    void SyncUnitInfo(PhotonMessageInfo info)
+    
+    public void Start()
     {
         unitInfo = Camera.main.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
-    }
-
-    public void SetUnitInfo()
-    {
-        unitInfo = Camera.main.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
-        photonView.RPC("SyncUnitInfo", RpcTarget.Others);
     }
     void OnMouseEnter()
      {
@@ -80,7 +73,9 @@ public class UnitDisplay : MonoBehaviourPun
   
      void Write()
      {
-         if (currentToolTipText != "")
+        if(unitInfo == null)
+            unitInfo = Camera.main.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
+        if (currentToolTipText != "")
          {
              unitInfo.text = currentToolTipText;
          }

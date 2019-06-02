@@ -16,7 +16,7 @@ public class UnitMov : MonoBehaviourPun
     public bool givebonus = false;
 
     [PunRPC]
-    void SyncPosition(int x, int y, PhotonMessageInfo info)
+    void SetPosition(int x, int y, PhotonMessageInfo info)
     {
         position = new Vector2Int(x, y);
     }
@@ -30,15 +30,13 @@ public class UnitMov : MonoBehaviourPun
         Neighbours = AvailableFields();
     }
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         battle = gameObject.GetComponent<UnitMan>().battle;
         battlefield = battle.GetComponent<Manager>();
         move = gameObject.GetComponent<UnitMan>().R1.move;
-        //position = new Vector2Int((int)gameObject.transform.position.x,(int)gameObject.transform.position.z);
-        position = battlefield.Vselected();
+        photonView.RPC("SetPosition", RpcTarget.All, (int)gameObject.transform.position.x,(int) - gameObject.transform.position.z);
         Neighbours = new List<Vector2Int>();
-        photonView.RPC("SyncStart", RpcTarget.Others);
         //Debug.Log("UnitCanMove");
     }
 
@@ -49,12 +47,6 @@ public class UnitMov : MonoBehaviourPun
         ActivateMovBonus();
         Neighbours = AvailableFields();
         photonView.RPC("SyncMoveStat", RpcTarget.Others);
-    }
-    public void SetPosition(Vector2Int v)
-    {
-        position = v;
-        photonView.RPC("SyncPosition", RpcTarget.Others, v.x, v.y);
-        Neighbours = AvailableFields();
     }
     public void OnMouseOver()
     {

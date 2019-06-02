@@ -141,9 +141,10 @@ public class CardControl : MonoBehaviourPun
         unit.GetComponent<UnitMan>().R1 = template;
         unit.GetComponent<UnitMan>().battle = battlefield;
         unit.GetComponent<UnitMan>().Start();
-        unit.GetComponent<UnitMov>().SetPosition(position);
+        unit.GetComponent<UnitMan>().AddUnit();
+        unit.GetComponent<UnitMov>().Start();
         unit.GetComponent<PlayerComponent>().SetSelect();
-        unit.GetComponent<UnitDisplay>().SetUnitInfo();
+        unit.GetComponent<UnitDisplay>().Start();
         unit.GetComponent<UnitMan>().statUpdate();
         if (!herob)
         {
@@ -151,7 +152,6 @@ public class CardControl : MonoBehaviourPun
             herob = true;
             hero = unit;
         }
-        field.Units.Add(unit);
         //unit.transform.parent = something.transform;//for hierarchy
         unit.GetComponent<UnitMan>().statUpdate();
         hand.Remove(template);

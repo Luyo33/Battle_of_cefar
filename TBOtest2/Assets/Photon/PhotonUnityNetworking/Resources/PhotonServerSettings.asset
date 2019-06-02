@@ -45,4 +45,7 @@ MonoBehaviour:
   - SyncStat
   - StartTurn
   - SyncMoveStat
+  - AddEnemyUnit
+  - SetPosition
+  - Startturn
   DisableAutoOpenWizard: 1

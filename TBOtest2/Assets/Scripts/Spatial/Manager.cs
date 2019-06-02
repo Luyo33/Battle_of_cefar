@@ -15,6 +15,8 @@ public class Manager : MonoBehaviour //Yael
     public float stepX = 0.1f;
     public float stepZ = 0.1f;
     public List<GameObject> biomesCell;
+    public List<GameObject> EnemyUnits;
+    public List<GameObject> FriendlyUnits;
     public List<GameObject> Units;
     public GameObject[,] cellMap;
 
@@ -24,11 +26,19 @@ public class Manager : MonoBehaviour //Yael
     {
         GenerateMap();
         surface.BuildNavMesh();
+        Units = new List<GameObject>();
+        EnemyUnits = new List<GameObject>();
+        FriendlyUnits = new List<GameObject>();
+
     }
 
     public void OnClickEndTurn()
     {
-        foreach(GameObject unit in Units)
+        foreach(GameObject unit in FriendlyUnits)
+        {
+            unit.GetComponent<UnitMan>().EndTurn();
+        }
+        foreach(GameObject unit in EnemyUnits)
         {
             unit.GetComponent<UnitMan>().StartTurn();
         }
