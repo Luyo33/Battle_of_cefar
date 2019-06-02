@@ -47,6 +47,7 @@ public class UnitMov : MonoBehaviourPun
         ActivateMovBonus();
         Neighbours = AvailableFields();
         photonView.RPC("SyncMoveStat", RpcTarget.Others);
+        photonView.RPC("SetPosition", RpcTarget.All, (int)gameObject.transform.position.x, (int)-gameObject.transform.position.z);
     }
     public void OnMouseOver()
     {
