@@ -38,7 +38,6 @@ public class UnitMov : MonoBehaviourPun
         //position = new Vector2Int((int)gameObject.transform.position.x,(int)gameObject.transform.position.z);
         position = battlefield.Vselected();
         Neighbours = new List<Vector2Int>();
-        photonView.RPC("SyncStart", RpcTarget.Others);
         //Debug.Log("UnitCanMove");
     }
 

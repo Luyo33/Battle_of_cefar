@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Air Assassin
   description: '"I''m watching you"'
   element: 3
+  sprite: {fileID: 21300000, guid: b6619f1ec6224014481807bfeea107ac, type: 3}
   cardrank: 1
   model: 2
   move: 5

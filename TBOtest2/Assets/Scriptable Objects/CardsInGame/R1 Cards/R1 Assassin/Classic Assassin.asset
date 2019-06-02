@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Classic Assassin
   description: Strikes from the shadows
   element: 0
+  sprite: {fileID: 21300000, guid: 641d0811661ec244cb4cd73776863c35, type: 3}
   cardrank: 1
   model: 2
   move: 5

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Water Assassin
   description: Comes from behind and drags you into the dark seas
   element: 2
+  sprite: {fileID: 21300000, guid: 918cbceec3dfdfb439495134d0360669, type: 3}
   cardrank: 1
   model: 2
   move: 5

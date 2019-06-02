@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 4446314518490890657}
   - component: {fileID: 8881932333341425867}
   - component: {fileID: 6998333146760165335}
+  - component: {fileID: 8386511276597481857}
   m_Layer: 0
   m_Name: Assassin
   m_TagString: Untagged
@@ -226,7 +227,7 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 0}
+  - {fileID: 94451634911257286}
   viewIdField: 0
   InstantiationId: 2
   isRuntimeInstantiated: 0
@@ -323,6 +324,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitInfo: {fileID: 0}
+--- !u!114 &8386511276597481857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164043886111441507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7edeba5b27b3247ac6f1f971d467a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0
 --- !u!1 &7164043886111441515
 GameObject:
   m_ObjectHideFlags: 0

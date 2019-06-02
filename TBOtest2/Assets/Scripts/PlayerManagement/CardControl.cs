@@ -20,6 +20,17 @@ public class CardControl : MonoBehaviourPun
     public GameObject EmptyCardR1;
     public GameObject EmptyCardR2;
     public GameObject EmptyCardR3;
+    public Material clas1;
+    public Material clas2;
+    public Material fire1;
+    public Material fire2;
+    public Material water1;
+    public Material water2;
+    public Material earth1;
+    public Material earth2;
+    public Material wind1;
+    public Material wind2;
+    public List<Material> colors;
     public GameObject battlefield;
     public Manager field;
     public DeckBuilder DeckBuilder;
@@ -30,10 +41,24 @@ public class CardControl : MonoBehaviourPun
     public bool herob;
 
     public Dictionary<Card_R1.Model, GameObject> mod;
+    public Dictionary<CardTemplate.Element, Material> color1;
+    public Dictionary<CardTemplate.Element, Material> color2;
 
     // Start is called before the first frame update
     private void Start()
     {
+        color1 = new Dictionary<CardTemplate.Element, Material>();
+        color1.Add(CardTemplate.Element.Classic, clas1);
+        color1.Add(CardTemplate.Element.Fire, fire1);
+        color1.Add(CardTemplate.Element.Earth, earth1);
+        color1.Add(CardTemplate.Element.Water, water1);
+        color1.Add(CardTemplate.Element.Wind, wind1);
+        color2 = new Dictionary<CardTemplate.Element, Material>();
+        color2.Add(CardTemplate.Element.Classic, clas2);
+        color2.Add(CardTemplate.Element.Fire, fire2);
+        color2.Add(CardTemplate.Element.Earth, earth2);
+        color2.Add(CardTemplate.Element.Water, water2);
+        color2.Add(CardTemplate.Element.Wind, wind2);
         mod = new Dictionary<Card_R1.Model, GameObject>();
         mod.Add(Card_R1.Model.None, EmptyUnit);
         mod.Add(Card_R1.Model.Archer, EmptyArcher);
@@ -160,6 +185,7 @@ public class CardControl : MonoBehaviourPun
         unit.GetComponent<PlayerComponent>().SetSelect();
         unit.GetComponent<UnitDisplay>().SetUnitInfo();
         unit.GetComponent<UnitMan>().statUpdate();
+        AssignAppearance(template, unit);
         if (!herob)
         {
             unit.GetComponent<UnitStat>().SetHero();
@@ -175,7 +201,15 @@ public class CardControl : MonoBehaviourPun
 
     public void AssignAppearance(Card_R1 template, GameObject unit)
     {
-        //TODO Ylan
+        CardTemplate.Element element = template.element;
+        Material mat;
+        Debug.Log("color");
+        unit.GetComponent<MeshRenderer>().material = color1[template.element];
+
+        if (unit.GetPhotonView().Owner.UserId == "2")
+        {
+            unit.GetComponent<MeshRenderer>().material = color2[template.element];
+        }
     }
 
     public bool R1R2(Card_R2 template, GameObject Unit)

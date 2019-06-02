@@ -44,6 +44,7 @@ public class UnitMan : MonoBehaviourPun
             photonView.RPC("PutPiece", RpcTarget.Others, n, d, e, c, m, r, a, h, mo);
             //battle.GetComponent<Manager>().Units.Add(gameObject);
             statUpdate();
+            
         }
 
         tomouse = true;

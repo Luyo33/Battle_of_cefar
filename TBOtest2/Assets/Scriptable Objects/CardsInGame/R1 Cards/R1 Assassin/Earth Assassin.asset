@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Earth Assassin
   description: Mine his way out of the killing
   element: 4
+  sprite: {fileID: 21300000, guid: 09327c93833cfb24690d50565b98dea5, type: 3}
   cardrank: 1
   model: 2
   move: 5

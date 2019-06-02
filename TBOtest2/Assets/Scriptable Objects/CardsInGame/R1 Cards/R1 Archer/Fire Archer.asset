@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Fire Archer
   description: '"I will rain fire on you"'
   element: 1
+  sprite: {fileID: 21300000, guid: 1b2a9d324031d0a40875392ed29fcbdc, type: 3}
   cardrank: 1
   model: 1
   move: 5

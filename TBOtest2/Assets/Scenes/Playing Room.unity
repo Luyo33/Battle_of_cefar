@@ -1156,6 +1156,17 @@ MonoBehaviour:
     type: 3}
   EmptyCardR3: {fileID: 4208080986910555667, guid: fa06f73aaa76b1746934174e534fccd3,
     type: 3}
+  clas1: {fileID: 2100000, guid: ef06733eaecee7f4796a88760beea9d2, type: 2}
+  clas2: {fileID: 2100000, guid: 147e635e25735dc448ae1b8655d1bc33, type: 2}
+  fire1: {fileID: 2100000, guid: 3c5e766624cdba84b956f82b42ec7940, type: 2}
+  fire2: {fileID: 2100000, guid: b80ced3b46901184aa9d6853c2db3dd8, type: 2}
+  water1: {fileID: 2100000, guid: 5ef82f25040e35b4da878b2f94f06ab5, type: 2}
+  water2: {fileID: 2100000, guid: 7febf55d68f08994cae1281e8594bfec, type: 2}
+  earth1: {fileID: 2100000, guid: e32279c6a69818a4eb8125303c1f5bf9, type: 2}
+  earth2: {fileID: 2100000, guid: c4f526bf881dcb24eabffa8527787f56, type: 2}
+  wind1: {fileID: 2100000, guid: bf512c4437ece924c843e9674e4ffdff, type: 2}
+  wind2: {fileID: 2100000, guid: c986d63e9a506b148b422fc517e7bf5d, type: 2}
+  colors: []
   battlefield: {fileID: 1737194752}
   field: {fileID: 0}
   DeckBuilder: {fileID: 11400000, guid: da1f19060d50aa44694800edbe16a9c0, type: 2}
@@ -1486,7 +1497,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.74200004, y: 0.31949368}
   m_AnchorMax: {x: 0.9312254, y: 0.3886709}
-  m_AnchoredPosition: {x: 0.3000183, y: -0.79999924}
+  m_AnchoredPosition: {x: 0.3000183, y: -0.80000305}
   m_SizeDelta: {x: -1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136263212
