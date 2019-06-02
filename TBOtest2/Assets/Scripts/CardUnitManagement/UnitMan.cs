@@ -27,7 +27,7 @@ public class UnitMan : MonoBehaviourPun
     }
     
     [PunRPC]
-    void Startturn()
+    public void Startturn()
     {
         canhit = true;
         canmove = true;
@@ -48,12 +48,15 @@ public class UnitMan : MonoBehaviourPun
     
     public void AddUnit()
     {
-        string n = R1.name, d = R1.description, e = R1.ToString(R1.element);
-        int c = R1.cardrank, m = R1.move, r = R1.range, a = R1.atk, h = R1.hp;
-        Card_R1.Model mo = R1.model;
-        photonView.RPC("PutPiece", RpcTarget.Others, n, d, e, c, m, r, a, h, mo);
-        battle.GetComponent<Manager>().Units.Add(gameObject);
-        battle.GetComponent<Manager>().FriendlyUnits.Add(gameObject);
+        if (R1 != null)
+        {
+            string n = R1.name, d = R1.description, e = R1.ToString(R1.element);
+            int c = R1.cardrank, m = R1.move, r = R1.range, a = R1.atk, h = R1.hp;
+            Card_R1.Model mo = R1.model;
+            photonView.RPC("PutPiece", RpcTarget.Others, n, d, e, c, m, r, a, h, mo);
+            battle.GetComponent<Manager>().Units.Add(gameObject);
+            battle.GetComponent<Manager>().FriendlyUnits.Add(gameObject);
+        }
     }
 
 

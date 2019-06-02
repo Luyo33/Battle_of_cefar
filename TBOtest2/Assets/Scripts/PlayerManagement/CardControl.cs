@@ -173,6 +173,7 @@ public class CardControl : MonoBehaviourPun
             Unit.GetComponent<UnitStat>().biome = template.biome;
             Unit.GetComponent<UnitStat>().stat = template.stat;
             Unit.GetComponent<UnitStat>().statBonus = template.bonus;
+            Unit.GetComponent<UnitAtk>().Start();
             if (template.stat == CardTemplate.Stat.move)
             {
                 Unit.GetComponent<UnitStat>().MvBonus = template.movebonus;

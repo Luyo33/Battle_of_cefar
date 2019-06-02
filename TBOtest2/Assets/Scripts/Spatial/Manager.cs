@@ -44,6 +44,21 @@ public class Manager : MonoBehaviour //Yael
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            foreach (GameObject unit in EnemyUnits)
+            {
+                unit.GetComponent<UnitMan>().EndTurn();
+            }
+            foreach (GameObject unit in FriendlyUnits)
+            {
+                unit.GetComponent<UnitMan>().Startturn();
+            }
+        }
+    }
+
     public GameObject selected()
     {
         foreach (GameObject c in cellMap)

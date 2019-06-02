@@ -13,7 +13,8 @@ public class UnitAtk : MonoBehaviourPun
     public CardTemplate.Element Element;
     public List<GameObject> targets;
     public List<Vector2Int> w;
-    void Start()
+
+    public void Start()
     {
         battle = gameObject.GetComponent<UnitMan>().battle;
         battlefield = battle.GetComponent<Manager>();
@@ -30,19 +31,15 @@ public class UnitAtk : MonoBehaviourPun
     }
     public List<GameObject> GetTargets()
     {
-        try
-        {
-            UnitStat u = gameObject.GetComponent<UnitStat>();
-            GameObject cell = battlefield.GetCellFromXZ(position);
-            BiomeProp.Biome biome = cell.GetComponent<BiomeProp>().biome;
-            int range = u.range + (u.stat == CardTemplate.Stat.range && u.biome == biome ? u.statBonus : 0);
-            int height = cell.GetComponent<BiomeProp>().height;
-            targets = RecGetTargets(range, u, height);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
+        if (battle == null)
+            Start();
+        UnitStat u = gameObject.GetComponent<UnitStat>();
+        GameObject cell = battlefield.GetCellFromXZ(position);
+        BiomeProp.Biome biome = cell.GetComponent<BiomeProp>().biome;
+        int range = u.range + (u.stat == CardTemplate.Stat.range && u.biome == biome ? u.statBonus : 0);
+        int height = cell.GetComponent<BiomeProp>().height;
+        targets = RecGetTargets(range, u, height);
+
 
         return targets;
     }
