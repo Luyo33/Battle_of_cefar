@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Underwater Threat
   description: A Gift from the Drowns
   element: 2
+  sprite: {fileID: 21300000, guid: a6b28e6c13fbe2047a8bd657cb821f0c, type: 3}
   cardrank: 2
   biome: 2
   bonus: 2

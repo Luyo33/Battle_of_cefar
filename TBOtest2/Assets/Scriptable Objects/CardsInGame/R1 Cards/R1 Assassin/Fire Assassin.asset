@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Fire Assassin
   description: Enflammed dagger
   element: 1
-  sprite: {fileID: 21300000, guid: 006d44a7bce4fbb46aea53b7f29eb97d, type: 3}
+  sprite: {fileID: 21300000, guid: a53cecdd8f26bb449a7366e682b95b4b, type: 3}
   cardrank: 1
   model: 2
   move: 5

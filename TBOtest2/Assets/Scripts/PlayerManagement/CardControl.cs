@@ -190,6 +190,7 @@ public class CardControl : MonoBehaviourPun
             {
                 Unit.GetComponent<UnitStat>().MvBonus = template.movebonus;
             }
+            Unit.GetComponent<UnitMan>().statUpdate();
             hand.Remove(template);
 
             return true;

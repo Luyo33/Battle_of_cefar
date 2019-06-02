@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Tornado Summoner
   description: Very pushy winds
   element: 3
+  sprite: {fileID: 21300000, guid: af9735b2f33edea4ab5ab0ca995941b6, type: 3}
   cardrank: 2
   biome: 4
   bonus: 2

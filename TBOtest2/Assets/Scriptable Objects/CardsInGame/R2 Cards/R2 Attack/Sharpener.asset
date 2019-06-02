@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Sharpener
   description: To cut things off with ease
   element: 0
+  sprite: {fileID: 21300000, guid: b2a73b9e201303444a25e21b5a361470, type: 3}
   cardrank: 2
   biome: 0
   bonus: 1

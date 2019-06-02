@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Water Knight
   description: His sword is made of water
   element: 2
-  sprite: {fileID: 21300000, guid: 3386fcbe9145560499b71ac15654a3e9, type: 3}
+  sprite: {fileID: 21300000, guid: 760e1e57806692b48bbd854559be313b, type: 3}
   cardrank: 1
   model: 4
   move: 4

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Rock Crusher
   description: Add the remain of a crushed rock to your attack
   element: 4
+  sprite: {fileID: 21300000, guid: 2fee9268529eb134db084ae385706bfe, type: 3}
   cardrank: 2
   biome: 1
   bonus: 3
