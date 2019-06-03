@@ -95,6 +95,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 R1 = GetComponent<CardDisplay>().CardR1;
                 R2 = GetComponent<CardDisplay>().CardR2;
                 R3 = GetComponent<CardDisplay>().CardR3;
+                if (bin.GetComponent<Deleter>().delete)
+                {
+                    hand.GetComponent<CardControl>().hand.Remove(Card);
+                    Destroy(gameObject);
+                }
                 if (R1 != null)
                 {
                     Vector2Int pos = gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().Vselected();
