@@ -497,11 +497,11 @@ MonoBehaviour:
   hero: 0
   name: 
   description: 
+  candie: 0
   move: 0
   range: 0
   atk: 0
   hp: 0
-  candie: 0
   element: 0
   biome: 0
   statBonus: 0

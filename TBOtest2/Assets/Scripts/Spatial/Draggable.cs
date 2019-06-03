@@ -78,81 +78,89 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log(eventData.button.ToString());
-        if (eventData.button == PointerEventData.InputButton.Right)
+        if (!gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().isTurn)
         {
-            
-            R1 = GetComponent<CardDisplay>().CardR1;
-            R2 = GetComponent<CardDisplay>().CardR2;
-            R3 = GetComponent<CardDisplay>().CardR3;
-            if (R1 != null)
+            this.transform.SetParent(parentToReturnTo);
+            GetComponent<CanvasGroup>().blocksRaycasts = true;
+            GetComponent<CanvasGroup>().alpha = 1f;
+        }
+        else
+        {
+            Debug.Log(eventData.button.ToString());
+            if (eventData.button == PointerEventData.InputButton.Right)
             {
-                Vector2Int pos = gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().Vselected();
-                Debug.Log(pos);
-                if (gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetUnitFromXZ(pos) == null)
+                R1 = GetComponent<CardDisplay>().CardR1;
+                R2 = GetComponent<CardDisplay>().CardR2;
+                R3 = GetComponent<CardDisplay>().CardR3;
+                if (R1 != null)
                 {
-                    if (invoc != null && 
-                        (invoc.herob == false ||
-                         invoc.hero == null ||
-                        invoc.hero.GetComponent<UnitMov>().Neighbours.Count != 0&&
-                        (invoc.hero.GetComponent<UnitMov>().Neighbours.Contains(pos) ||
-                        invoc.hero.GetComponent<UnitAtk>().w.Contains(pos))))
+                    Vector2Int pos = gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().Vselected();
+                    Debug.Log(pos);
+                    if (gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetUnitFromXZ(pos) == null)
                     {
-                        GameObject u = invoc.CreateUnit1(R1, pos);
-                        u.GetComponent<UnitMan>().statUpdate();
-                        used = true;
-                    }
-                    else
-                    {
-                        used = false;
-                    }
-                }
-            }
-
-            if (R2 != null)
-            {
-                foreach (GameObject unit in gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().Units)
-                {
-                    PlayerComponent p = unit.GetComponent<PlayerComponent>();
-                    if (p != null)
-                    {
-                        if (p.selected)
+                        if (invoc != null &&
+                            (invoc.herob == false ||
+                             invoc.hero == null ||
+                            invoc.hero.GetComponent<UnitMov>().Neighbours.Count != 0 &&
+                            (invoc.hero.GetComponent<UnitMov>().Neighbours.Contains(pos) ||
+                            invoc.hero.GetComponent<UnitAtk>().w.Contains(pos))))
                         {
-                            used = invoc.R1R2(R2, unit);
-                            if (used)
-                                unit.GetComponent<UnitDisplay>().OnMouseEnter();
-                            break;
+                            GameObject u = invoc.CreateUnit1(R1, pos);
+                            u.GetComponent<UnitMan>().statUpdate();
+                            used = true;
+                        }
+                        else
+                        {
+                            used = false;
                         }
                     }
                 }
-            }
-            if (R3 != null)
-            {
-                foreach (GameObject unit in gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().Units)
+
+                if (R2 != null)
                 {
-                    PlayerComponent p = unit.GetComponent<PlayerComponent>();
-                    if (p != null)
+                    foreach (GameObject unit in gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().Units)
                     {
-                        if (p.selected)
+                        PlayerComponent p = unit.GetComponent<PlayerComponent>();
+                        if (p != null)
                         {
-                            used = invoc.R2R3(R3, unit);
-                            if (used)
-                                unit.GetComponent<UnitDisplay>().OnMouseEnter();
-                            break;
+                            if (p.selected)
+                            {
+                                used = invoc.R1R2(R2, unit);
+                                if (used)
+                                    unit.GetComponent<UnitDisplay>().OnMouseEnter();
+                                break;
+                            }
                         }
                     }
                 }
-            }
+                if (R3 != null)
+                {
+                    foreach (GameObject unit in gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().Units)
+                    {
+                        PlayerComponent p = unit.GetComponent<PlayerComponent>();
+                        if (p != null)
+                        {
+                            if (p.selected)
+                            {
+                                used = invoc.R2R3(R3, unit);
+                                if (used)
+                                    unit.GetComponent<UnitDisplay>().OnMouseEnter();
+                                break;
+                            }
+                        }
+                    }
+                }
 
-            if (used)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                this.transform.SetParent(parentToReturnTo);
-                GetComponent<CanvasGroup>().blocksRaycasts = true;
-                GetComponent<CanvasGroup>().alpha = 1f; 
+                if (used)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    this.transform.SetParent(parentToReturnTo);
+                    GetComponent<CanvasGroup>().blocksRaycasts = true;
+                    GetComponent<CanvasGroup>().alpha = 1f;
+                }
             }
         }
     }

@@ -35,6 +35,7 @@ public class UnitMan : MonoBehaviourPun
         canhit = true;
         canmove = true;
         tomouse = true;
+        statUpdate();
     }
     [PunRPC]
     public void RemoveDeads()
@@ -50,7 +51,7 @@ public class UnitMan : MonoBehaviourPun
     public void EndTurn()
     {
         canhit = false;
-        canhit = false;
+        canmove = false;
         tomouse = true;
         statUpdate();
     }

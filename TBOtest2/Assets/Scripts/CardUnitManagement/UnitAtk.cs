@@ -118,6 +118,7 @@ public class UnitAtk : MonoBehaviourPun
         gameObject.GetComponent<UnitMan>().canhit = false;
         gameObject.GetComponent<UnitMan>().canmove = false;
         gameObject.GetComponent<UnitMan>().tomouse = true;
+        target.GetComponent<UnitDisplay>().OnMouseEnter();
 
 
     }

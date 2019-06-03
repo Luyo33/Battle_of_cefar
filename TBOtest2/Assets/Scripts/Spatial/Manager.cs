@@ -19,11 +19,16 @@ public class Manager : MonoBehaviour //Yael
     public List<GameObject> FriendlyUnits;
     public List<GameObject> Units;
     public GameObject[,] cellMap;
+    public GameObject Turnmanager;
+    public bool isTurn;
 
     public NavMeshSurface surface;
     // Start is called before the first frame update
     void Start()
     {
+        isTurn = PhotonNetwork.PlayerList[0] == PhotonNetwork.LocalPlayer;
+        if (isTurn)
+            Turnmanager =  PhotonNetwork.Instantiate("TurnManager",Vector3.zero,Quaternion.identity);
         Camera.main.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<CardControl>().BuildMod();
         GenerateMap();
         surface.BuildNavMesh();
@@ -34,7 +39,12 @@ public class Manager : MonoBehaviour //Yael
 
     public void OnClickEndTurn()
     {
-        foreach(GameObject unit in FriendlyUnits)
+        if(Turnmanager == null)
+            Turnmanager = gameObject.scene.GetRootGameObjects().Where(g => g.GetComponent<TurnManager>() != null).ToArray()[0];
+        isTurn = false;
+        Turnmanager.GetComponent<TurnManager>().photonView.RPC("EndTurn",RpcTarget.Others);
+        Camera.main.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<CardControl>().authorizedDraws = 1;
+        foreach (GameObject unit in FriendlyUnits)
         {
             unit.GetComponent<UnitMan>().EndTurn();
         }
@@ -76,6 +86,11 @@ public class Manager : MonoBehaviour //Yael
     {
         if (Input.GetKeyDown(KeyCode.C))
         {
+            if (Turnmanager == null)
+                Turnmanager = gameObject.scene.GetRootGameObjects().Where(g => g.GetComponent<TurnManager>() != null).ToArray()[0];
+            isTurn = true;
+            Turnmanager.GetComponent<TurnManager>().photonView.RPC("StartTurn", RpcTarget.Others);
+            Camera.main.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<CardControl>().authorizedDraws = 1;
             foreach (GameObject unit in EnemyUnits)
             {
                 unit.GetComponent<UnitMan>().EndTurn();

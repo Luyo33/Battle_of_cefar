@@ -192,6 +192,7 @@
     <Compile Include="Assets\Scripts\Multiplayer\MultiplayerSetting.cs" />
     <Compile Include="Assets\Scripts\Multiplayer\PhotonLobby.cs" />
     <Compile Include="Assets\Scripts\Multiplayer\PhotonRoom.cs" />
+    <Compile Include="Assets\Scripts\Multiplayer\TurnManager.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\CameraMouvement.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\CardControl.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\PlayerComponent.cs" />

@@ -150,7 +150,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 43.828384
+  m_Radius: 40
   m_Height: 2078
   m_Direction: 1
   m_Center: {x: 0, y: 1084, z: 0}
@@ -206,8 +206,8 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 9043195461238765378}
-  viewIdField: 4
-  InstantiationId: 4
+  viewIdField: 3
+  InstantiationId: 3
   isRuntimeInstantiated: 0
 --- !u!114 &9043195461238765378
 MonoBehaviour:

@@ -53,4 +53,5 @@ MonoBehaviour:
   - LoseHp
   - SyncIfR2
   - SyncIfR3
+  - EndTurn
   DisableAutoOpenWizard: 1
