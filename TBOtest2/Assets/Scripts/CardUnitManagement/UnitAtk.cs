@@ -117,7 +117,9 @@ public class UnitAtk : MonoBehaviourPun
         target.GetComponent<UnitMan>().statUpdate();
         gameObject.GetComponent<UnitMan>().canhit = false;
         gameObject.GetComponent<UnitMan>().canmove = false;
-        
+        gameObject.GetComponent<UnitMan>().tomouse = true;
+
+
     }
     
     
