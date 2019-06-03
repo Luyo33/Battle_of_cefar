@@ -181,6 +181,7 @@ public class CardControl : MonoBehaviourPun
         //unit.transform.parent = something.transform;//for hierarchy
         unit.GetComponent<UnitMan>().statUpdate();
         hand.Remove(template);
+        FindObjectOfType<AudioManager>().Play("Toc");
         return unit;
     }
 
@@ -203,7 +204,7 @@ public class CardControl : MonoBehaviourPun
             }
             Unit.GetComponent<UnitMan>().statUpdate();
             hand.Remove(template);
-            FindObjectOfType<AudioManager>().Play("Toc");
+            FindObjectOfType<AudioManager>().Play("Upgrade");
 
             return true;
         }
@@ -223,6 +224,7 @@ public class CardControl : MonoBehaviourPun
             Unit.GetComponent<UnitStat>().move += template.moveplus;
             Unit.GetComponent<UnitStat>().range += template.rangeplus;
             hand.Remove(template);
+            FindObjectOfType<AudioManager>().Play("Upgrade");
             return true;
         }
 

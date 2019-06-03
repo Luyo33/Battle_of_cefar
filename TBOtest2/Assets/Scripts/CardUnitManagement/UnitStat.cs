@@ -99,6 +99,7 @@ public class UnitStat : MonoBehaviourPun
 
         if (candie && hp < 1)
         {
+            FindObjectOfType<AudioManager>().Play("Bad");
             gameObject.GetComponent<UnitMan>().photonView.RPC("RemoveDeads", RpcTarget.All);
             if (photonView.Owner == PhotonNetwork.LocalPlayer)
                 PhotonNetwork.Destroy(gameObject);
