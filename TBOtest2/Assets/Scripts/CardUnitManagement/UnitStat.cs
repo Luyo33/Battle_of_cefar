@@ -124,8 +124,10 @@ public class UnitStat : MonoBehaviourPun
 //            range += R3.rangeplus;
 //            move += R3.moveplus;
 //        }
+
         if (candie && hp < 1)
         {
+            FindObjectOfType<AudioManager>().Play("Bad");
             gameObject.GetComponent<UnitMan>().photonView.RPC("RemoveDeads", RpcTarget.All);
             if (photonView.Owner == PhotonNetwork.LocalPlayer)
                 PhotonNetwork.Destroy(gameObject);
