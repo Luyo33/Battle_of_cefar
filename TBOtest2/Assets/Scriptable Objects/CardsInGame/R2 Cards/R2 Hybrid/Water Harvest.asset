@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Water Harvest
   description: Brings the water from the Mountains
   element: 2
+  sprite: {fileID: 21300000, guid: 49c9481fb0b821b47a12e28badc53ff9, type: 3}
   cardrank: 2
   biome: 4
   bonus: 1

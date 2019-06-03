@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Pushing Winds
   description: 'Utilize The Strong Winds In The Plains '
   element: 3
+  sprite: {fileID: 21300000, guid: 702e432d34bb18245811bac7b027d438, type: 3}
   cardrank: 2
   biome: 0
   bonus: 0

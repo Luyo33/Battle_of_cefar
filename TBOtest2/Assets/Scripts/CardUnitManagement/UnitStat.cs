@@ -108,7 +108,26 @@ public class UnitStat : MonoBehaviourPun
     //    //hp = template.hp;
     //    range = template.range;
     //    move = template.move;
+<<<<<<< HEAD
     //    element = template.element;
+=======
+//    //    element = template.element;
+//        if (gameObject.GetComponent<UnitMan>().R2 != null)
+//        {
+//            stat = gameObject.GetComponent<UnitMan>().R2.stat;
+//            biome = gameObject.GetComponent<UnitMan>().R2.biome;
+//            statBonus =  gameObject.GetComponent<UnitMan>().R2.bonus;
+//        }
+//        if (gameObject.GetComponent<UnitMan>().R3 != null)
+//        {
+//            Card_R3 R3 = gameObject.GetComponent<UnitMan>().R3;
+//            hp += R3.hpplus;
+//            atk += R3.atkplus;
+//            range += R3.rangeplus;
+//            move += R3.moveplus;
+//        }
+
+>>>>>>> Aristide
         if (candie && hp < 1)
         {
             gameObject.GetComponent<UnitMan>().photonView.RPC("RemoveDeads", RpcTarget.All);

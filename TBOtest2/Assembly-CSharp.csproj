@@ -186,8 +186,10 @@
     <Compile Include="Assets\Scripts\CardUnitManagement\UnitMan.cs" />
     <Compile Include="Assets\Scripts\CardUnitManagement\UnitMov.cs" />
     <Compile Include="Assets\Scripts\CardUnitManagement\UnitStat.cs" />
+    <Compile Include="Assets\Scripts\MenuSettings\AudioManager.cs" />
     <Compile Include="Assets\Scripts\MenuSettings\Menu.cs" />
     <Compile Include="Assets\Scripts\MenuSettings\OptionsMenu.cs" />
+    <Compile Include="Assets\Scripts\MenuSettings\Sound.cs" />
     <Compile Include="Assets\Scripts\MenuSettings\TranscendentMusic.cs" />
     <Compile Include="Assets\Scripts\Multiplayer\MultiplayerSetting.cs" />
     <Compile Include="Assets\Scripts\Multiplayer\PhotonLobby.cs" />
@@ -195,6 +197,7 @@
     <Compile Include="Assets\Scripts\Multiplayer\TurnManager.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\CameraMouvement.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\CardControl.cs" />
+    <Compile Include="Assets\Scripts\PlayerManagement\Deleter.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\PlayerComponent.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\PlayerMotor.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\Select.cs" />

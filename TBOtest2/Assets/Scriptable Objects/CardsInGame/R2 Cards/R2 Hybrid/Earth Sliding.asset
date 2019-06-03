@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Earth Siding
   description: The extra speed Gives you more range to reach the enemy
   element: 4
+  sprite: {fileID: 21300000, guid: b47e67df99edce24285e90a945b33d10, type: 3}
   cardrank: 2
   biome: 4
   bonus: 1

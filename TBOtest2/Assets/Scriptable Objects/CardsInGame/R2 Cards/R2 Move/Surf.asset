@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Surf
   m_EditorClassIdentifier: 
   name: Surf
-  description: Commun technique to travel faster when on water
+  description: Common technique to travel faster when on water
   element: 2
+  sprite: {fileID: 21300000, guid: a70a2d74f633aaf41a5bd7ba3675e29a, type: 3}
   cardrank: 2
   biome: 2
   bonus: 0

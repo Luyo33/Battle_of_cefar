@@ -29,6 +29,7 @@ public class CardControl : MonoBehaviourPun
     public int deckCount;
     public List<CardTemplate> hand;
     public GameObject hero;
+    public GameObject bin;
     public bool herob;
 
     public Dictionary<Card_R1.Model, GameObject> mod;
@@ -98,6 +99,7 @@ public class CardControl : MonoBehaviourPun
             card.GetComponent<CardDisplay>().Card = c;
             card.GetComponent<Draggable>().hand = gameObject;
             card.GetComponent<Draggable>().invoc = this;
+            card.GetComponent<Draggable>().bin = bin;
             card.GetComponent<Draggable>().battlefield = battlefield;
             card.GetComponent<CardDisplay>().setR(); //here
             card.GetComponent<Draggable>().setR(); //here
@@ -114,6 +116,7 @@ public class CardControl : MonoBehaviourPun
             card.GetComponent<CardDisplay>().Card = c;
             card.GetComponent<Draggable>().hand = gameObject;
             card.GetComponent<Draggable>().invoc = this;
+            card.GetComponent<Draggable>().bin = bin;
             card.GetComponent<Draggable>().battlefield = battlefield;
             card.GetComponent<CardDisplay>().setR(); //here
             card.GetComponent<Draggable>().setR(); //here
@@ -129,6 +132,7 @@ public class CardControl : MonoBehaviourPun
             card.GetComponent<CardDisplay>().Card = c;
             card.GetComponent<Draggable>().hand = gameObject;
             card.GetComponent<Draggable>().invoc = this;
+            card.GetComponent<Draggable>().bin = bin;
             card.GetComponent<Draggable>().battlefield = battlefield;
             card.GetComponent<CardDisplay>().setR(); //here
             card.GetComponent<Draggable>().setR(); //here
@@ -136,6 +140,7 @@ public class CardControl : MonoBehaviourPun
             card.transform.rotation = new Quaternion(0,0,0,0);
             card.GetComponent<CardDisplay>().DisplayUp();
         }
+        
         hand.Add(c);
     }
     public void Shuffle()
@@ -190,7 +195,14 @@ public class CardControl : MonoBehaviourPun
         if (u.element == template.element && u.rank < 3)
         {
             Unit.GetComponent<UnitMan>().R2 = template;
+<<<<<<< HEAD
             Unit.GetComponent<UnitStat>().InitR2();
+=======
+            Unit.GetComponent<UnitStat>().rank = 2;
+            Unit.GetComponent<UnitStat>().biome = template.biome;
+            Unit.GetComponent<UnitStat>().stat = template.stat;
+            Unit.GetComponent<UnitStat>().statBonus = template.bonus;
+>>>>>>> Aristide
             Unit.GetComponent<UnitAtk>().Start();
             if (template.stat == CardTemplate.Stat.move)
             {
@@ -198,6 +210,7 @@ public class CardControl : MonoBehaviourPun
             }
             Unit.GetComponent<UnitMan>().statUpdate();
             hand.Remove(template);
+            FindObjectOfType<AudioManager>().Play("Toc");
 
             return true;
         }
@@ -211,7 +224,15 @@ public class CardControl : MonoBehaviourPun
         if (u.element == template.element && u.rank == 2)
         {
             Unit.GetComponent<UnitMan>().R3 = template;
+<<<<<<< HEAD
             Unit.GetComponent<UnitStat>().InitR3();
+=======
+            u.rank = 3;
+            Unit.GetComponent<UnitStat>().hp += template.hpplus;
+            Unit.GetComponent<UnitStat>().atk += template.atkplus;
+            Unit.GetComponent<UnitStat>().move += template.moveplus;
+            Unit.GetComponent<UnitStat>().range += template.rangeplus;
+>>>>>>> Aristide
             hand.Remove(template);
             return true;
         }

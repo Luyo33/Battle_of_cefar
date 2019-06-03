@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Boots
   description: Good old boots
   element: 0
+  sprite: {fileID: 21300000, guid: 5ac90f282507dd944a4e0bb87b660f45, type: 3}
   cardrank: 2
   biome: 0
   bonus: 0
