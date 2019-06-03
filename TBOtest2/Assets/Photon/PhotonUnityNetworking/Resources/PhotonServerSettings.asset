@@ -48,4 +48,7 @@ MonoBehaviour:
   - AddEnemyUnit
   - SetPosition
   - Startturn
+  - RemoveDeads
+  - DestroyThis
+  - LoseHp
   DisableAutoOpenWizard: 1

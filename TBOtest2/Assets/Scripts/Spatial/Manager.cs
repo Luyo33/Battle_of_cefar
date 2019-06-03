@@ -44,6 +44,34 @@ public class Manager : MonoBehaviour //Yael
         }
     }
 
+    public void AddEnemy(GameObject unit)
+    {
+        if (Units == null)
+            Units = new List<GameObject>();
+        if (EnemyUnits == null)
+            EnemyUnits = new List<GameObject>();
+        Units.Add(unit);
+        EnemyUnits.Add(unit);
+    }
+    
+    public void AddFriendly(GameObject unit)
+    {
+        if (Units == null)
+            Units = new List<GameObject>();
+        if (FriendlyUnits == null)
+            FriendlyUnits = new List<GameObject>();
+        Units.Add(unit);
+        FriendlyUnits.Add(unit);
+    }
+
+    public void RemoveCorpses(int id)
+    {
+        Units = Units.Where(e => e.GetComponent<UnitMan>().id != id).ToList();
+        FriendlyUnits = FriendlyUnits.Where(e => e.GetComponent<UnitMan>().id != id).ToList();
+        EnemyUnits = EnemyUnits.Where(e => e.GetComponent<UnitMan>().id != id).ToList();
+    }
+
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.C))
@@ -59,13 +87,14 @@ public class Manager : MonoBehaviour //Yael
         }
     }
 
+
     public GameObject selected()
     {
-        foreach (GameObject c in cellMap)
+        foreach (Transform c in transform)
         {
-            if (c.GetComponent<Selector>().IsSelected)
+            if (c.gameObject.GetComponent<Selector>().IsSelected)
             {
-                return c;
+                return c.gameObject;
             }
         }
 
@@ -99,9 +128,9 @@ public class Manager : MonoBehaviour //Yael
         float varZ = seed.z * 10000;
         float deltaX = seed.y * 10000;
         float deltaZ = seed.w * 10000;
-        for (int x = 0; x < cellMap.GetLength(0); x++)
+        for (int x = 0; x < sizeX; x++)
         {
-            for (int z = 0; z < cellMap.GetLength(1); z++)
+            for (int z = 0; z < sizeZ; z++)
             {
                 float y = Mathf.PerlinNoise(x * stepX + varX, z * stepZ + varZ);
                 GameObject closest = biomesCell[0];
@@ -129,9 +158,14 @@ public class Manager : MonoBehaviour //Yael
     //Aristide
     public GameObject GetCellFromXZ(int x, int z)
     {
-        if (x < cellMap.GetLength(0) && z < cellMap.GetLength(1) && x >= 0 && z >= 0)
+        if (x < sizeX && z < sizeZ && x >= 0 && z >= 0)
         {
-            return cellMap[x, z];
+            foreach (Transform cell in transform)
+            {
+                if ((int)cell.position.x == x && (int)-cell.position.z == z)
+                    return cell.gameObject;
+            }
+            return null;
         }
         else
         {
@@ -142,25 +176,18 @@ public class Manager : MonoBehaviour //Yael
     {
         int x = pos.x;
         int z = pos.y;
-        if (x < cellMap.GetLength(0) && z < cellMap.GetLength(1) && x >= 0 && z >= 0)
-        {
-            return cellMap[x, z];
-        }
-        else
-        {
-            return null;
-        }
+        return GetCellFromXZ(x, z);
     }
 
     public bool IsHere(int x, int z)
     {
-        return x < cellMap.GetLength(0) && z < cellMap.GetLength(1) && x >= 0 && z >= 0;
+        return x < sizeX && z < sizeZ && x >= 0 && z >= 0;
     }
     public bool IsHere(Vector2Int pos)
     {
         int x = pos.x;
         int z = pos.y;
-        return x < cellMap.GetLength(0) && z < cellMap.GetLength(1) && x >= 0 && z >= 0;
+        return IsHere(x,z);
     }
     
     public GameObject GetUnitFromXZ(Vector2Int pos)

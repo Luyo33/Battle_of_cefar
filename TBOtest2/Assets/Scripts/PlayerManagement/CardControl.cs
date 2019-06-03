@@ -8,6 +8,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
+using System.Linq;
 
 public class CardControl : MonoBehaviourPun
 {
@@ -28,7 +29,7 @@ public class CardControl : MonoBehaviourPun
     // Start is called before the first frame update
     private void Start()
     {
-        field = battlefield.GetComponent<Manager>();
+        field = gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>();
         deckCount = 0;
         hero = null;
         herob = false;
