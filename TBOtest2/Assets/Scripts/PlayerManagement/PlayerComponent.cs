@@ -67,7 +67,7 @@ public class PlayerComponent : MonoBehaviourPun
                             gameObject.GetComponent<UnitMov>().position != pos)
                         {
                             Debug.Log("Possible Movement");
-                            gameObject.GetComponent<UnitMov>().position = pos;
+                            gameObject.GetComponent<UnitMov>().photonView.RPC("SetPosition",RpcTarget.All, pos.x, pos.y);
                             Debug.Log("You moved to : " + gameObject.GetComponent<UnitMov>().position);
                             motor.MoveToPoint(hit.point);
                             Debug.Log(gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>()

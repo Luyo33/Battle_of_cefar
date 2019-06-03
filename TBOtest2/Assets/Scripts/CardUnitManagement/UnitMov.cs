@@ -36,7 +36,6 @@ public class UnitMov : MonoBehaviourPun
         yield return new WaitUntil(() => gameObject.GetComponent<UnitMan>().R1 != null);
         battle = gameObject.scene.GetRootGameObjects()[0];
         move = gameObject.GetComponent<UnitMan>().R1.move;
-        photonView.RPC("SetPosition", RpcTarget.All, (int)gameObject.transform.position.x,(int) - gameObject.transform.position.z);
         Neighbours = new List<Vector2Int>();
         //Debug.Log("UnitCanMove");
     }
@@ -48,7 +47,6 @@ public class UnitMov : MonoBehaviourPun
         ActivateMovBonus();
         Neighbours = AvailableFields();
         photonView.RPC("SyncMoveStat", RpcTarget.Others);
-        photonView.RPC("SetPosition", RpcTarget.All, (int)gameObject.transform.position.x, (int)-gameObject.transform.position.z);
     }
     public void OnMouseOver()
     {
