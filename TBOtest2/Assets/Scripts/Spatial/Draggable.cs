@@ -88,22 +88,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
         else
         {
-<<<<<<< HEAD
             Debug.Log(eventData.button.ToString());
             if (eventData.button == PointerEventData.InputButton.Right)
-=======
-            
-            R1 = GetComponent<CardDisplay>().CardR1;
-            R2 = GetComponent<CardDisplay>().CardR2;
-            R3 = GetComponent<CardDisplay>().CardR3;
-            if (bin.GetComponent<Deleter>().delete && Input.GetMouseButtonUp(1))
-            {
-                hand.GetComponent<CardControl>().hand.Remove(Card);
-                Destroy(gameObject);
-                return;
-            }
-            if (R1 != null)
->>>>>>> Aristide
             {
                 R1 = GetComponent<CardDisplay>().CardR1;
                 R2 = GetComponent<CardDisplay>().CardR2;
@@ -166,7 +152,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                         }
                     }
                 }
-<<<<<<< HEAD
 
                 if (used)
                 {
@@ -178,24 +163,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                     GetComponent<CanvasGroup>().blocksRaycasts = true;
                     GetComponent<CanvasGroup>().alpha = 1f;
                 }
-=======
-            }
-//
-//            if (bin.GetComponent<Deleter>().delete && Input.GetMouseButtonUp(1))
-//            {
-//                used = true;
-//            }
-            Debug.Log(used);
-            if (used)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                this.transform.SetParent(parentToReturnTo);
-                GetComponent<CanvasGroup>().blocksRaycasts = true;
-                GetComponent<CanvasGroup>().alpha = 1f; 
->>>>>>> Aristide
             }
         }
     }

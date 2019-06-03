@@ -108,9 +108,7 @@ public class UnitStat : MonoBehaviourPun
     //    //hp = template.hp;
     //    range = template.range;
     //    move = template.move;
-<<<<<<< HEAD
     //    element = template.element;
-=======
 //    //    element = template.element;
 //        if (gameObject.GetComponent<UnitMan>().R2 != null)
 //        {
@@ -127,10 +125,6 @@ public class UnitStat : MonoBehaviourPun
 //            move += R3.moveplus;
 //        }
 
-<<<<<<< HEAD
-=======
->>>>>>> Aristide
->>>>>>> f2b0b550341a1da31983feea76f7fa9f6ee781b4
         if (candie && hp < 1)
         {
             FindObjectOfType<AudioManager>().Play("Bad");
