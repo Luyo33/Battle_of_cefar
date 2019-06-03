@@ -54,4 +54,5 @@ MonoBehaviour:
   - SyncIfR2
   - SyncIfR3
   - EndTurn
+  - Play
   DisableAutoOpenWizard: 1

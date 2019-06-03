@@ -28,7 +28,10 @@ public class Manager : MonoBehaviour //Yael
     {
         isTurn = PhotonNetwork.PlayerList[0] == PhotonNetwork.LocalPlayer;
         if (isTurn)
-            Turnmanager =  PhotonNetwork.Instantiate("TurnManager",Vector3.zero,Quaternion.identity);
+        {
+            Turnmanager = PhotonNetwork.Instantiate("TurnManager", Vector3.zero, Quaternion.identity);
+            PhotonNetwork.Instantiate("AudioManager", Vector3.zero, Quaternion.identity);
+        }
         Camera.main.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<CardControl>().BuildMod();
         GenerateMap();
         surface.BuildNavMesh();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Photon.Pun;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,7 +66,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             this.transform.SetParent(parent.parent);
 
             GetComponent<CanvasGroup>().blocksRaycasts = false;
-            FindObjectOfType<AudioManager>().Play("Toc");
+            FindObjectOfType<AudioManager>().photonView.RPC("Play", PhotonNetwork.LocalPlayer, "Toc");
         }
     }
 

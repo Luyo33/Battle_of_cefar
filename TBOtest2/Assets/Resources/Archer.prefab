@@ -444,8 +444,13 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 6697990935599389253}
+<<<<<<< HEAD
   viewIdField: 1
   InstantiationId: 1
+=======
+  viewIdField: 4
+  InstantiationId: 4
+>>>>>>> FuckingMulti
   isRuntimeInstantiated: 0
 --- !u!114 &6697990935599389253
 MonoBehaviour:
