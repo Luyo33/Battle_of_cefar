@@ -40,6 +40,12 @@ public class UnitDisplay : MonoBehaviourPun
              bonus =  Environment.NewLine + "BONUS : " + gameObject.GetComponent<UnitStat>().stat.ToString() +
                       "+"+gameObject.GetComponent<UnitStat>().statBonus + " ON " + gameObject.GetComponent<UnitStat>().biome.ToString();
          }
+         
+         if(gameObject.GetComponent<UnitStat>().MvBonus != 0)
+         {
+            bonus =  Environment.NewLine + "BONUS : " + gameObject.GetComponent<UnitStat>().stat.ToString() +
+                     "+"+gameObject.GetComponent<UnitStat>().MvBonus + " ON " + gameObject.GetComponent<UnitStat>().biome.ToString();
+         }
 
          if (gameObject.GetComponent<UnitMan>().R1)
          {
