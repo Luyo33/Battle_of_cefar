@@ -28,6 +28,7 @@ public class CardControl : MonoBehaviourPun
     public int deckCount;
     public List<CardTemplate> hand;
     public GameObject hero;
+    public GameObject bin;
     public bool herob;
 
     public Dictionary<Card_R1.Model, GameObject> mod;
@@ -95,6 +96,7 @@ public class CardControl : MonoBehaviourPun
             card.GetComponent<CardDisplay>().Card = c;
             card.GetComponent<Draggable>().hand = gameObject;
             card.GetComponent<Draggable>().invoc = this;
+            card.GetComponent<Draggable>().bin = bin;
             card.GetComponent<Draggable>().battlefield = battlefield;
             card.GetComponent<CardDisplay>().setR(); //here
             card.GetComponent<Draggable>().setR(); //here
@@ -111,6 +113,7 @@ public class CardControl : MonoBehaviourPun
             card.GetComponent<CardDisplay>().Card = c;
             card.GetComponent<Draggable>().hand = gameObject;
             card.GetComponent<Draggable>().invoc = this;
+            card.GetComponent<Draggable>().bin = bin;
             card.GetComponent<Draggable>().battlefield = battlefield;
             card.GetComponent<CardDisplay>().setR(); //here
             card.GetComponent<Draggable>().setR(); //here
@@ -126,6 +129,7 @@ public class CardControl : MonoBehaviourPun
             card.GetComponent<CardDisplay>().Card = c;
             card.GetComponent<Draggable>().hand = gameObject;
             card.GetComponent<Draggable>().invoc = this;
+            card.GetComponent<Draggable>().bin = bin;
             card.GetComponent<Draggable>().battlefield = battlefield;
             card.GetComponent<CardDisplay>().setR(); //here
             card.GetComponent<Draggable>().setR(); //here
@@ -133,6 +137,7 @@ public class CardControl : MonoBehaviourPun
             card.transform.rotation = new Quaternion(0,0,0,0);
             card.GetComponent<CardDisplay>().DisplayUp();
         }
+        
         hand.Add(c);
     }
     public void Shuffle()

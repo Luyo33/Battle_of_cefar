@@ -19,6 +19,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public Card_R2 R2;
     public Card_R3 R3;
     public bool used;
+    public GameObject bin;
     
     //public enum Tile{ PLAIN, MOUNTAIN, LAKE, DESERT, FOREST, MAP}
 
@@ -85,6 +86,12 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             R1 = GetComponent<CardDisplay>().CardR1;
             R2 = GetComponent<CardDisplay>().CardR2;
             R3 = GetComponent<CardDisplay>().CardR3;
+            if (bin.GetComponent<Deleter>().delete && Input.GetMouseButtonUp(1))
+            {
+                hand.GetComponent<CardControl>().hand.Remove(Card);
+                Destroy(gameObject);
+                return;
+            }
             if (R1 != null)
             {
                 Vector2Int pos = gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().Vselected();
@@ -139,8 +146,12 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                     }
                 }
             }
+//
+//            if (bin.GetComponent<Deleter>().delete && Input.GetMouseButtonUp(1))
+//            {
+//                used = true;
+//            }
             Debug.Log(used);
-
             if (used)
             {
                 Destroy(gameObject);

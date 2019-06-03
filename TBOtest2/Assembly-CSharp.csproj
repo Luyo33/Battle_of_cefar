@@ -3,9 +3,9 @@
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
     <_TargetFrameworkDirectories>non_empty_path_generated_by_rider_editor_plugin</_TargetFrameworkDirectories>
     <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_rider_editor_plugin</_FullFrameworkReferenceAssemblyPaths>
+    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -183,14 +183,17 @@
     <Compile Include="Assets\Scripts\CardUnitManagement\UnitMan.cs" />
     <Compile Include="Assets\Scripts\CardUnitManagement\UnitMov.cs" />
     <Compile Include="Assets\Scripts\CardUnitManagement\UnitStat.cs" />
+    <Compile Include="Assets\Scripts\MenuSettings\AudioManager.cs" />
     <Compile Include="Assets\Scripts\MenuSettings\Menu.cs" />
     <Compile Include="Assets\Scripts\MenuSettings\OptionsMenu.cs" />
+    <Compile Include="Assets\Scripts\MenuSettings\Sound.cs" />
     <Compile Include="Assets\Scripts\MenuSettings\TranscendentMusic.cs" />
     <Compile Include="Assets\Scripts\Multiplayer\MultiplayerSetting.cs" />
     <Compile Include="Assets\Scripts\Multiplayer\PhotonLobby.cs" />
     <Compile Include="Assets\Scripts\Multiplayer\PhotonRoom.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\CameraMouvement.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\CardControl.cs" />
+    <Compile Include="Assets\Scripts\PlayerManagement\Deleter.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\PlayerComponent.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\PlayerMotor.cs" />
     <Compile Include="Assets\Scripts\PlayerManagement\Select.cs" />
