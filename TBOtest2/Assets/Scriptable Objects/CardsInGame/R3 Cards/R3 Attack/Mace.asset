@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1943657ee14746bc9a57a3e280ce4390, type: 3}
-  m_Name: Mass
+  m_Name: Mace
   m_EditorClassIdentifier: 
-  name: Mass
+  name: Mace
   description: Hit as hard as you can
   element: 0
+  sprite: {fileID: 0}
   cardrank: 3
   moveplus: 0
   rangeplus: 0

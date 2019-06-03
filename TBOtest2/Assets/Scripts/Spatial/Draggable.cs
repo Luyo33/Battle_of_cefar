@@ -65,6 +65,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             this.transform.SetParent(parent.parent);
 
             GetComponent<CanvasGroup>().blocksRaycasts = false;
+            FindObjectOfType<AudioManager>().Play("Toc");
         }
     }
 

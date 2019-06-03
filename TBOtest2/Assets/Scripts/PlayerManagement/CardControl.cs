@@ -203,6 +203,7 @@ public class CardControl : MonoBehaviourPun
             }
             Unit.GetComponent<UnitMan>().statUpdate();
             hand.Remove(template);
+            FindObjectOfType<AudioManager>().Play("Toc");
 
             return true;
         }
