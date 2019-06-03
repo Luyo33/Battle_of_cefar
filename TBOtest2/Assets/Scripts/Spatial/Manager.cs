@@ -24,12 +24,12 @@ public class Manager : MonoBehaviour //Yael
     // Start is called before the first frame update
     void Start()
     {
+        Camera.main.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<CardControl>().BuildMod();
         GenerateMap();
         surface.BuildNavMesh();
         Units = new List<GameObject>();
         EnemyUnits = new List<GameObject>();
         FriendlyUnits = new List<GameObject>();
-
     }
 
     public void OnClickEndTurn()

@@ -35,9 +35,17 @@ public class CardControl : MonoBehaviourPun
     public Dictionary<CardTemplate.Element, Material> color2;
 
     // Start is called before the first frame update
-    private void Start()
+    public void Start()
     {
-<<<<<<< HEAD
+        field = gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>();
+        deckCount = 0;
+        hero = null;
+        herob = false;
+        BuildDeck();
+        FirstTurn();
+    }
+    public void BuildMod()
+    {
         mod = new Dictionary<Card_R1.Model, GameObject>();
         mod.Add(Card_R1.Model.None, EmptyUnit);
         mod.Add(Card_R1.Model.Archer, EmptyArcher);
@@ -45,15 +53,6 @@ public class CardControl : MonoBehaviourPun
         mod.Add(Card_R1.Model.Executioner, EmptyExecutioner);
         mod.Add(Card_R1.Model.Knight, EmptyKnight);
         mod.Add(Card_R1.Model.Mage, EmptyMage);
-        field = battlefield.GetComponent<Manager>();
-=======
-        field = gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>();
->>>>>>> CopyAristide
-        deckCount = 0;
-        hero = null;
-        herob = false;
-        BuildDeck();
-        FirstTurn();
     }
 
     public void BuildDeck()
@@ -158,7 +157,7 @@ public class CardControl : MonoBehaviourPun
     {
         GameObject inst = mod[template.model];
         GameObject unit = PhotonNetwork.Instantiate(inst.name,
-            new Vector3(position.x, field.GetCellFromXZ(position).GetComponent<BiomeProp>().height, -position.y),
+            new Vector3(position.x, gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetCellFromXZ(position).GetComponent<BiomeProp>().height, -position.y),
             Quaternion.identity);
         unit.GetComponent<UnitMan>().R1 = template;
         unit.GetComponent<UnitMan>().battle = battlefield;

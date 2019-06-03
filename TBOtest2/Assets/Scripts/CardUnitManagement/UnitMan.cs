@@ -52,6 +52,7 @@ public class UnitMan : MonoBehaviourPun
         canhit = false;
         canhit = false;
         tomouse = true;
+        statUpdate();
     }
     
     public void AddUnit()
