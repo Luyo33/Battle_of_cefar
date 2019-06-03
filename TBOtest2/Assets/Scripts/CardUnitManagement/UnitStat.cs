@@ -126,7 +126,8 @@ public class UnitStat : MonoBehaviourPun
 //        }
         if (candie && hp < 1)
         {
-            FindObjectOfType<AudioManager>().Play("Bad");
+            gameObject.GetComponent<UnitMov>().OnMouseExit();
+            FindObjectOfType<AudioManager>().photonView.RPC("Play",RpcTarget.All,"Bad");
             gameObject.GetComponent<UnitMan>().photonView.RPC("RemoveDeads", RpcTarget.All);
             if (photonView.Owner == PhotonNetwork.LocalPlayer)
                 PhotonNetwork.Destroy(gameObject);
@@ -137,25 +138,6 @@ public class UnitStat : MonoBehaviourPun
     
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Debug.Log("A was pressed");
-            statlog();
-        }
     }
-
-    public void statlog()
-    {
-        Debug.Log("hp " + hp);
-        Debug.Log("atk " + atk);
-        Debug.Log("range " + range);
-        Debug.Log("move " + move);
-        Debug.Log("element " + element);
-        if (gameObject.GetComponent<UnitMan>().R2 != null)
-        {
-            Debug.Log(stat);
-            Debug.Log(biome);
-            Debug.Log(statBonus);
-        }
-    }
+    
 }

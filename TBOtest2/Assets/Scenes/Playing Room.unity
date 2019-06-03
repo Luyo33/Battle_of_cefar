@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -303,6 +303,26 @@ PrefabInstance:
       propertyPath: stepZ
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5870550867594606291, guid: 5f6d83d6be7f125468cc57f7f920429f,
+        type: 3}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870550867594606291, guid: 5f6d83d6be7f125468cc57f7f920429f,
+        type: 3}
+      propertyPath: InstantiationId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870550867594606291, guid: 5f6d83d6be7f125468cc57f7f920429f,
+        type: 3}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5870550867594606291, guid: 5f6d83d6be7f125468cc57f7f920429f,
+        type: 3}
+      propertyPath: InstantiationId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1255134091023950544, guid: 5f6d83d6be7f125468cc57f7f920429f,
         type: 3}
       propertyPath: m_Enabled
@@ -314,26 +334,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2334186763500800170, guid: 17d4c6bfc23a87e4e8f2e3ce7cb71e99,
         type: 3}
-    - target: {fileID: 5870550867594606291, guid: 5f6d83d6be7f125468cc57f7f920429f,
-        type: 3}
-      propertyPath: viewIdField
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870550867594606291, guid: 5f6d83d6be7f125468cc57f7f920429f,
-        type: 3}
-      propertyPath: InstantiationId
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870550867594606291, guid: 5f6d83d6be7f125468cc57f7f920429f,
-        type: 3}
-      propertyPath: viewIdField
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870550867594606291, guid: 5f6d83d6be7f125468cc57f7f920429f,
-        type: 3}
-      propertyPath: InstantiationId
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1255134091023950544, guid: 5f6d83d6be7f125468cc57f7f920429f, type: 3}
     - {fileID: 7080984369122460956, guid: 5f6d83d6be7f125468cc57f7f920429f, type: 3}
@@ -1060,85 +1060,6 @@ MonoBehaviour:
   viewIdField: 8
   InstantiationId: 8
   isRuntimeInstantiated: 0
---- !u!1 &969953420
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 969953422}
-  - component: {fileID: 969953421}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &969953421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969953420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58d42bd131b63344c84f0741b3822a47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sounds:
-  - name: Toc
-    clip: {fileID: 8300000, guid: 3af59c23723133d44985ae2315304890, type: 3}
-    volume: 1
-    pitch: 3
-    source: {fileID: 0}
-  - name: Question
-    clip: {fileID: 8300000, guid: 98a0d3f91f3372d4bbd48a2ff44dadb3, type: 3}
-    volume: 1
-    pitch: 3
-    source: {fileID: 0}
-  - name: Answer
-    clip: {fileID: 8300000, guid: cf0bc744201da344a8c235e38bf9c003, type: 3}
-    volume: 1
-    pitch: 3
-    source: {fileID: 0}
-  - name: Bad
-    clip: {fileID: 8300000, guid: 9d2817e1b6e3c924795e010f4f2ba334, type: 3}
-    volume: 1
-    pitch: 3
-    source: {fileID: 0}
-  - name: Bim
-    clip: {fileID: 8300000, guid: 6dfddc09696d8a24387a3965411539d5, type: 3}
-    volume: 1
-    pitch: 3
-    source: {fileID: 0}
-  - name: Upgrade
-    clip: {fileID: 8300000, guid: 859647ee85ce1e04b9e3bf6d5e071248, type: 3}
-    volume: 1
-    pitch: 3
-    source: {fileID: 0}
-  - name: Cric
-    clip: {fileID: 8300000, guid: e0bcd0f5f3947a043becf121eb08efa0, type: 3}
-    volume: 1
-    pitch: 3
-    source: {fileID: 0}
---- !u!4 &969953422
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 969953420}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1085751577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,6 +1434,7 @@ MonoBehaviour:
     type: 3}
   battlefield: {fileID: 1737194752}
   field: {fileID: 0}
+  authorizedDraws: 0
   DeckBuilder: {fileID: 11400000, guid: da1f19060d50aa44694800edbe16a9c0, type: 2}
   Deck: []
   deckCount: 0

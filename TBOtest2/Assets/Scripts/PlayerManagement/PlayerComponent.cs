@@ -74,7 +74,7 @@ public class PlayerComponent : MonoBehaviourPun
                                 .GetCellFromXZ(gameObject.GetComponent<UnitMov>().position));
                             gameObject.GetComponent<UnitMan>().canmove = false;
                             gameObject.GetComponent<UnitMan>().canhit = true;
-                            FindObjectOfType<AudioManager>().Play("Answer");
+                            FindObjectOfType<AudioManager>().photonView.RPC("Play", RpcTarget.All, "Answer");
                         }
                         
                         else
@@ -91,7 +91,7 @@ public class PlayerComponent : MonoBehaviourPun
                             if (ennemy == target)
                             {
                                 atk.attack(ennemy);
-                                FindObjectOfType<AudioManager>().Play("Cric");
+                                FindObjectOfType<AudioManager>().photonView.RPC("Play", RpcTarget.All, "Cric");
                                 //target.GetComponent<UnitMan>().GetHit();
                                 break;
                             }
@@ -115,7 +115,7 @@ public class PlayerComponent : MonoBehaviourPun
                 Select Unit = hit.collider.GetComponent<Select>();
                 if (Unit)
                 {
-                    FindObjectOfType<AudioManager>().Play("Question");
+                    FindObjectOfType<AudioManager>().photonView.RPC("Play", PhotonNetwork.LocalPlayer, "Question");
                     Unit.SelectMe();
                     //selected = true;
                     Unit.selected = true;
