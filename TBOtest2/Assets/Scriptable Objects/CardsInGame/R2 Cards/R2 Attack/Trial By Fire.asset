@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Trial By Fire
   description: Not like in the dark ages but a sword on fire
   element: 1
-  sprite: {fileID: 21300000, guid: 86904834db0f2584a9b966bcb9c5957a, type: 3}
+  sprite: {fileID: 21300000, guid: c6d20371c429cdb45981b5ca383cf6b0, type: 3}
   cardrank: 2
   biome: 3
   bonus: 4

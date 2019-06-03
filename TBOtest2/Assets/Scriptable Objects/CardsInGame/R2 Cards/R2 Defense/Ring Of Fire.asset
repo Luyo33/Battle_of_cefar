@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Ring Of Fire
   description: Surronders you with a magical
   element: 1
+  sprite: {fileID: 21300000, guid: 274312ff09420d3429541140083ce68d, type: 3}
   cardrank: 2
   biome: 3
   bonus: 2

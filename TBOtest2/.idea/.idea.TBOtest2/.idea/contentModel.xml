@@ -381,8 +381,10 @@
             <e p="UnitStat.cs" t="Include" />
           </e>
           <e p="MenuSettings" t="Include">
+            <e p="AudioManager.cs" t="Include" />
             <e p="Menu.cs" t="Include" />
             <e p="OptionsMenu.cs" t="Include" />
+            <e p="Sound.cs" t="Include" />
             <e p="TranscendentMusic.cs" t="Include" />
           </e>
           <e p="Multiplayer" t="Include">
@@ -393,6 +395,7 @@
           <e p="PlayerManagement" t="Include">
             <e p="CameraMouvement.cs" t="Include" />
             <e p="CardControl.cs" t="Include" />
+            <e p="Deleter.cs" t="Include" />
             <e p="PlayerComponent.cs" t="Include" />
             <e p="PlayerMotor.cs" t="Include" />
             <e p="Select.cs" t="Include" />

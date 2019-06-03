@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Fire Propultion
   description: Use actual fireworks to go faster
   element: 1
+  sprite: {fileID: 21300000, guid: de6a0a8e16dbb1c4ab872eb849ea7d17, type: 3}
   cardrank: 2
   biome: 3
   bonus: 0

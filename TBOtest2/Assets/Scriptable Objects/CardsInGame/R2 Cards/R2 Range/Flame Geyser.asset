@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Flame Geyser
   description: Makes fire come out the ground
   element: 1
+  sprite: {fileID: 21300000, guid: e40f52317c0543142ade2222542066a6, type: 3}
   cardrank: 2
   biome: 3
   bonus: 2

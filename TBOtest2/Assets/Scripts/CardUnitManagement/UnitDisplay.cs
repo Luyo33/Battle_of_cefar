@@ -40,7 +40,36 @@ public class UnitDisplay : MonoBehaviourPun
              bonus =  Environment.NewLine + "BONUS : " + gameObject.GetComponent<UnitStat>().stat.ToString() +
                       "+"+gameObject.GetComponent<UnitStat>().statBonus + " ON " + gameObject.GetComponent<UnitStat>().biome.ToString();
          }
+<<<<<<< HEAD
         rank = "R" + gameObject.GetComponent<UnitStat>().rank.ToString();
+=======
+         
+         if(gameObject.GetComponent<UnitStat>().MvBonus != 0)
+         {
+            bonus =  Environment.NewLine + "BONUS : " + gameObject.GetComponent<UnitStat>().stat.ToString() +
+                     "+"+gameObject.GetComponent<UnitStat>().MvBonus + " ON " + gameObject.GetComponent<UnitStat>().biome.ToString();
+         }
+
+         if (gameObject.GetComponent<UnitMan>().R1)
+         {
+             if (gameObject.GetComponent<UnitMan>().R2)
+             {
+                 if (gameObject.GetComponent<UnitMan>().R3)
+                 {
+                     rank = "R3";
+                 }
+                 else
+                 {
+                     rank = "R2";
+                 }
+             }
+             else
+             {
+                 rank = "R1";
+             }
+         }
+
+>>>>>>> Aristide
          text =  rank + Environment.NewLine + hp + Environment.NewLine + atk + Environment.NewLine + range + Environment.NewLine + move + Environment.NewLine + element
                 + hero + bonus;
          currentToolTipText = text;

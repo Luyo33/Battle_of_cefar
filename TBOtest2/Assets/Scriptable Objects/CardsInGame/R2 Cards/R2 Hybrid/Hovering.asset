@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Hovering
   description: Better than God Himself
   element: 3
+  sprite: {fileID: 21300000, guid: 0fc33dca9f4b74c4598002bc03d6e66a, type: 3}
   cardrank: 2
   biome: 2
   bonus: 0

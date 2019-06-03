@@ -229,8 +229,13 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 94451634911257286}
+<<<<<<< HEAD
   viewIdField: 2
   InstantiationId: 2
+=======
+  viewIdField: 5
+  InstantiationId: 5
+>>>>>>> Aristide
   isRuntimeInstantiated: 0
 --- !u!114 &94451634911257286
 MonoBehaviour:
