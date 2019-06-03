@@ -39,11 +39,12 @@ public class Manager : MonoBehaviour //Yael
 
     public void OnClickEndTurn()
     {
-        if(Turnmanager == null)
+        if(isTurn)
+            Camera.main.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<CardControl>().authorizedDraws = 1;
+        if (Turnmanager == null)
             Turnmanager = gameObject.scene.GetRootGameObjects().Where(g => g.GetComponent<TurnManager>() != null).ToArray()[0];
         isTurn = false;
         Turnmanager.GetComponent<TurnManager>().photonView.RPC("EndTurn",RpcTarget.Others);
-        Camera.main.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<CardControl>().authorizedDraws = 1;
         foreach (GameObject unit in FriendlyUnits)
         {
             unit.GetComponent<UnitMan>().EndTurn();
