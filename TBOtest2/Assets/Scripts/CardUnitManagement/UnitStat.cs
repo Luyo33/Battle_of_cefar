@@ -108,9 +108,7 @@ public class UnitStat : MonoBehaviourPun
     //    //hp = template.hp;
     //    range = template.range;
     //    move = template.move;
-<<<<<<< HEAD
     //    element = template.element;
-=======
 //    //    element = template.element;
 //        if (gameObject.GetComponent<UnitMan>().R2 != null)
 //        {
@@ -126,8 +124,6 @@ public class UnitStat : MonoBehaviourPun
 //            range += R3.rangeplus;
 //            move += R3.moveplus;
 //        }
-
->>>>>>> Aristide
         if (candie && hp < 1)
         {
             gameObject.GetComponent<UnitMan>().photonView.RPC("RemoveDeads", RpcTarget.All);
