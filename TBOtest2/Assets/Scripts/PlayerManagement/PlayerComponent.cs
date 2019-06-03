@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Photon.Pun;
+using System.Linq;
 
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerComponent : MonoBehaviourPun
@@ -59,7 +60,7 @@ public class PlayerComponent : MonoBehaviourPun
                     GameObject ennemy = hit.collider.gameObject;
                     if (ennemy.GetComponent<UnitMan>() == null)
                     {
-                        Vector2Int pos = gameObject.GetComponent<UnitMan>().battle.GetComponent<Manager>()
+                        Vector2Int pos = gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>()
                             .Vselected();
                         
                         if (gameObject.GetComponent<UnitMov>().Neighbours.Contains(pos) &&
@@ -69,8 +70,7 @@ public class PlayerComponent : MonoBehaviourPun
                             gameObject.GetComponent<UnitMov>().position = pos;
                             Debug.Log("You moved to : " + gameObject.GetComponent<UnitMov>().position);
                             motor.MoveToPoint(hit.point);
-                            Debug.Log(gameObject.GetComponent<UnitMan>()
-                                .battle.GetComponent<Manager>()
+                            Debug.Log(gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>()
                                 .GetCellFromXZ(gameObject.GetComponent<UnitMov>().position));
                             gameObject.GetComponent<UnitMan>().canmove = false;
                             gameObject.GetComponent<UnitMan>().canhit = true;

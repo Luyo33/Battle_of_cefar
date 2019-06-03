@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Numerics;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -86,9 +87,9 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             R3 = GetComponent<CardDisplay>().CardR3;
             if (R1 != null)
             {
-                Vector2Int pos = battlefield.GetComponent<Manager>().Vselected();
+                Vector2Int pos = gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().Vselected();
                 Debug.Log(pos);
-                if (battlefield.GetComponent<Manager>().GetUnitFromXZ(pos) == null)
+                if (gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetUnitFromXZ(pos) == null)
                 {
                     if (invoc != null && 
                         (invoc.herob == false ||
@@ -110,7 +111,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
             if (R2 != null)
             {
-                foreach (GameObject unit in battlefield.GetComponent<Manager>().Units)
+                foreach (GameObject unit in gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().Units)
                 {
                     PlayerComponent p = unit.GetComponent<PlayerComponent>();
                     if (p != null)
@@ -125,7 +126,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
             }
             if (R3 != null)
             {
-                foreach (GameObject unit in battlefield.GetComponent<Manager>().Units)
+                foreach (GameObject unit in gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().Units)
                 {
                     PlayerComponent p = unit.GetComponent<PlayerComponent>();
                     if (p != null)

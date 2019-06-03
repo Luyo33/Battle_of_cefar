@@ -150,7 +150,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 3.4386864
-  m_BaseOffset: 0
+  m_BaseOffset: 0.05
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &8310940271501803203
@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8369b4dd50b303e40aafe2dcbd47df73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   R1: {fileID: 0}
   R2: {fileID: 0}
   R3: {fileID: 0}
@@ -222,7 +223,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battle: {fileID: 0}
-  battlefield: {fileID: 0}
   position: {x: 0, y: 0}
   Neighbours: []
   move: 0
@@ -269,7 +269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battle: {fileID: 0}
-  battlefield: {fileID: 0}
   position: {x: 0, y: 0}
   Element: 0
   targets: []

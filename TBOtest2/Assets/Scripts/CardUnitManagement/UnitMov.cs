@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Photon.Pun;
 using UnityEngine;
 
 public class UnitMov : MonoBehaviourPun
 {
     public GameObject battle;
-    public Manager battlefield;
     public Vector2Int position;
     public List<Vector2Int> Neighbours;
     public int move;
@@ -16,7 +16,7 @@ public class UnitMov : MonoBehaviourPun
     public bool givebonus = false;
 
     [PunRPC]
-    void SyncPosition(int x, int y, PhotonMessageInfo info)
+    void SetPosition(int x, int y, PhotonMessageInfo info)
     {
         position = new Vector2Int(x, y);
     }
@@ -30,13 +30,13 @@ public class UnitMov : MonoBehaviourPun
         Neighbours = AvailableFields();
     }
     // Start is called before the first frame update
-    void Start()
+
+    public IEnumerator Start()
     {
-        battle = gameObject.GetComponent<UnitMan>().battle;
-        battlefield = battle.GetComponent<Manager>();
+        yield return new WaitUntil(() => gameObject.GetComponent<UnitMan>().R1 != null);
+        battle = gameObject.scene.GetRootGameObjects()[0];
         move = gameObject.GetComponent<UnitMan>().R1.move;
-        //position = new Vector2Int((int)gameObject.transform.position.x,(int)gameObject.transform.position.z);
-        position = battlefield.Vselected();
+        photonView.RPC("SetPosition", RpcTarget.All, (int)gameObject.transform.position.x,(int) - gameObject.transform.position.z);
         Neighbours = new List<Vector2Int>();
         //Debug.Log("UnitCanMove");
     }
@@ -48,27 +48,22 @@ public class UnitMov : MonoBehaviourPun
         ActivateMovBonus();
         Neighbours = AvailableFields();
         photonView.RPC("SyncMoveStat", RpcTarget.Others);
-    }
-    public void SetPosition(Vector2Int v)
-    {
-        position = v;
-        photonView.RPC("SyncPosition", RpcTarget.Others, v.x, v.y);
-        Neighbours = AvailableFields();
+        photonView.RPC("SetPosition", RpcTarget.All, (int)gameObject.transform.position.x, (int)-gameObject.transform.position.z);
     }
     public void OnMouseOver()
     {
         foreach (Vector2Int neighbour in Neighbours)
         {
-            battle.GetComponent<Manager>().GetCellFromXZ(neighbour).GetComponent<Selector>().Highlight();
+            gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetCellFromXZ(neighbour).GetComponent<Selector>().Highlight();
                 
         }
     }
 
     public void OnMouseExit()
     {
-        foreach (GameObject o in battlefield.cellMap)
+        foreach (Transform o in gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].transform)
         {
-            o.GetComponent<Selector>().ExitHighlight();
+            o.gameObject.GetComponent<Selector>().ExitHighlight();
         }
     }
 
@@ -91,7 +86,7 @@ public class UnitMov : MonoBehaviourPun
         }
         List<Tuple<Vector3Int, float>> next = new List<Tuple<Vector3Int, float>>();
         Vector3Int here = new Vector3Int(position.x, position.y,
-            battlefield.GetCellFromXZ(position).GetComponent<BiomeProp>().height);
+            gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetCellFromXZ(position).GetComponent<BiomeProp>().height);
         float mv = move + 1;
         next.Add(new Tuple<Vector3Int, float>(here, mv));
         List<Vector2Int> works = new List<Vector2Int>();
@@ -104,9 +99,9 @@ public class UnitMov : MonoBehaviourPun
             int x = here.x;
             int y = here.y;
             mv = now.Item2;
-            if (battlefield.IsHere(x, y))
+            if (gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().IsHere(x, y))
             {
-                GameObject field = battlefield.GetCellFromXZ(x, y);
+                GameObject field = gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetCellFromXZ(x, y);
                 BiomeProp b = field.GetComponent<BiomeProp>();
                 int h = field.GetComponent<BiomeProp>().height -
                         here.z; // current height - previous height = h, height difference
@@ -126,7 +121,7 @@ public class UnitMov : MonoBehaviourPun
                 {
                     tested.Add(pos);
                     Vector2Int toadd = new Vector2Int(x, y);
-                    if (battlefield.GetUnitFromXZ(toadd) == gameObject||battlefield.GetUnitFromXZ(toadd) == null)
+                    if (gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetUnitFromXZ(toadd) == gameObject|| gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetUnitFromXZ(toadd) == null)
                     {
                         if (mv <= 0.5)
                         {

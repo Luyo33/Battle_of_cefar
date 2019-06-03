@@ -8,6 +8,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = System.Random;
+using System.Linq;
 
 public class CardControl : MonoBehaviourPun
 {
@@ -36,6 +37,7 @@ public class CardControl : MonoBehaviourPun
     // Start is called before the first frame update
     private void Start()
     {
+<<<<<<< HEAD
         mod = new Dictionary<Card_R1.Model, GameObject>();
         mod.Add(Card_R1.Model.None, EmptyUnit);
         mod.Add(Card_R1.Model.Archer, EmptyArcher);
@@ -44,6 +46,9 @@ public class CardControl : MonoBehaviourPun
         mod.Add(Card_R1.Model.Knight, EmptyKnight);
         mod.Add(Card_R1.Model.Mage, EmptyMage);
         field = battlefield.GetComponent<Manager>();
+=======
+        field = gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>();
+>>>>>>> CopyAristide
         deckCount = 0;
         hero = null;
         herob = false;
@@ -158,9 +163,10 @@ public class CardControl : MonoBehaviourPun
         unit.GetComponent<UnitMan>().R1 = template;
         unit.GetComponent<UnitMan>().battle = battlefield;
         unit.GetComponent<UnitMan>().Start();
-        unit.GetComponent<UnitMov>().SetPosition(position);
+        unit.GetComponent<UnitMan>().AddUnit();
+        unit.GetComponent<UnitMov>().Start();
         unit.GetComponent<PlayerComponent>().SetSelect();
-        unit.GetComponent<UnitDisplay>().SetUnitInfo();
+        unit.GetComponent<UnitDisplay>().Start();
         unit.GetComponent<UnitMan>().statUpdate();
         if (!herob)
         {
@@ -168,7 +174,6 @@ public class CardControl : MonoBehaviourPun
             herob = true;
             hero = unit;
         }
-        field.Units.Add(unit);
         //unit.transform.parent = something.transform;//for hierarchy
         unit.GetComponent<UnitMan>().statUpdate();
         hand.Remove(template);
@@ -186,6 +191,7 @@ public class CardControl : MonoBehaviourPun
             Unit.GetComponent<UnitStat>().biome = template.biome;
             Unit.GetComponent<UnitStat>().stat = template.stat;
             Unit.GetComponent<UnitStat>().statBonus = template.bonus;
+            Unit.GetComponent<UnitAtk>().Start();
             if (template.stat == CardTemplate.Stat.move)
             {
                 Unit.GetComponent<UnitStat>().MvBonus = template.movebonus;

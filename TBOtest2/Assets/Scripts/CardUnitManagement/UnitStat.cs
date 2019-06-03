@@ -31,14 +31,26 @@ public class UnitStat : MonoBehaviourPun
         hero = true;
     }
 
+    [PunRPC]
+    public void LoseHp(int loss)
+    {
+        hp -= loss;
+    }
+
+    [PunRPC]
+    void DestroyThis()
+    {
+        PhotonNetwork.Destroy(gameObject);
+    }
 
     public void SetHero()
     {
         photonView.RPC("SyncHero", RpcTarget.All);
     }
 
-    private void Start()
+    public IEnumerator Start()
     {
+        yield return new WaitUntil(() => gameObject.GetComponent<UnitMan>().R1 != null);
         template = gameObject.GetComponent<UnitMan>().R1;
         rank = 1;
         biome = BiomeProp.Biome.Classic;
@@ -62,14 +74,14 @@ public class UnitStat : MonoBehaviourPun
  
     public void statUpdate()
     {
-        template = gameObject.GetComponent<UnitMan>().R1;
-        name = template.name;
-        description = template.description;
-        atk = template.atk;
-        //hp = template.hp;
-        range = template.range;
-        move = template.move;
-        element = template.element;
+    //    template = gameObject.GetComponent<UnitMan>().R1;
+    //    name = template.name;
+    //    description = template.description;
+    //    atk = template.atk;
+    //    //hp = template.hp;
+    //    range = template.range;
+    //    move = template.move;
+    //    element = template.element;
         if (gameObject.GetComponent<UnitMan>().R2 != null)
         {
             stat = gameObject.GetComponent<UnitMan>().R2.stat;
@@ -87,11 +99,11 @@ public class UnitStat : MonoBehaviourPun
 
         if (candie && hp < 1)
         {
-            PhotonNetwork.Destroy(gameObject);
-            gameObject.GetComponent<UnitMan>().battle.GetComponent<Manager>().Units = gameObject.GetComponent<UnitMan>()
-                .battle.GetComponent<Manager>()
-                .Units.Where(item => item != null)
-                .ToList();
+            gameObject.GetComponent<UnitMan>().photonView.RPC("RemoveDeads", RpcTarget.All);
+            if (photonView.Owner == PhotonNetwork.LocalPlayer)
+                PhotonNetwork.Destroy(gameObject);
+            else
+                photonView.RPC("DestroyThis", RpcTarget.Others);
         }
     }
     
