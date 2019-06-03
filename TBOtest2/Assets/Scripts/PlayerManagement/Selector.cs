@@ -4,15 +4,18 @@ public class Selector : MonoBehaviour
 {
     public GameObject selector;
     public GameObject mark2;
+    public GameObject enemyMoveRange;
+    public GameObject MoveRangeWhenCantMove;
     public bool IsSelected = false;
     private GameObject selected = null;
     private GameObject marked = null;
+    private GameObject enemyMoveRangeMarked = null;
+    private GameObject MoveWhenCantMarked = null;
     
     
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -43,7 +46,7 @@ public class Selector : MonoBehaviour
         IsSelected = false;
     }
 
-    public void Highlight()
+    public void HighlightMoveWhenCan()
     {
         if (marked == null)
         {
@@ -52,9 +55,32 @@ public class Selector : MonoBehaviour
         }
     }
 
+    public void HighlightMoveWhenCant()
+    {
+        if (MoveWhenCantMarked == null)
+        {
+            MoveWhenCantMarked = Instantiate(MoveRangeWhenCantMove, transform, true);
+            MoveWhenCantMarked.transform.position = transform.position;
+        }
+    }
+    
+    public void HighlightEnemyMove()
+    {
+        if (enemyMoveRangeMarked == null)
+        {
+            enemyMoveRangeMarked = Instantiate(enemyMoveRange, transform, true);
+            enemyMoveRangeMarked.transform.position = transform.position;
+        }
+    }
+
     public void ExitHighlight()
     {
         Destroy(marked);
         marked = null;
+        Destroy(MoveWhenCantMarked);
+        MoveWhenCantMarked = null;
+        Destroy(enemyMoveRangeMarked);
+        enemyMoveRangeMarked = null;
     }
+
 }
