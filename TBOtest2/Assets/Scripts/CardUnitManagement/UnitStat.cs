@@ -23,7 +23,7 @@ public class UnitStat : MonoBehaviourPun
     public int statBonus = 0;
     public CardTemplate.Stat stat;
     public float MvBonus = 0f;
-    public int rank; // 0 = trapcard ;
+    public int rank = 1; // 0 = trapcard ;
     
     [PunRPC]
     void SyncHero()
@@ -45,7 +45,7 @@ public class UnitStat : MonoBehaviourPun
     [PunRPC]
     void SyncIfR2(CardTemplate.Stat stat, BiomeProp.Biome biome, int bonus, PhotonMessageInfo info)
     {
-        ++rank;
+        rank = 2;
         this.stat = stat;
         this.biome = biome;
         statBonus = bonus;
@@ -53,7 +53,7 @@ public class UnitStat : MonoBehaviourPun
     [PunRPC]
     void SyncIfR3(int hpplus, int atkplus, int rangeplus, int moveplus, PhotonMessageInfo info)
     {
-        ++rank;
+        rank = 3;
         hp += hpplus;
         atk += atkplus;
         range += rangeplus;
