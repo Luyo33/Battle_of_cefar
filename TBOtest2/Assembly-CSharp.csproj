@@ -184,6 +184,7 @@
     <Compile Include="Assets\Scripts\CardUnitManagement\UnitMov.cs" />
     <Compile Include="Assets\Scripts\CardUnitManagement\UnitStat.cs" />
     <Compile Include="Assets\Scripts\MenuSettings\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\MenuSettings\EndgameMenu.cs" />
     <Compile Include="Assets\Scripts\MenuSettings\Menu.cs" />
     <Compile Include="Assets\Scripts\MenuSettings\OptionsMenu.cs" />
     <Compile Include="Assets\Scripts\MenuSettings\Sound.cs" />
