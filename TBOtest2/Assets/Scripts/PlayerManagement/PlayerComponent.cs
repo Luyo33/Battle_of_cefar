@@ -94,7 +94,6 @@ public class PlayerComponent : MonoBehaviourPun
                             }
                         }
                     }
-                    gameObject.GetComponent<UnitMan>().statUpdate();
                     select.selected = false;
                 }
             }

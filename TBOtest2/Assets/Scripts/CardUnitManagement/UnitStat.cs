@@ -13,17 +13,17 @@ public class UnitStat : MonoBehaviourPun
     public bool hero;
     public string name;
     public string description;
+    public bool candie;
     public int move;
     public int range;
     public int atk;
     public int hp;
-    public bool candie;
     public CardTemplate.Element element;
     public BiomeProp.Biome biome;
     public int statBonus = 0;
     public CardTemplate.Stat stat;
     public float MvBonus = 0f;
-    public int rank; // 0 = trapcard ;
+    public int rank = 1; // 0 = trapcard ;
     
     [PunRPC]
     void SyncHero()
@@ -41,6 +41,23 @@ public class UnitStat : MonoBehaviourPun
     void DestroyThis()
     {
         PhotonNetwork.Destroy(gameObject);
+    }
+    [PunRPC]
+    void SyncIfR2(CardTemplate.Stat stat, BiomeProp.Biome biome, int bonus, PhotonMessageInfo info)
+    {
+        rank = 2;
+        this.stat = stat;
+        this.biome = biome;
+        statBonus = bonus;
+    }
+    [PunRPC]
+    void SyncIfR3(int hpplus, int atkplus, int rangeplus, int moveplus, PhotonMessageInfo info)
+    {
+        rank = 3;
+        hp += hpplus;
+        atk += atkplus;
+        range += rangeplus;
+        move += moveplus;
     }
 
     public void SetHero()
@@ -62,16 +79,26 @@ public class UnitStat : MonoBehaviourPun
             hp *= 3;
         }
         if (hp != 0)
-        {
             candie = true;
-        }
         atk = template.atk;
         range = template.range;
         move = template.move;
         element = template.element;
         stat = CardTemplate.Stat.none;
     }
- 
+
+    public void InitR2()
+    {
+        Card_R2 R2 = gameObject.GetComponent<UnitMan>().R2;
+        photonView.RPC("SyncIfR2", RpcTarget.All, R2.stat, R2.biome, R2.bonus);
+    }
+
+    public void InitR3()
+    {
+        Card_R3 R3 = gameObject.GetComponent<UnitMan>().R3;
+        photonView.RPC("SyncIfR3", RpcTarget.All, R3.hpplus, R3.atkplus, R3.rangeplus, R3.moveplus);
+    }
+
     public void statUpdate()
     {
     //    template = gameObject.GetComponent<UnitMan>().R1;
@@ -82,21 +109,6 @@ public class UnitStat : MonoBehaviourPun
     //    range = template.range;
     //    move = template.move;
     //    element = template.element;
-        if (gameObject.GetComponent<UnitMan>().R2 != null)
-        {
-            stat = gameObject.GetComponent<UnitMan>().R2.stat;
-            biome = gameObject.GetComponent<UnitMan>().R2.biome;
-            statBonus =  gameObject.GetComponent<UnitMan>().R2.bonus;
-        }
-        if (gameObject.GetComponent<UnitMan>().R3 != null)
-        {
-            Card_R3 R3 = gameObject.GetComponent<UnitMan>().R3;
-            hp += R3.hpplus;
-            atk += R3.atkplus;
-            range += R3.rangeplus;
-            move += R3.moveplus;
-        }
-
         if (candie && hp < 1)
         {
             gameObject.GetComponent<UnitMan>().photonView.RPC("RemoveDeads", RpcTarget.All);

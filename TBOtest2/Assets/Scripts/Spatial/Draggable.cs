@@ -119,6 +119,8 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                         if (p.selected)
                         {
                             used = invoc.R1R2(R2, unit);
+                            if (used)
+                                unit.GetComponent<UnitDisplay>().OnMouseEnter();
                             break;
                         }
                     }
@@ -134,12 +136,13 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                         if (p.selected)
                         {
                             used = invoc.R2R3(R3, unit);
+                            if (used)
+                                unit.GetComponent<UnitDisplay>().OnMouseEnter();
                             break;
                         }
                     }
                 }
             }
-            Debug.Log(used);
 
             if (used)
             {
@@ -151,7 +154,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 GetComponent<CanvasGroup>().blocksRaycasts = true;
                 GetComponent<CanvasGroup>().alpha = 1f; 
             }
-            
         }
     }
 }

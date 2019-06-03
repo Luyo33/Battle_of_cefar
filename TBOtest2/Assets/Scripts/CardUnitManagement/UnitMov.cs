@@ -55,7 +55,6 @@ public class UnitMov : MonoBehaviourPun
         foreach (Vector2Int neighbour in Neighbours)
         {
             gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetCellFromXZ(neighbour).GetComponent<Selector>().Highlight();
-                
         }
     }
 

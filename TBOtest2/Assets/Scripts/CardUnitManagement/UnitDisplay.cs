@@ -20,7 +20,7 @@ public class UnitDisplay : MonoBehaviourPun
     {
         unitInfo = Camera.main.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
     }
-    void OnMouseEnter()
+    public void OnMouseEnter()
      {
          string rank = "";
          string hp = " HP = " + gameObject.GetComponent<UnitStat>().hp.ToString();
