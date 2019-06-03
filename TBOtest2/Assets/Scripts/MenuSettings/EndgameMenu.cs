@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndgameMenu : MonoBehaviour
 {
@@ -9,6 +8,21 @@ public class EndgameMenu : MonoBehaviour
 
     /*void Start()
     {
-        if()
+        if(win)
+        {
+            WinButton.SetActive(true);
+            LoseButton.SetActive(false);
+        }
+        if(lose)
+        {
+            WinButton.SetActive(true);
+            LoseButton.SetActive(true);
+        }
     }*/
+
+    public void ReturnToMain()
+    {
+        SceneManager.LoadScene(0);
+    }
+    
 }
