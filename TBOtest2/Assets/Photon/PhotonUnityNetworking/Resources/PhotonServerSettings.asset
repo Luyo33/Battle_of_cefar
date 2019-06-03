@@ -51,4 +51,6 @@ MonoBehaviour:
   - RemoveDeads
   - DestroyThis
   - LoseHp
+  - SyncIfR2
+  - SyncIfR3
   DisableAutoOpenWizard: 1

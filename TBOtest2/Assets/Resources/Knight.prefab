@@ -326,6 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8369b4dd50b303e40aafe2dcbd47df73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   R1: {fileID: 0}
   R2: {fileID: 0}
   R3: {fileID: 0}
@@ -396,7 +397,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battle: {fileID: 0}
-  battlefield: {fileID: 0}
   position: {x: 0, y: 0}
   Neighbours: []
   move: 0
@@ -419,11 +419,11 @@ MonoBehaviour:
   hero: 0
   name: 
   description: 
+  candie: 0
   move: 0
   range: 0
   atk: 0
   hp: 0
-  candie: 0
   element: 0
   biome: 0
   statBonus: 0
@@ -443,7 +443,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battle: {fileID: 0}
-  battlefield: {fileID: 0}
   position: {x: 0, y: 0}
   Element: 0
   targets: []

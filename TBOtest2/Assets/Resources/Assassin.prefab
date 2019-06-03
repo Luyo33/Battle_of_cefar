@@ -229,7 +229,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 94451634911257286}
-  viewIdField: 0
+  viewIdField: 2
   InstantiationId: 2
   isRuntimeInstantiated: 0
 --- !u!114 &94451634911257286
@@ -282,11 +282,11 @@ MonoBehaviour:
   hero: 0
   name: 
   description: 
+  candie: 0
   move: 0
   range: 0
   atk: 0
   hp: 0
-  candie: 0
   element: 0
   biome: 0
   statBonus: 0
