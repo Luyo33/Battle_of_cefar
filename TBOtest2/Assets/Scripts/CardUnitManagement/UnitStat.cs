@@ -17,7 +17,6 @@ public class UnitStat : MonoBehaviourPun
     public int range;
     public int atk;
     public int hp;
-    public bool candie;
     public CardTemplate.Element element;
     public BiomeProp.Biome biome;
     public int statBonus = 0;
@@ -60,10 +59,6 @@ public class UnitStat : MonoBehaviourPun
         if (hero)
         {
             hp *= 3;
-        }
-        if (hp != 0)
-        {
-            candie = true;
         }
         atk = template.atk;
         range = template.range;
