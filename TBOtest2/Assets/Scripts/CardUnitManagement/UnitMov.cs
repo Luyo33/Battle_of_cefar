@@ -36,7 +36,6 @@ public class UnitMov : MonoBehaviourPun
         yield return new WaitUntil(() => gameObject.GetComponent<UnitMan>().R1 != null);
         battle = gameObject.scene.GetRootGameObjects()[0];
         move = gameObject.GetComponent<UnitMan>().R1.move;
-        photonView.RPC("SetPosition", RpcTarget.All, (int)gameObject.transform.position.x,(int) - gameObject.transform.position.z);
         Neighbours = new List<Vector2Int>();
         //Debug.Log("UnitCanMove");
     }
@@ -48,14 +47,27 @@ public class UnitMov : MonoBehaviourPun
         ActivateMovBonus();
         Neighbours = AvailableFields();
         photonView.RPC("SyncMoveStat", RpcTarget.Others);
-        photonView.RPC("SetPosition", RpcTarget.All, (int)gameObject.transform.position.x, (int)-gameObject.transform.position.z);
     }
     public void OnMouseOver()
     {
-        foreach (Vector2Int neighbour in Neighbours)
+        if(gameObject.GetPhotonView().Owner == PhotonNetwork.LocalPlayer)
         {
-            gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetCellFromXZ(neighbour).GetComponent<Selector>().Highlight();
+            if (gameObject.GetComponent<UnitMan>().canmove)
+                foreach (Vector2Int neighbour in Neighbours)
+                {
+                    gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetCellFromXZ(neighbour).GetComponent<Selector>().HighlightMoveWhenCan();
+                }
+            else
+                foreach (Vector2Int neighbour in Neighbours)
+                {
+                    gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetCellFromXZ(neighbour).GetComponent<Selector>().HighlightMoveWhenCant();
+                }
         }
+        else
+            foreach (Vector2Int neighbour in Neighbours)
+            {
+                gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetCellFromXZ(neighbour).GetComponent<Selector>().HighlightEnemyMove();
+            }
     }
 
     public void OnMouseExit()
@@ -79,10 +91,10 @@ public class UnitMov : MonoBehaviourPun
 
     private List<Vector2Int> AvailableFields() //idea: have as flight bonus the faculty to have h+1
     {
-        if (!gameObject.GetComponent<UnitMan>().canmove)
-        {
-            return new List<Vector2Int>();
-        }
+        //if (!gameObject.GetComponent<UnitMan>().canmove)
+        //{
+        //    return new List<Vector2Int>();
+        //}
         List<Tuple<Vector3Int, float>> next = new List<Tuple<Vector3Int, float>>();
         Vector3Int here = new Vector3Int(position.x, position.y,
             gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetCellFromXZ(position).GetComponent<BiomeProp>().height);

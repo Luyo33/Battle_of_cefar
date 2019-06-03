@@ -13,21 +13,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.0000002, z: 5.000001}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5103684322450425086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6206372761850750764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af7fd57ff5f0eaf478999fae43090f7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selector: {fileID: 3909438553596214898, guid: 6f420f55ee762ca4796093220cf94bff,
-    type: 3}
-  IsSelected: 0
 --- !u!1001 &1529805115014707920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125,6 +110,18 @@ PrefabInstance:
       propertyPath: defaultHeight
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2799335971443464760, guid: 260aad0a1712ef74d8e987823ea35140,
+        type: 3}
+      propertyPath: enemyMoveRange
+      value: 
+      objectReference: {fileID: 4676621604024218953, guid: 659197b2f8b34f24fbb5375352c13f8e,
+        type: 3}
+    - target: {fileID: 2799335971443464760, guid: 260aad0a1712ef74d8e987823ea35140,
+        type: 3}
+      propertyPath: MoveRangeWhenCantMove
+      value: 
+      objectReference: {fileID: 2837111996669468415, guid: 05ac75968253dd64d9343a46f8ae196a,
+        type: 3}
     - target: {fileID: 2864083917123180187, guid: 260aad0a1712ef74d8e987823ea35140,
         type: 3}
       propertyPath: biome

@@ -16,8 +16,8 @@ public class UnitMan : MonoBehaviourPun
     public Card_R3 R3;
     public GameObject battle;
     public bool tomouse;
-    public bool canmove;
-    public bool canhit;
+    public bool canmove = false;
+    public bool canhit = false;
 
     [PunRPC]
     void PutPiece(string n, string d, string e, int c, int m, int r, int a, int h, Card_R1.Model mo, int gid, PhotonMessageInfo info)

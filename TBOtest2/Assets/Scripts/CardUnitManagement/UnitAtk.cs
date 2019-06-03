@@ -116,7 +116,11 @@ public class UnitAtk : MonoBehaviourPun
         target.GetComponent<UnitStat>().photonView.RPC("LoseHp", RpcTarget.All, (u1.atk + plusatk - plusdef) * damage(u2.element));
         target.GetComponent<UnitMan>().statUpdate();
         gameObject.GetComponent<UnitMan>().canhit = false;
+<<<<<<< HEAD
         GetComponent<UnitMan>().canmove = false;
+=======
+        gameObject.GetComponent<UnitMan>().canmove = false;
+>>>>>>> FuckingMulti
         gameObject.GetComponent<UnitMan>().tomouse = true;
         target.GetComponent<UnitDisplay>().OnMouseEnter();
     }
