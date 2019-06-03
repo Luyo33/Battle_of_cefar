@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Ball Of Protection
   description: Surronds you in powerfull winds reducing incoming damages
   element: 3
+  sprite: {fileID: 21300000, guid: ab517f8c28e60ae46b81294a20086fe0, type: 3}
   cardrank: 2
   biome: 4
   bonus: 2

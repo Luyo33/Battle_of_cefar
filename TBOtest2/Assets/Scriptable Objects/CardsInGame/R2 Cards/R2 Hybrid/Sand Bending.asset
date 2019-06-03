@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Sand Bending
   description: Finally Mastered The Art Of Using Sand
   element: 4
+  sprite: {fileID: 21300000, guid: db55876e05d1fb345b96a85381e15ef2, type: 3}
   cardrank: 2
   biome: 3
   bonus: 1

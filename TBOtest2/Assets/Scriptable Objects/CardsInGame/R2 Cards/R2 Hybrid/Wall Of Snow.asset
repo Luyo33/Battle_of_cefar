@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Wall Of Snow
   description: Not as Strong as The Mighty Wall but good enought
   element: 2
+  sprite: {fileID: 21300000, guid: 65329e37f38904748a79a5966cfb6a80, type: 3}
   cardrank: 2
   biome: 4
   bonus: 1

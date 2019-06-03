@@ -184,9 +184,10 @@ public class CardControl : MonoBehaviourPun
     {
         
         UnitStat u = Unit.GetComponent<UnitStat>();
-        if (u.element == template.element)
+        if (u.element == template.element && u.rank < 3)
         {
             Unit.GetComponent<UnitMan>().R2 = template;
+            Unit.GetComponent<UnitStat>().rank = 2;
             Unit.GetComponent<UnitStat>().biome = template.biome;
             Unit.GetComponent<UnitStat>().stat = template.stat;
             Unit.GetComponent<UnitStat>().statBonus = template.bonus;
@@ -210,6 +211,7 @@ public class CardControl : MonoBehaviourPun
         if (u.element == template.element && u.rank == 2)
         {
             Unit.GetComponent<UnitMan>().R3 = template;
+            u.rank = 3;
             Unit.GetComponent<UnitStat>().hp += template.hpplus;
             Unit.GetComponent<UnitStat>().atk += template.atkplus;
             Unit.GetComponent<UnitStat>().move += template.moveplus;

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Wall Of Ice
   description: Summons a part of a mighty wall
   element: 2
+  sprite: {fileID: 21300000, guid: 7f19cb6dbd393e8429ee944ee85a39ba, type: 3}
   cardrank: 2
   biome: 2
   bonus: 3

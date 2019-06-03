@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Boat
   description: Makes a boat magically spawn
   element: 0
+  sprite: {fileID: 21300000, guid: 2e1c29df364276744acc25007ea5d277, type: 3}
   cardrank: 2
   biome: 2
   bonus: 0
