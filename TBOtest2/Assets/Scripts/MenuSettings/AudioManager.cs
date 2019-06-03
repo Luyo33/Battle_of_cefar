@@ -1,8 +1,9 @@
 ﻿using UnityEngine.Audio;
 using UnityEngine;
 using System;
+using Photon.Pun;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : MonoBehaviourPun
 {
     public Sound[] sounds;
 
