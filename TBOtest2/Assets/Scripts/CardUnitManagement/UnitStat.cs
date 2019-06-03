@@ -92,7 +92,7 @@ public class UnitStat : MonoBehaviourPun
             move += R3.moveplus;
         }
 
-        if (candie && hp < 1)
+        if (hp < 1)
         {
             gameObject.GetComponent<UnitMan>().photonView.RPC("RemoveDeads", RpcTarget.All);
             if (photonView.Owner == PhotonNetwork.LocalPlayer)
