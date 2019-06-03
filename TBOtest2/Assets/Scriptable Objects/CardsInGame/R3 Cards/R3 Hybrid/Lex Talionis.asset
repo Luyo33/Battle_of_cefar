@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Lex Talionis
   description: An eye for an eye
   element: 1
+  sprite: {fileID: 21300000, guid: 59d238aea34f0654e8ccb202bcce2d87, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 0

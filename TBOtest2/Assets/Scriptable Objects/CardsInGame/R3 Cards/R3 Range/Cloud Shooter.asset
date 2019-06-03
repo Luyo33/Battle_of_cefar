@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Cloud Shooter
   description: Best view from above
   element: 3
+  sprite: {fileID: 21300000, guid: 0a9a32a40a389524f8abd201fa619047, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 4

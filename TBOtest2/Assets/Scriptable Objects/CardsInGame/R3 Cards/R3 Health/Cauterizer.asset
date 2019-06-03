@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Cauterizer
   description: Healing thanks to the heat
   element: 1
+  sprite: {fileID: 21300000, guid: 2911d73545458cb41b59d0e93e76c863, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 0

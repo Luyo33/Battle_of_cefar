@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Mace
   description: Hit as hard as you can
   element: 0
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: bd4757f41dc06df41bfe6cae4f325108, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 0

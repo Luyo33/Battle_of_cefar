@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Cyclone
   description: Strongest wind force you may find
   element: 3
+  sprite: {fileID: 21300000, guid: bed28a73dd7972f429fdc4cbbfd78d65, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 0

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Magma River
   description: Slide down the river
   element: 1
+  sprite: {fileID: 21300000, guid: 848ae1338c68a154fbe2e1f5774a716a, type: 3}
   cardrank: 3
   moveplus: 2
   rangeplus: 0

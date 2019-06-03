@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Fire Precision
   description: Look into the fire to see your target
   element: 1
+  sprite: {fileID: 21300000, guid: 71704d0999cd35f4c8967a81cd6fad8d, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 3

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Ice Spear
   description: Took down a dragon in one hit
   element: 2
+  sprite: {fileID: 21300000, guid: 4239d56bfc06dcf45ad0b451dafe8822, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 0

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Jet Weapon
   description: Water brings your doom
   element: 2
+  sprite: {fileID: 21300000, guid: 41284a7f1284e4e459100c5c52034064, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 3

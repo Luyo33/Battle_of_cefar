@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Blue Fire
   description: '"If you can''t take the heat, then SD"'
   element: 1
+  sprite: {fileID: 21300000, guid: cb6f179dbab9aa4489231d7caf567063, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 0

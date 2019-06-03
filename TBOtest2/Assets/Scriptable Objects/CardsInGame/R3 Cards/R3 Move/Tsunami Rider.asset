@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Tsunami Rider
   description: Use its force to go beyond
   element: 2
+  sprite: {fileID: 21300000, guid: b97a66e15721d3b4c824b94f6f5bbd88, type: 3}
   cardrank: 3
   moveplus: 3
   rangeplus: 0

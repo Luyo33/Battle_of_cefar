@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Uncrakable
   description: Legend say you cannot be killed in this form
   element: 4
+  sprite: {fileID: 21300000, guid: 2ac3bdca3b5875b498921a7e558ea7f3, type: 3}
   cardrank: 3
   moveplus: -2
   rangeplus: 0

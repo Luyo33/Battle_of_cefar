@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Lightning Survivor
   description: Summon lightning to boost you
   element: 2
+  sprite: {fileID: 21300000, guid: 512634cb2d94be041b641b4695f27163, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 0

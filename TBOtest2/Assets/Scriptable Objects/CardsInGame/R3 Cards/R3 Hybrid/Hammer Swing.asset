@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Hammer Swing
   description: A new efficient way to fight
   element: 0
+  sprite: {fileID: 21300000, guid: 2ed0bb012b29d93489acf3e626228e2a, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 1

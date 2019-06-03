@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class EndgameMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject WinButton;
+    public GameObject LoseButton;
 
-    // Update is called once per frame
-    void Update()
+    /*void Start()
     {
-        
-    }
+        if()
+    }*/
 }

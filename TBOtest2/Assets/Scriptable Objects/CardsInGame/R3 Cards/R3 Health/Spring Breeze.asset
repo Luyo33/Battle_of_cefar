@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Spring Breeze
   description: The hero arrived with it
   element: 3
+  sprite: {fileID: 21300000, guid: ece832c1e1b86ac438fe680d4afcaad3, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 0

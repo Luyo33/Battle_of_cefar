@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Unraveled Earth
   description: Just like the name suggest ..
   element: 4
+  sprite: {fileID: 21300000, guid: 049562a56baf1904780ab573ea9d7e40, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 3

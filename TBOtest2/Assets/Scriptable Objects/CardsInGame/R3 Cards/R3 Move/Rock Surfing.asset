@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Rock Surfing
   description: Bend rock to go faster
   element: 4
+  sprite: {fileID: 21300000, guid: eb11950c28b02fb4c80885cfc3044446, type: 3}
   cardrank: 3
   moveplus: 2
   rangeplus: 0

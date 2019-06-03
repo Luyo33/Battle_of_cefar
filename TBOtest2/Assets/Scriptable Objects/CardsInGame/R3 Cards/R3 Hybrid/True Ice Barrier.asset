@@ -15,6 +15,7 @@ MonoBehaviour:
   name: True Ice Barrier
   description: True Ice never melts
   element: 2
+  sprite: {fileID: 21300000, guid: c0bbf788288b66c4e8690dbae3ec1168, type: 3}
   cardrank: 3
   moveplus: -1
   rangeplus: 0

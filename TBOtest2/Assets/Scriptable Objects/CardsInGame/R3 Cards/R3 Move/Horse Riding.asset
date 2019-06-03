@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Horse Riding
   description: Ride a horse makes you faster (Duh)
   element: 0
+  sprite: {fileID: 21300000, guid: be205d8d4cb0c5f4db8fe89b5c8cc2cf, type: 3}
   cardrank: 3
   moveplus: 1
   rangeplus: 0

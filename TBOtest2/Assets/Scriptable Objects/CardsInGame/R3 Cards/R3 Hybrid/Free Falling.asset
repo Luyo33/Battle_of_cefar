@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Free Falling
   description: Builds momentum thanks to gravity
   element: 3
+  sprite: {fileID: 21300000, guid: 70f452b1c04101343a82b0a26918fb15, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 2

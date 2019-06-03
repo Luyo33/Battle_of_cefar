@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Elixir Of Life
   description: This legendary elixir makes you bigger
   element: 0
+  sprite: {fileID: 21300000, guid: b3ae63c34544fe341ab9960054c444df, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 0

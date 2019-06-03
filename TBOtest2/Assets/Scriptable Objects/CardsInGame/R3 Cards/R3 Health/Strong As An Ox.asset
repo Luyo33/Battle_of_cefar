@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Strong As An Ox
   description: Like the old saying said
   element: 4
+  sprite: {fileID: 21300000, guid: daaf96f9016edb34a9c30218b3fed521, type: 3}
   cardrank: 3
   moveplus: 0
   rangeplus: 0

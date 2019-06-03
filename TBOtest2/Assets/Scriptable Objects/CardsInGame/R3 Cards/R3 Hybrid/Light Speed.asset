@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Light Speed
   description: 300 000 kilometers per hour
   element: 3
+  sprite: {fileID: 21300000, guid: 89a40a3db795c8145bc9ac9e73c61333, type: 3}
   cardrank: 3
   moveplus: 4
   rangeplus: 0
