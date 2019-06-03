@@ -64,7 +64,7 @@ public class PlayerComponent : MonoBehaviourPun
                             .Vselected();
                         
                         if (gameObject.GetComponent<UnitMov>().Neighbours.Contains(pos) &&
-                            gameObject.GetComponent<UnitMov>().position != pos)
+                            gameObject.GetComponent<UnitMov>().position != pos && gameObject.GetComponent<UnitMan>().canmove)
                         {
                             Debug.Log("Possible Movement");
                             gameObject.GetComponent<UnitMov>().photonView.RPC("SetPosition",RpcTarget.All, pos.x, pos.y);
@@ -85,15 +85,18 @@ public class PlayerComponent : MonoBehaviourPun
                     }
                     else
                     {
-                        UnitAtk atk = gameObject.GetComponent<UnitAtk>();
-                        foreach (GameObject target in atk.GetTargets())
+                        if (gameObject.GetComponent<UnitMan>().canhit)
                         {
-                            if (ennemy == target)
+                            UnitAtk atk = gameObject.GetComponent<UnitAtk>();
+                            foreach (GameObject target in atk.GetTargets())
                             {
-                                atk.attack(ennemy);
-                                FindObjectOfType<AudioManager>().photonView.RPC("Play", RpcTarget.All, "Cric");
-                                //target.GetComponent<UnitMan>().GetHit();
-                                break;
+                                if (ennemy == target)
+                                {
+                                    atk.attack(ennemy);
+                                    FindObjectOfType<AudioManager>().photonView.RPC("Play", RpcTarget.All, "Cric");
+                                    //target.GetComponent<UnitMan>().GetHit();
+                                    break;
+                                }
                             }
                         }
                     }

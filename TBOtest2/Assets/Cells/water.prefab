@@ -132,6 +132,10 @@ MonoBehaviour:
   selector: {fileID: 3909438553596214898, guid: 6f420f55ee762ca4796093220cf94bff,
     type: 3}
   mark2: {fileID: 3923367898808832899, guid: 884dd8453bd69cc49b442e973cd3424e, type: 3}
+  enemyMoveRange: {fileID: 4676621604024218953, guid: 659197b2f8b34f24fbb5375352c13f8e,
+    type: 3}
+  MoveRangeWhenCantMove: {fileID: 2837111996669468415, guid: 05ac75968253dd64d9343a46f8ae196a,
+    type: 3}
   IsSelected: 0
 --- !u!65 &8393072371901118231
 BoxCollider:
