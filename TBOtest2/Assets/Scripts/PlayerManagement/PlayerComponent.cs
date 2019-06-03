@@ -92,6 +92,7 @@ public class PlayerComponent : MonoBehaviourPun
                             {
                                 atk.attack(ennemy);
                                 FindObjectOfType<AudioManager>().Play("Cric");
+                                //target.GetComponent<UnitMan>().GetHit();
                                 break;
                             }
                         }
