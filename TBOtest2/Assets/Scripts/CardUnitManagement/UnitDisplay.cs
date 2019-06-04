@@ -15,10 +15,12 @@ public class UnitDisplay : MonoBehaviourPun
 
     private string currentToolTipText = "";
     public TextMeshProUGUI unitInfo;
-    
+
     public void Start()
     {
         unitInfo = Camera.main.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
+        currentToolTipText = " " + Environment.NewLine + " " + Environment.NewLine + PhotonNetwork.PlayerListOthers[0].NickName + Environment.NewLine + "VS" + Environment.NewLine + PhotonNetwork.LocalPlayer.NickName + Environment.NewLine + " " + Environment.NewLine +" ";
+        Write();
     }
     public void OnMouseEnter()
      {
@@ -48,22 +50,15 @@ public class UnitDisplay : MonoBehaviourPun
      }
   
      void OnMouseExit ()
-     {
-         currentToolTipText = "";
-         Write();
+    {
+        currentToolTipText = " " + Environment.NewLine + " " + Environment.NewLine + PhotonNetwork.PlayerListOthers[0].NickName + Environment.NewLine + "VS" + Environment.NewLine + PhotonNetwork.LocalPlayer.NickName + Environment.NewLine + " " + Environment.NewLine + " ";
+        Write();
      }
   
      void Write()
      {
         if(unitInfo == null)
             unitInfo = Camera.main.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>();
-        if (currentToolTipText != "")
-         {
-             unitInfo.text = currentToolTipText;
-         }
-         else
-         {
-             unitInfo.text = "";
-         }
+        unitInfo.text = currentToolTipText;
      }
 }

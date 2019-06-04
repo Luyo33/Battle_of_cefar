@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 
 public class Deleter : MonoBehaviour , IPointerEnterHandler, IPointerExitHandler
 {
+    public int deleted = 0;
     public bool delete;
 
     public void OnPointerEnter(PointerEventData eventData)

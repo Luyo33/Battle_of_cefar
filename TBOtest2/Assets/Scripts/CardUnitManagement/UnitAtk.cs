@@ -115,12 +115,9 @@ public class UnitAtk : MonoBehaviourPun
         int plusdef = u2.stat == CardTemplate.Stat.def && u2.biome == gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>().GetCellFromXZ(target.GetComponent<UnitMov>().position).GetComponent<BiomeProp>().biome? u2.statBonus:0;
         target.GetComponent<UnitStat>().photonView.RPC("LoseHp", RpcTarget.All, (u1.atk + plusatk - plusdef) * damage(u2.element));
         target.GetComponent<UnitMan>().statUpdate();
+        PhotonNetwork.Instantiate("Blood", target.transform.position, Quaternion.identity);
         gameObject.GetComponent<UnitMan>().canhit = false;
-<<<<<<< HEAD
-        GetComponent<UnitMan>().canmove = false;
-=======
         gameObject.GetComponent<UnitMan>().canmove = false;
->>>>>>> FuckingMulti
         gameObject.GetComponent<UnitMan>().tomouse = true;
         target.GetComponent<UnitDisplay>().OnMouseEnter();
     }

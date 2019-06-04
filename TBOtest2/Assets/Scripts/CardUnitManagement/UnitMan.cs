@@ -6,6 +6,7 @@ using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.Experimental.PlayerLoop;
 using System.Linq;
+using System.Threading;
 
 public class UnitMan : MonoBehaviourPun
 {
@@ -163,13 +164,6 @@ public class UnitMan : MonoBehaviourPun
         gameObject.GetComponent<MeshRenderer>().material = mat;
     }
     
-    public IEnumerable<WaitForSeconds> GetHit()
-    {
-        Material mat = GetComponent<MeshRenderer>().material;
-        GetComponent<MeshRenderer>().material = Resources.Load("HitMaterial", typeof(Material)) as Material;
-        yield return new WaitForSeconds(1);
-        GetComponent<MeshRenderer>().material = mat;
-    }
     private void Update()
     {
     }

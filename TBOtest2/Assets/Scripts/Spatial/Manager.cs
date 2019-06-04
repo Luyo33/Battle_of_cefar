@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using Random = System.Random;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class Manager : MonoBehaviour //Yael
 {
@@ -26,6 +27,13 @@ public class Manager : MonoBehaviour //Yael
     // Start is called before the first frame update
     void Start()
     {
+        if (PhotonNetwork.PlayerList.Length < 2)
+        {
+            DestroyImmediate(FindObjectOfType<PhotonRoom>().gameObject);
+            SceneManager.LoadScene(0);
+        }
+        PhotonNetwork.LocalPlayer.NickName = gameObject.GetComponent<NickNameHolder>().GetNickName();
+        Debug.LogWarning(PhotonNetwork.LocalPlayer.NickName);
         isTurn = PhotonNetwork.PlayerList[0] == PhotonNetwork.LocalPlayer;
         if (isTurn)
         {
@@ -43,7 +51,7 @@ public class Manager : MonoBehaviour //Yael
     public void OnClickEndTurn()
     {
         if(isTurn)
-            Camera.main.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<CardControl>().authorizedDraws = 1;
+            Camera.main.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<CardControl>().draw();
         if (Turnmanager == null)
             Turnmanager = gameObject.scene.GetRootGameObjects().Where(g => g.GetComponent<TurnManager>() != null).ToArray()[0];
         isTurn = false;
@@ -88,13 +96,18 @@ public class Manager : MonoBehaviour //Yael
 
     private void Update()
     {
+        if (PhotonNetwork.PlayerList.Length < 2)
+        {
+            DestroyImmediate(FindObjectOfType<PhotonRoom>().gameObject);
+            SceneManager.LoadScene(3);
+        }
         if (Input.GetKeyDown(KeyCode.C))
         {
             if (Turnmanager == null)
                 Turnmanager = gameObject.scene.GetRootGameObjects().Where(g => g.GetComponent<TurnManager>() != null).ToArray()[0];
             isTurn = true;
             Turnmanager.GetComponent<TurnManager>().photonView.RPC("StartTurn", RpcTarget.Others);
-            Camera.main.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<CardControl>().authorizedDraws = 1;
+            Camera.main.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<CardControl>().draw();
             foreach (GameObject unit in EnemyUnits)
             {
                 unit.GetComponent<UnitMan>().EndTurn();

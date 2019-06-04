@@ -23,7 +23,6 @@ public class CardControl : MonoBehaviourPun
     public GameObject EmptyCardR3;
     public GameObject battlefield;
     public Manager field;
-    public int authorizedDraws;
     public DeckBuilder DeckBuilder;
     public List<CardTemplate> Deck;
     public int deckCount;
@@ -39,7 +38,6 @@ public class CardControl : MonoBehaviourPun
     // Start is called before the first frame update
     public void Start()
     {
-        authorizedDraws = 6;
         field = gameObject.scene.GetRootGameObjects().Where(g => g.name == "GameManager").ToArray()[0].GetComponent<Manager>();
         deckCount = 0;
         hero = null;
@@ -82,11 +80,10 @@ public class CardControl : MonoBehaviourPun
 
     public void draw()//à utiliser avant toute pioche;
     {
-        if (Deck.Count > deckCount && hand.Count < 6 && authorizedDraws > 0)
+        if (Deck.Count > deckCount && hand.Count < 6)
         {
             take(Deck[deckCount]);
             ++deckCount;
-            --authorizedDraws;
         }
         
     }

@@ -70,9 +70,13 @@ public class PhotonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
     // Update is called once per frame
     void Update()
     {
+        if (playersInRoom == 0)
+        {
+
+        }
         if (MultiplayerSetting.multiplayerSetting.delayStart)
         {
-            if (playersInRoom == minplayers-1)
+            if (playersInRoom < minplayers)
             {
                 RestartTimer();
             }
@@ -148,6 +152,7 @@ public class PhotonRoom : MonoBehaviourPunCallbacks, IInRoomCallbacks
             }
         }
     }
+    
 
     void StartGame()
     {

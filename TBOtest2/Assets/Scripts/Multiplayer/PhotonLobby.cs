@@ -3,6 +3,7 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PhotonLobby : MonoBehaviourPunCallbacks
 {
@@ -57,10 +58,9 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
 
     public void OnCancelButtonClicked()
     {
-        cancelButton.SetActive(false);
-        battleButton.SetActive(true);
         PhotonNetwork.LeaveRoom();
-        Debug.Log("Left room");
+        DestroyImmediate(FindObjectOfType<PhotonRoom>().gameObject);
+        SceneManager.LoadScene(1);
     }
 
     public override void OnJoinedRoom()

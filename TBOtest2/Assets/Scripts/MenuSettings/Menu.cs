@@ -5,13 +5,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using Photon;
+using Photon.Pun;
 
 public class Menu : MonoBehaviour
 {
-
+    
     public InputField inputFieldText;
 
-    private string username;
+
+    public void Start()
+    {
+        PhotonNetwork.Disconnect();
+    }
     //Everything below is for the main menu
     public void PlayGame()
     {
@@ -27,19 +33,14 @@ public class Menu : MonoBehaviour
     //From here it is used to return to the menu from the launcher
     public void ReturntoMain()
     {
+        DestroyImmediate(FindObjectOfType<PhotonRoom>().gameObject);
+        DestroyImmediate(FindObjectOfType<AudioManager>().gameObject);
         SceneManager.LoadScene(0);
     }
 
     public void SetUsername()
     {
-        Debug.Log(inputFieldText.text);
-        username = inputFieldText.text;
-        Debug.Log(username);
-    }
-    
-    public string GetUsername()
-    {
-        return username;
+        gameObject.GetComponent<NickNameHolder>().SetNickName(inputFieldText.text);
     }
     
 }

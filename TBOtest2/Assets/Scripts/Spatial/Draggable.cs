@@ -97,8 +97,14 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
                 R3 = GetComponent<CardDisplay>().CardR3;
                 if (bin.GetComponent<Deleter>().delete)
                 {
+                    ++bin.GetComponent<Deleter>().deleted;
                     hand.GetComponent<CardControl>().hand.Remove(Card);
                     Destroy(gameObject);
+                    if (bin.GetComponent<Deleter>().deleted > 1)
+                    {
+                        Camera.main.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<CardControl>().draw();
+                        bin.GetComponent<Deleter>().deleted = 0;
+                    }
                 }
                 if (R1 != null)
                 {

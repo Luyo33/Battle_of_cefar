@@ -5,24 +5,34 @@ public class EndgameMenu : MonoBehaviour
 {
     public GameObject WinButton;
     public GameObject LoseButton;
+    private static bool win = false;
 
-    /*void Start()
+    public void SetWin(bool w)
     {
-        if(win)
+        win = w;
+    }
+
+    void Start()
+    {
+        if (WinButton != null)
         {
-            WinButton.SetActive(true);
-            LoseButton.SetActive(false);
+            if (win)
+            {
+                WinButton.SetActive(true);
+                LoseButton.SetActive(false);
+            }
+            else
+            {
+                WinButton.SetActive(true);
+                LoseButton.SetActive(true);
+            }
         }
-        if(lose)
-        {
-            WinButton.SetActive(true);
-            LoseButton.SetActive(true);
-        }
-    }*/
+    }
 
     public void ReturnToMain()
     {
         SceneManager.LoadScene(0);
+        DestroyImmediate(FindObjectOfType<AudioManager>().gameObject);
     }
     
 }
